@@ -1,0 +1,114 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Armor_Freefall_Divers.name",
+    "Description": "server.items.Armor_Freefall_Divers.description"
+  },
+  "Parent": "Armor_Iron_Legs",
+  "ItemLevel": 25,
+  "Icon": "Icons/ItemsGenerated/Armor_Bronze_Legs.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -1.2,
+      -5
+    ]
+  },
+  "Model": "Items/Armors/Bronze/Legs.blockymodel",
+  "Texture": "Items/Armors/Bronze/Legs_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Bronze",
+        "Quantity": 4
+      },
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Leather_Light",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "TODO",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Legs"
+        ]
+      }
+    ],
+    "KnowledgeRequired": true
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ],
+    "StatModifiers": {
+      "Oxygen": [
+        {
+          "CalculationType": "Additive",
+          "Amount": -5
+        }
+      ],
+      "Pressure_Resistance": [
+        {
+          "CalculationType": "Additive",
+          "Amount": 1
+        }
+      ]
+    }
+  },
+  "MaxDurability": 250,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Bronze"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Quality": "Epic",
+  "Interactions": {
+    "Equipped": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "HorizontalSpeedMultiplier": 0.5,
+          "RunTime": 1
+        },
+        {
+          "Type": "Condition",
+          "RequiredGameMode": "Adventure",
+          "Swimming": true,
+          "Next": {
+            "Type": "ApplyForce",
+            "Direction": {
+              "Y": -1,
+              "X": 0,
+              "Z": 0
+            },
+            "Force": 10,
+            "VelocityConfig": {
+              "GroundResistance": 0
+            },
+            "Duration": 2,
+            "RunTime": 1,
+            "HorizontalSpeedMultiplier": 3
+          }
+        }
+      ]
+    }
+  }
+}
