@@ -84,35 +84,28 @@
     "Equipped": {
       "Interactions": [
         {
+          "Type": "Simple",
+          "HorizontalSpeedMultiplier": 0.5,
+          "RunTime": 1
+        },
+        {
           "Type": "Condition",
+          "RequiredGameMode": "Adventure",
           "Swimming": true,
           "Next": {
             "Type": "ApplyForce",
             "Direction": {
               "Y": -1,
+              "X": 0,
               "Z": 0
             },
-            "Force": 5,
-            "Duration": 1,
-            "ChangeVelocityType": "Set",
+            "Force": 10,
             "VelocityConfig": {
-              "GroundResistance": 0,
-              "GroundResistanceMax": 0
+              "GroundResistance": 0
             },
-            "GroundNext": {
-              "Type": "ApplyEffect",
-              "EffectId": {
-                "Parent": "Water_Speed"
-              }
-            },
-            "HorizontalSpeedMultiplier": 2.5
-          },
-          "RequiredGameMode": "Adventure"
-        },
-        {
-          "Type": "ApplyEffect",
-          "EffectId": {
-            "Parent": "Divers_Slowdown"
+            "Duration": 2,
+            "RunTime": 1,
+            "HorizontalSpeedMultiplier": 3
           }
         }
       ]

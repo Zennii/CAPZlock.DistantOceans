@@ -43,6 +43,12 @@
           "CalculationType": "Additive",
           "Amount": 7
         }
+      ],
+      "Pressure_Resistance": [
+        {
+          "Amount": 1,
+          "CalculationType": "Additive"
+        }
       ]
     },
     "CosmeticsToHide": [
@@ -70,16 +76,15 @@
           "Next": {
             "Type": "StatsCondition",
             "Costs": {
-              "Oxygen": 200
+              "Pressure_Resistance": 4
             },
             "Next": {
-              "Type": "ApplyEffect",
-              "EffectId": {
-                "Parent": "Water_Speed"
-              }
+              "Type": "Simple",
+              "HorizontalSpeedMultiplier": 1.2,
+              "RunTime": 1
             }
           },
-          "HorizontalSpeedMultiplier": 0
+          "Jumping": false
         }
       ]
     }
