@@ -1,6 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Armor_Diving_Crude_Legs.name"
+    "Name": "server.items.Armor_Diving_CAPZ_Legs.name",
+    "Description": "server.items.Armor_Diving_CAPZ_Legs.description"
   },
   "Parent": "Armor_Iron_Legs",
   "ItemLevel": 30,
@@ -28,12 +29,6 @@
           "Amount": 0.07,
           "CalculationType": "Multiplicative"
         }
-      ],
-      "Projectile": [
-        {
-          "Amount": 0.07,
-          "CalculationType": "Multiplicative"
-        }
       ]
     },
     "StatModifiers": {
@@ -45,8 +40,8 @@
       ],
       "Health": [
         {
-          "Amount": 13,
-          "CalculationType": "Additive"
+          "CalculationType": "Additive",
+          "Amount": 7
         }
       ]
     },
@@ -65,7 +60,7 @@
     ]
   },
   "MaxDurability": 120,
-  "Quality": "Uncommon",
+  "Quality": "Rare",
   "Interactions": {
     "Equipped": {
       "Interactions": [
@@ -73,9 +68,15 @@
           "Type": "Condition",
           "Swimming": true,
           "Next": {
-            "Type": "ApplyEffect",
-            "EffectId": {
-              "Parent": "Water_Speed"
+            "Type": "StatsCondition",
+            "Costs": {
+              "Oxygen": 200
+            },
+            "Next": {
+              "Type": "ApplyEffect",
+              "EffectId": {
+                "Parent": "Water_Speed"
+              }
             }
           },
           "HorizontalSpeedMultiplier": 0
