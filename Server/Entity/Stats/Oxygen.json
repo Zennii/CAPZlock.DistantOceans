@@ -34,8 +34,8 @@
       ]
     },
     {
-      "Interval": 0.5,
-      "Amount": -3,
+      "Interval": 0.09,
+      "Amount": -0.3,
       "RegenType": "Additive",
       "Conditions": [
         {
@@ -48,7 +48,126 @@
           "Id": "Stat",
           "Stat": "Oxygen",
           "Comparison": "Lte",
-          "Amount": 200
+          "Amount": 100
+        }
+      ]
+    },
+    {
+      "Interval": 3,
+      "Amount": -1,
+      "RegenType": "Additive",
+      "Conditions": [
+        {
+          "Id": "Alive"
+        },
+        {
+          "Id": "Suffocating"
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Gt",
+          "Amount": 100
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Lte",
+          "Amount": 110
+        }
+      ]
+    },
+    {
+      "Interval": 10,
+      "Amount": -2.5,
+      "RegenType": "Additive",
+      "Conditions": [
+        {
+          "Id": "Alive"
+        },
+        {
+          "Id": "Suffocating"
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Gt",
+          "Amount": 110
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Lte",
+          "Amount": 125
+        }
+      ]
+    },
+    {
+      "Interval": 30,
+      "Amount": -4.1667,
+      "RegenType": "Additive",
+      "Conditions": [
+        {
+          "Id": "Alive"
+        },
+        {
+          "Id": "Suffocating"
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Gt",
+          "Amount": 125
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Lt",
+          "Amount": 175
+        }
+      ]
+    },
+    {
+      "Interval": 0,
+      "Amount": 0,
+      "RegenType": "Additive",
+      "Conditions": [
+        {
+          "Id": "Alive"
+        },
+        {
+          "Id": "Suffocating"
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Equal",
+          "Amount": 175
+        }
+      ]
+    },
+    {
+      "Interval": 120,
+      "Amount": 25,
+      "RegenType": "Additive",
+      "Conditions": [
+        {
+          "Id": "Alive"
+        },
+        {
+          "Id": "Suffocating"
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Comparison": "Gt",
+          "Amount": 175
+        },
+        {
+          "Id": "Stat",
+          "Stat": "Oxygen",
+          "Amount": 200,
+          "Comparison": "Lt"
         }
       ]
     }
