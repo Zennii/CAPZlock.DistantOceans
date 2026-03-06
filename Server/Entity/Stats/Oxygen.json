@@ -10,11 +10,11 @@
       "RegenType": "Additive",
       "Conditions": [
         {
-          "Id": "Alive"
-        },
-        {
           "Id": "Suffocating",
           "Inverse": true
+        },
+        {
+          "Id": "Alive"
         }
       ]
     },
@@ -25,10 +25,11 @@
       "RegenType": "Percentage",
       "Conditions": [
         {
-          "Id": "Alive"
+          "Id": "Alive",
+          "Inverse": false
         },
         {
-          "Id": "Player",
+          "Id": "CheckPlayerGameMode",
           "GameMode": "Creative"
         }
       ]
@@ -155,7 +156,8 @@
           "Id": "Alive"
         },
         {
-          "Id": "Suffocating"
+          "Id": "Suffocating",
+          "Inverse": true
         },
         {
           "Id": "Stat",
