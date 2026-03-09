@@ -1,0 +1,237 @@
+{
+	"$NodeId":	"Biome-e24e5daf-dbc1-468c-aa4b-8175a5955181",
+	"Name":	"Placeholder_Water",
+	"Terrain":	{
+		"$NodeId":	"Terrain-f4f07f4f-e040-49d9-8933-35ff18ba1b09",
+		"Type":	"DAOTerrain",
+		"Density":	{
+			"$NodeId":	"SumDensityNode-e3acf865-d304-4ef2-9f32-b6e06cb996af",
+			"Type":	"Sum",
+			"Skip":	false,
+			"Inputs":	[{
+					"$NodeId":	"ImportedDensityNode-10b6b567-dbd9-4acd-93ea-6162979c0ed5",
+					"Type":	"Imported",
+					"Skip":	false,
+					"Name":	"Global_Height"
+				}, {
+					"$NodeId":	"CurveMapper.Density-c53739d3-1e75-40be-be43-b014613f2ca0",
+					"Type":	"CurveMapper",
+					"Skip":	false,
+					"Curve":	{
+						"$NodeId":	"ManualCurve-67bd89bc-f363-48a3-a002-b020ad0bd27d",
+						"Type":	"Manual",
+						"Points":	[{
+								"$NodeId":	"CurvePoint-d93c344e-419d-4606-bf6c-dd72125e58ee",
+								"In":	0,
+								"Out":	1
+							}, {
+								"$NodeId":	"CurvePoint-6f00d8e8-bd66-44a8-804c-dfeece14ae69",
+								"In":	320,
+								"Out":	-1
+							}]
+					},
+					"Inputs":	[{
+							"$NodeId":	"YValue.Density-4df1500d-e966-4fed-a0a1-713cc14e9840",
+							"Type":	"YValue",
+							"Skip":	false
+						}]
+				}]
+		}
+	},
+	"MaterialProvider":	{
+		"$NodeId":	"SolidityMaterialProvider-fe143081-b93b-4a04-bfe3-4cb1de1e3e43",
+		"Type":	"Solidity",
+		"Solid":	{
+			"$NodeId":	"QueueMaterialProvider-24803d79-2db4-40dc-98ee-aa2f4eb8b8c2",
+			"Type":	"Queue",
+			"Queue":	[{
+					"$NodeId":	"ConstantMaterialProvider-675f3961-30ba-4808-a82f-c9e796224b77",
+					"Type":	"Constant",
+					"Material":	{
+						"$NodeId":	"Material-b39ad0d8-278b-4039-8ff2-36cf6a37f9f4",
+						"Solid":	"Soil_Sand",
+						"SolidBottomUp":	false
+					}
+				}]
+		},
+		"Empty":	{
+			"$NodeId":	"QueueMaterialProvider-93c84d5c-c664-433d-89cf-47ba2a5590c2",
+			"Type":	"Queue",
+			"Queue":	[{
+					"$NodeId":	"SimpleHorizontalMaterialProvider-4d8c62e2-a5e7-41d7-a4a1-2ab33dbad991",
+					"Type":	"SimpleHorizontal",
+					"TopY":	0,
+					"TopBaseHeight":	"Water",
+					"BottomY":	0,
+					"BottomBaseHeight":	"Bedrock",
+					"Material":	{
+						"$NodeId":	"ConstantMaterialProvider-69dd54d1-6d66-41d4-9813-c58663685b78",
+						"Type":	"Constant",
+						"Material":	{
+							"$NodeId":	"Material-6cb522f5-7319-496d-bacf-a1f9c94d35b2",
+							"Solid":	"",
+							"Fluid":	"Water_Source",
+							"SolidBottomUp":	false
+						}
+					}
+				}, {
+					"$NodeId":	"ConstantMaterialProvider-40b3ae79-8f4c-4ed6-b867-cdd320a3cf48",
+					"$Comment":	"REQUIRED",
+					"Type":	"Constant",
+					"Material":	{
+						"$NodeId":	"Material-b4a5c7b1-4606-48d7-80c3-61f96867ed3b",
+						"Solid":	"Empty",
+						"SolidBottomUp":	false
+					}
+				}]
+		}
+	},
+	"Props":	[],
+	"EnvironmentProvider":	{
+		"$NodeId":	"Constant.EnvironmentProvider-9d435dc0-ffa2-4de6-886d-c6e8b54f3b44",
+		"Type":	"Constant",
+		"Environment":	"Env_Zone1_Plains"
+	},
+	"TintProvider":	{
+		"$NodeId":	"Constant.TintProvider-20fa68de-61e3-4ecc-aac3-9af55bc33e29",
+		"Type":	"Constant",
+		"Color":	"#5b9e28"
+	},
+	"$NodeEditorMetadata":	{
+		"$Nodes":	{
+			"Biome-e24e5daf-dbc1-468c-aa4b-8175a5955181":	{
+				"$Position":	{
+					"$x":	-4228,
+					"$y":	-4226
+				},
+				"$Title":	"[ROOT] Biome"
+			},
+			"Terrain-f4f07f4f-e040-49d9-8933-35ff18ba1b09":	{
+				"$Position":	{
+					"$x":	-3366,
+					"$y":	-4882
+				}
+			},
+			"SumDensityNode-e3acf865-d304-4ef2-9f32-b6e06cb996af":	{
+				"$Position":	{
+					"$x":	-2475,
+					"$y":	-6091
+				}
+			},
+			"ImportedDensityNode-10b6b567-dbd9-4acd-93ea-6162979c0ed5":	{
+				"$Position":	{
+					"$x":	-1572,
+					"$y":	-6180
+				}
+			},
+			"CurveMapper.Density-c53739d3-1e75-40be-be43-b014613f2ca0":	{
+				"$Position":	{
+					"$x":	-1841,
+					"$y":	-5922
+				}
+			},
+			"ManualCurve-67bd89bc-f363-48a3-a002-b020ad0bd27d":	{
+				"$Position":	{
+					"$x":	-1220,
+					"$y":	-5686
+				}
+			},
+			"CurvePoint-d93c344e-419d-4606-bf6c-dd72125e58ee":	{
+				"$Position":	{
+					"$x":	-568,
+					"$y":	-5828
+				}
+			},
+			"CurvePoint-6f00d8e8-bd66-44a8-804c-dfeece14ae69":	{
+				"$Position":	{
+					"$x":	-561,
+					"$y":	-5676
+				}
+			},
+			"YValue.Density-4df1500d-e966-4fed-a0a1-713cc14e9840":	{
+				"$Position":	{
+					"$x":	-1178,
+					"$y":	-5941
+				}
+			},
+			"SolidityMaterialProvider-fe143081-b93b-4a04-bfe3-4cb1de1e3e43":	{
+				"$Position":	{
+					"$x":	-3434,
+					"$y":	-4060
+				}
+			},
+			"QueueMaterialProvider-24803d79-2db4-40dc-98ee-aa2f4eb8b8c2":	{
+				"$Position":	{
+					"$x":	-2735,
+					"$y":	-4075
+				}
+			},
+			"ConstantMaterialProvider-675f3961-30ba-4808-a82f-c9e796224b77":	{
+				"$Position":	{
+					"$x":	-2095,
+					"$y":	-4064
+				}
+			},
+			"Material-b39ad0d8-278b-4039-8ff2-36cf6a37f9f4":	{
+				"$Position":	{
+					"$x":	-1452,
+					"$y":	-4072
+				}
+			},
+			"QueueMaterialProvider-93c84d5c-c664-433d-89cf-47ba2a5590c2":	{
+				"$Position":	{
+					"$x":	-2735,
+					"$y":	-3491
+				}
+			},
+			"SimpleHorizontalMaterialProvider-4d8c62e2-a5e7-41d7-a4a1-2ab33dbad991":	{
+				"$Position":	{
+					"$x":	-1957,
+					"$y":	-3640
+				}
+			},
+			"ConstantMaterialProvider-69dd54d1-6d66-41d4-9813-c58663685b78":	{
+				"$Position":	{
+					"$x":	-1250,
+					"$y":	-3642
+				}
+			},
+			"Material-6cb522f5-7319-496d-bacf-a1f9c94d35b2":	{
+				"$Position":	{
+					"$x":	-607,
+					"$y":	-3650
+				}
+			},
+			"ConstantMaterialProvider-40b3ae79-8f4c-4ed6-b867-cdd320a3cf48":	{
+				"$Position":	{
+					"$x":	-2044,
+					"$y":	-3009
+				}
+			},
+			"Material-b4a5c7b1-4606-48d7-80c3-61f96867ed3b":	{
+				"$Position":	{
+					"$x":	-1401,
+					"$y":	-3004
+				}
+			},
+			"Constant.EnvironmentProvider-9d435dc0-ffa2-4de6-886d-c6e8b54f3b44":	{
+				"$Position":	{
+					"$x":	-4409,
+					"$y":	-2427
+				}
+			},
+			"Constant.TintProvider-20fa68de-61e3-4ecc-aac3-9af55bc33e29":	{
+				"$Position":	{
+					"$x":	-4402,
+					"$y":	-2215
+				}
+			}
+		},
+		"$FloatingNodes":	[],
+		"$Links":	{
+		},
+		"$Groups":	[],
+		"$Comments":	[],
+		"$WorkspaceID":	"HytaleGenerator - Biome"
+	}
+}
