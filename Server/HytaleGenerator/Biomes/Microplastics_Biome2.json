@@ -413,119 +413,141 @@
 			"$NodeId":	"QueueMaterialProvider-0b91c4c2-a6a5-421b-8a67-7767fcefbaba",
 			"Type":	"Queue",
 			"Queue":	[{
-					"$NodeId":	"FieldFunctionMaterialProvider-6720f0a4-f7ea-49af-8e27-abe157a75c01",
-					"$Comment":	"Makes sure the swirly lines can't touch between 0 - 10 degrees of the terrain",
-					"Type":	"FieldFunction",
-					"FieldFunction":	{
-						"$NodeId":	"Angle.Density-c8d0c181-d3ef-45dd-a6d3-50dc89635d29",
-						"Type":	"Angle",
-						"Skip":	false,
-						"IsAxis":	false,
-						"Vector":	{
-							"$NodeId":	"Point3D-84c6ff54-94c6-469e-ba75-717e413e04a4",
-							"X":	0,
-							"Y":	-1,
-							"Z":	0
+					"$NodeId":	"SimpleHorizontalMaterialProvider-17af84a2-717f-4981-b3af-f6f884d74fb0",
+					"Type":	"SimpleHorizontal",
+					"TopY":	160,
+					"BottomY":	0,
+					"Material":	{
+						"$NodeId":	"FieldFunctionMaterialProvider-7a30467e-ee95-427f-ac14-92ccbcbbebf5",
+						"Type":	"FieldFunction",
+						"FieldFunction":	{
+							"$NodeId":	"Terrain.Density-53cf8a23-f50a-4f53-bf69-45f20ab18743",
+							"Type":	"Terrain",
+							"Skip":	false
 						},
-						"VectorProvider":	{
-							"$NodeId":	"DensityGradient.VectorProvider-274c4d22-7719-40a8-aa49-02f1e1aa9276",
-							"Type":	"DensityGradient",
-							"Density":	{
-								"$NodeId":	"ImportedDensityNode-ac45d3af-4810-45fc-a6f7-901313ac927d",
-								"Type":	"Imported",
-								"Skip":	false,
-								"Name":	"Microplastics2"
-							}
-						}
-					},
-					"Delimiters":	[{
-							"$NodeId":	"DelimiterFieldFunctionMP-1bc24f53-722a-4792-ac5b-af93a21c4c5c",
-							"From":	0,
-							"To":	10,
-							"Material":	{
-								"$NodeId":	"ConstantMaterialProvider-4a6d4409-cc0a-4aad-a1cf-3071010f7943",
-								"Type":	"Constant",
+						"Delimiters":	[{
+								"$NodeId":	"DelimiterFieldFunctionMP-8397ca87-e0ce-48d1-9d81-5e93485404ba",
+								"From":	0,
+								"To":	0.35,
 								"Material":	{
-									"$NodeId":	"Material-916ea835-a277-462a-9cab-27f8b2f654a9",
-									"Solid":	"Soil_Clay_White",
-									"SolidBottomUp":	false
+									"$NodeId":	"QueueMaterialProvider-c851b4ee-be72-4d5c-8001-2dd4fd110c26",
+									"Type":	"Queue",
+									"Queue":	[{
+											"$NodeId":	"FieldFunctionMaterialProvider-6720f0a4-f7ea-49af-8e27-abe157a75c01",
+											"$Comment":	"Makes sure the swirly lines can't touch between 0 - 10 degrees of the terrain",
+											"Type":	"FieldFunction",
+											"FieldFunction":	{
+												"$NodeId":	"Angle.Density-c8d0c181-d3ef-45dd-a6d3-50dc89635d29",
+												"Type":	"Angle",
+												"Skip":	false,
+												"IsAxis":	false,
+												"Vector":	{
+													"$NodeId":	"Point3D-84c6ff54-94c6-469e-ba75-717e413e04a4",
+													"X":	0,
+													"Y":	-1,
+													"Z":	0
+												},
+												"VectorProvider":	{
+													"$NodeId":	"DensityGradient.VectorProvider-274c4d22-7719-40a8-aa49-02f1e1aa9276",
+													"Type":	"DensityGradient",
+													"Density":	{
+														"$NodeId":	"Terrain.Density-7b036c82-3d5f-4487-898c-02b96a2b86d3",
+														"Type":	"Terrain",
+														"Skip":	false
+													}
+												}
+											},
+											"Delimiters":	[{
+													"$NodeId":	"DelimiterFieldFunctionMP-1bc24f53-722a-4792-ac5b-af93a21c4c5c",
+													"From":	0,
+													"To":	10,
+													"Material":	{
+														"$NodeId":	"ConstantMaterialProvider-4a6d4409-cc0a-4aad-a1cf-3071010f7943",
+														"Type":	"Constant",
+														"Material":	{
+															"$NodeId":	"Material-916ea835-a277-462a-9cab-27f8b2f654a9",
+															"Solid":	"Soil_Clay_White",
+															"SolidBottomUp":	false
+														}
+													}
+												}]
+										}, {
+											"$NodeId":	"FieldFunctionMaterialProvider-78550807-7f21-47f1-8424-8218894da2bb",
+											"$Comment":	"Follows the swirly lines without a care in the world",
+											"Type":	"FieldFunction",
+											"FieldFunction":	{
+												"$NodeId":	"NormalizerDensityNode-e1dad749-7270-45aa-aeef-0934d07b7c3d",
+												"$Comment":	"Makes the swirly lines thinner",
+												"Type":	"Normalizer",
+												"Skip":	false,
+												"FromMin":	-0.2,
+												"FromMax":	1,
+												"ToMin":	-1,
+												"ToMax":	1,
+												"Inputs":	[{
+														"$NodeId":	"ImportedDensityNode-9c89994d-e570-4708-895b-74ff7daa718c",
+														"Type":	"Imported",
+														"Skip":	false,
+														"Name":	"StrataPatterns"
+													}]
+											},
+											"Delimiters":	[{
+													"$NodeId":	"DelimiterFieldFunctionMP-addbb129-6136-4fa1-a592-ac4c79ee9a72",
+													"From":	0,
+													"To":	1,
+													"Material":	{
+														"$NodeId":	"ConstantMaterialProvider-5ec911e0-fbf3-40dd-8306-742c2cbad601",
+														"Type":	"Constant",
+														"Material":	{
+															"$NodeId":	"Material-e3720136-feaf-494a-91f9-4c6820fd0e02",
+															"Solid":	"Rock_Calcite",
+															"SolidBottomUp":	false
+														}
+													}
+												}]
+										}, {
+											"$NodeId":	"FieldFunctionMaterialProvider-6d04e25c-29bb-44ef-8627-4fe6a01c2b4d",
+											"$Comment":	"Gives a \"basecoat\" mask between 0 - 25 degrees of the terrain",
+											"Type":	"FieldFunction",
+											"FieldFunction":	{
+												"$NodeId":	"Angle.Density-7f094f27-a47f-4b53-9d84-1693f5bfe0fa",
+												"Type":	"Angle",
+												"Skip":	false,
+												"IsAxis":	false,
+												"Vector":	{
+													"$NodeId":	"Point3D-8d43baac-c1ba-4b3b-9e34-bb95d0cd7256",
+													"X":	0,
+													"Y":	-1,
+													"Z":	0
+												},
+												"VectorProvider":	{
+													"$NodeId":	"DensityGradient.VectorProvider-7d00e404-1ba3-4669-b536-0fbab8c0a843",
+													"Type":	"DensityGradient",
+													"Density":	{
+														"$NodeId":	"Terrain.Density-945048bb-226c-4046-b850-31fedda7ecc5",
+														"Type":	"Terrain",
+														"Skip":	false
+													}
+												}
+											},
+											"Delimiters":	[{
+													"$NodeId":	"DelimiterFieldFunctionMP-1de22a2c-5061-4546-9890-a1dd82cbf222",
+													"From":	0,
+													"To":	25,
+													"Material":	{
+														"$NodeId":	"ConstantMaterialProvider-17a27ff0-4fa1-48cf-981b-e2d1774b5eec",
+														"Type":	"Constant",
+														"Material":	{
+															"$NodeId":	"Material-cd0754b6-afd3-461e-b52f-278ecf62e80d",
+															"Solid":	"Soil_Clay_White",
+															"SolidBottomUp":	false
+														}
+													}
+												}]
+										}]
 								}
-							}
-						}]
-				}, {
-					"$NodeId":	"FieldFunctionMaterialProvider-78550807-7f21-47f1-8424-8218894da2bb",
-					"$Comment":	"Follows the swirly lines without a care in the world",
-					"Type":	"FieldFunction",
-					"FieldFunction":	{
-						"$NodeId":	"NormalizerDensityNode-e1dad749-7270-45aa-aeef-0934d07b7c3d",
-						"$Comment":	"Makes the swirly lines thinner",
-						"Type":	"Normalizer",
-						"Skip":	false,
-						"FromMin":	-0.2,
-						"FromMax":	1,
-						"ToMin":	-1,
-						"ToMax":	1,
-						"Inputs":	[{
-								"$NodeId":	"ImportedDensityNode-9c89994d-e570-4708-895b-74ff7daa718c",
-								"Type":	"Imported",
-								"Skip":	false,
-								"Name":	"StrataPatterns"
 							}]
-					},
-					"Delimiters":	[{
-							"$NodeId":	"DelimiterFieldFunctionMP-addbb129-6136-4fa1-a592-ac4c79ee9a72",
-							"From":	0,
-							"To":	1,
-							"Material":	{
-								"$NodeId":	"ConstantMaterialProvider-5ec911e0-fbf3-40dd-8306-742c2cbad601",
-								"Type":	"Constant",
-								"Material":	{
-									"$NodeId":	"Material-e3720136-feaf-494a-91f9-4c6820fd0e02",
-									"Solid":	"Rock_Calcite",
-									"SolidBottomUp":	false
-								}
-							}
-						}]
-				}, {
-					"$NodeId":	"FieldFunctionMaterialProvider-6d04e25c-29bb-44ef-8627-4fe6a01c2b4d",
-					"$Comment":	"Gives a \"basecoat\" mask between 0 - 25 degrees of the terrain",
-					"Type":	"FieldFunction",
-					"FieldFunction":	{
-						"$NodeId":	"Angle.Density-7f094f27-a47f-4b53-9d84-1693f5bfe0fa",
-						"Type":	"Angle",
-						"Skip":	false,
-						"IsAxis":	false,
-						"Vector":	{
-							"$NodeId":	"Point3D-8d43baac-c1ba-4b3b-9e34-bb95d0cd7256",
-							"X":	0,
-							"Y":	-1,
-							"Z":	0
-						},
-						"VectorProvider":	{
-							"$NodeId":	"DensityGradient.VectorProvider-7d00e404-1ba3-4669-b536-0fbab8c0a843",
-							"Type":	"DensityGradient",
-							"Density":	{
-								"$NodeId":	"ImportedDensityNode-c8dec578-0263-4154-a913-f6840e8758dc",
-								"Type":	"Imported",
-								"Skip":	false,
-								"Name":	"Microplastics2"
-							}
-						}
-					},
-					"Delimiters":	[{
-							"$NodeId":	"DelimiterFieldFunctionMP-1de22a2c-5061-4546-9890-a1dd82cbf222",
-							"From":	0,
-							"To":	25,
-							"Material":	{
-								"$NodeId":	"ConstantMaterialProvider-17a27ff0-4fa1-48cf-981b-e2d1774b5eec",
-								"Type":	"Constant",
-								"Material":	{
-									"$NodeId":	"Material-cd0754b6-afd3-461e-b52f-278ecf62e80d",
-									"Solid":	"Soil_Clay_White",
-									"SolidBottomUp":	false
-								}
-							}
-						}]
+					}
 				}, {
 					"$NodeId":	"ConstantMaterialProvider-544ba70f-83c5-43e9-8464-f492367c9ac6",
 					"Type":	"Constant",
@@ -634,14 +656,14 @@
 			},
 			"YSampled.Density-19f64826-5361-474c-8d38-5cb25e07b6b7":	{
 				"$Position":	{
-					"$x":	2888,
-					"$y":	-6389
+					"$x":	2815,
+					"$y":	-6385
 				}
 			},
 			"Cache.Density-f3bc1536-ca46-4d3a-aa2c-87d45804719b":	{
 				"$Position":	{
-					"$x":	3574,
-					"$y":	-6309
+					"$x":	3501,
+					"$y":	-6305
 				}
 			},
 			"SumDensityNode-a3095c60-004a-4464-9d1d-5e918c9a28a0":	{
@@ -672,6 +694,30 @@
 				"$Position":	{
 					"$x":	8242,
 					"$y":	-6346
+				}
+			},
+			"Scale.Density-3db71076-b496-49cd-b725-2fcef4af3a66":	{
+				"$Position":	{
+					"$x":	9120,
+					"$y":	-8477
+				}
+			},
+			"FastGradientWarp.Density-35552452-33f5-4b74-9270-d643cb952f2d":	{
+				"$Position":	{
+					"$x":	9752,
+					"$y":	-8478
+				}
+			},
+			"NormalizerDensityNode-f66be630-c6c5-4496-a0f7-15a6161946f3":	{
+				"$Position":	{
+					"$x":	10370,
+					"$y":	-8474
+				}
+			},
+			"ImportedDensityNode-f68c0bfe-81e7-4094-b72d-e4926c49ce95":	{
+				"$Position":	{
+					"$x":	10987,
+					"$y":	-8473
 				}
 			},
 			"Scale.Density-5da7b0ab-9de2-4e46-b1e7-e2c959eb7491":	{
@@ -866,30 +912,6 @@
 					"$y":	-6218
 				}
 			},
-			"Scale.Density-3db71076-b496-49cd-b725-2fcef4af3a66":	{
-				"$Position":	{
-					"$x":	9120,
-					"$y":	-8477
-				}
-			},
-			"FastGradientWarp.Density-35552452-33f5-4b74-9270-d643cb952f2d":	{
-				"$Position":	{
-					"$x":	9752,
-					"$y":	-8478
-				}
-			},
-			"NormalizerDensityNode-f66be630-c6c5-4496-a0f7-15a6161946f3":	{
-				"$Position":	{
-					"$x":	10370,
-					"$y":	-8474
-				}
-			},
-			"ImportedDensityNode-f68c0bfe-81e7-4094-b72d-e4926c49ce95":	{
-				"$Position":	{
-					"$x":	10987,
-					"$y":	-8473
-				}
-			},
 			"SumDensityNode-4702f1a2-ee44-4686-b89b-eaa73174e855":	{
 				"$Position":	{
 					"$x":	8073,
@@ -992,136 +1014,166 @@
 					"$y":	1851
 				}
 			},
+			"SimpleHorizontalMaterialProvider-17af84a2-717f-4981-b3af-f6f884d74fb0":	{
+				"$Position":	{
+					"$x":	9312,
+					"$y":	1386
+				}
+			},
+			"FieldFunctionMaterialProvider-7a30467e-ee95-427f-ac14-92ccbcbbebf5":	{
+				"$Position":	{
+					"$x":	9939,
+					"$y":	1388
+				}
+			},
+			"Terrain.Density-53cf8a23-f50a-4f53-bf69-45f20ab18743":	{
+				"$Position":	{
+					"$x":	10619,
+					"$y":	1180
+				}
+			},
+			"DelimiterFieldFunctionMP-8397ca87-e0ce-48d1-9d81-5e93485404ba":	{
+				"$Position":	{
+					"$x":	10604,
+					"$y":	1428
+				}
+			},
+			"QueueMaterialProvider-c851b4ee-be72-4d5c-8001-2dd4fd110c26":	{
+				"$Position":	{
+					"$x":	11037,
+					"$y":	1429
+				}
+			},
 			"FieldFunctionMaterialProvider-6720f0a4-f7ea-49af-8e27-abe157a75c01":	{
 				"$Position":	{
-					"$x":	9174,
-					"$y":	-233
+					"$x":	11724,
+					"$y":	863
 				}
 			},
 			"Angle.Density-c8d0c181-d3ef-45dd-a6d3-50dc89635d29":	{
 				"$Position":	{
-					"$x":	9956,
-					"$y":	-431
+					"$x":	12506,
+					"$y":	665
 				}
 			},
 			"Point3D-84c6ff54-94c6-469e-ba75-717e413e04a4":	{
 				"$Position":	{
-					"$x":	10882,
-					"$y":	-597
+					"$x":	13432,
+					"$y":	499
 				}
 			},
 			"DensityGradient.VectorProvider-274c4d22-7719-40a8-aa49-02f1e1aa9276":	{
 				"$Position":	{
-					"$x":	10721,
-					"$y":	-400
+					"$x":	13271,
+					"$y":	696
 				}
 			},
-			"ImportedDensityNode-ac45d3af-4810-45fc-a6f7-901313ac927d":	{
+			"Terrain.Density-7b036c82-3d5f-4487-898c-02b96a2b86d3":	{
 				"$Position":	{
-					"$x":	11405,
-					"$y":	-391
+					"$x":	13908,
+					"$y":	695
 				}
 			},
 			"DelimiterFieldFunctionMP-1bc24f53-722a-4792-ac5b-af93a21c4c5c":	{
 				"$Position":	{
-					"$x":	10007,
-					"$y":	-233
+					"$x":	12557,
+					"$y":	863
 				}
 			},
 			"ConstantMaterialProvider-4a6d4409-cc0a-4aad-a1cf-3071010f7943":	{
 				"$Position":	{
-					"$x":	10447,
-					"$y":	-209
+					"$x":	12997,
+					"$y":	887
 				}
 			},
 			"Material-916ea835-a277-462a-9cab-27f8b2f654a9":	{
 				"$Position":	{
-					"$x":	11112,
-					"$y":	-228
+					"$x":	13662,
+					"$y":	868
 				}
 			},
 			"FieldFunctionMaterialProvider-78550807-7f21-47f1-8424-8218894da2bb":	{
 				"$Position":	{
-					"$x":	9149,
-					"$y":	346
+					"$x":	11721,
+					"$y":	1457
 				}
 			},
 			"NormalizerDensityNode-e1dad749-7270-45aa-aeef-0934d07b7c3d":	{
 				"$Position":	{
-					"$x":	9898,
-					"$y":	-31
+					"$x":	12470,
+					"$y":	1080
 				}
 			},
 			"ImportedDensityNode-9c89994d-e570-4708-895b-74ff7daa718c":	{
 				"$Position":	{
-					"$x":	10599,
-					"$y":	23
+					"$x":	13171,
+					"$y":	1134
 				}
 			},
 			"DelimiterFieldFunctionMP-addbb129-6136-4fa1-a592-ac4c79ee9a72":	{
 				"$Position":	{
-					"$x":	9901,
-					"$y":	336
+					"$x":	12473,
+					"$y":	1447
 				}
 			},
 			"ConstantMaterialProvider-5ec911e0-fbf3-40dd-8306-742c2cbad601":	{
 				"$Position":	{
-					"$x":	10341,
-					"$y":	361
+					"$x":	12913,
+					"$y":	1472
 				}
 			},
 			"Material-e3720136-feaf-494a-91f9-4c6820fd0e02":	{
 				"$Position":	{
-					"$x":	11006,
-					"$y":	341
+					"$x":	13578,
+					"$y":	1452
 				}
 			},
 			"FieldFunctionMaterialProvider-6d04e25c-29bb-44ef-8627-4fe6a01c2b4d":	{
 				"$Position":	{
-					"$x":	9078,
-					"$y":	902
+					"$x":	11727,
+					"$y":	2009
 				}
 			},
 			"Angle.Density-7f094f27-a47f-4b53-9d84-1693f5bfe0fa":	{
 				"$Position":	{
-					"$x":	9858,
-					"$y":	704
+					"$x":	12507,
+					"$y":	1811
 				}
 			},
 			"Point3D-8d43baac-c1ba-4b3b-9e34-bb95d0cd7256":	{
 				"$Position":	{
-					"$x":	10784,
-					"$y":	538
+					"$x":	13433,
+					"$y":	1645
 				}
 			},
 			"DensityGradient.VectorProvider-7d00e404-1ba3-4669-b536-0fbab8c0a843":	{
 				"$Position":	{
-					"$x":	10623,
-					"$y":	735
+					"$x":	13272,
+					"$y":	1842
 				}
 			},
-			"ImportedDensityNode-c8dec578-0263-4154-a913-f6840e8758dc":	{
+			"Terrain.Density-945048bb-226c-4046-b850-31fedda7ecc5":	{
 				"$Position":	{
-					"$x":	11307,
-					"$y":	744
+					"$x":	13910,
+					"$y":	1842
 				}
 			},
 			"DelimiterFieldFunctionMP-1de22a2c-5061-4546-9890-a1dd82cbf222":	{
 				"$Position":	{
-					"$x":	9909,
-					"$y":	902
+					"$x":	12558,
+					"$y":	2009
 				}
 			},
 			"ConstantMaterialProvider-17a27ff0-4fa1-48cf-981b-e2d1774b5eec":	{
 				"$Position":	{
-					"$x":	10349,
-					"$y":	926
+					"$x":	12998,
+					"$y":	2033
 				}
 			},
 			"Material-cd0754b6-afd3-461e-b52f-278ecf62e80d":	{
 				"$Position":	{
-					"$x":	11014,
-					"$y":	907
+					"$x":	13663,
+					"$y":	2014
 				}
 			},
 			"ConstantMaterialProvider-544ba70f-83c5-43e9-8464-f492367c9ac6":	{
@@ -1459,6 +1511,18 @@
 					"$x":	-6636,
 					"$y":	-1317
 				}
+			},
+			"ConstantMaterialProvider-930835c1-af15-4604-b4f5-16ae7210c05a":	{
+				"$Position":	{
+					"$x":	7640,
+					"$y":	1563
+				}
+			},
+			"Material-7bd8ab30-f8fe-439c-a325-a1000eab272d":	{
+				"$Position":	{
+					"$x":	7582,
+					"$y":	1304
+				}
 			}
 		},
 		"$FloatingNodes":	[{
@@ -1713,6 +1777,14 @@
 						"Skip":	false,
 						"Value":	0.125
 					}]
+			}, {
+				"$NodeId":	"ConstantMaterialProvider-930835c1-af15-4604-b4f5-16ae7210c05a",
+				"Type":	"Constant",
+				"Material":	{
+					"$NodeId":	"Material-7bd8ab30-f8fe-439c-a325-a1000eab272d",
+					"Solid":	"Rock_Stone",
+					"SolidBottomUp":	false
+				}
 			}],
 		"$Links":	{
 		},
