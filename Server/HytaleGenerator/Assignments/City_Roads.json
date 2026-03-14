@@ -1,1054 +1,112 @@
 {
-	"$NodeId":	"Weighted.Assignments-b646a6b5-7d6c-4ddf-bfc6-88d4b476e6e0",
-	"Type":	"Weighted",
+	"$NodeId":	"FieldFunction.Assignments-1868047f-1681-405c-8f8c-be743d7bc969",
+	"Type":	"FieldFunction",
 	"ExportAs":	"City_Roads",
-	"SkipChance":	0,
-	"Seed":	"A",
-	"WeightedAssignments":	[{
-			"$NodeId":	"Weight.Weighted.Assignments-c67a4e66-7d07-49f1-aff5-1a1d6ba6d1a1",
-			"Weight":	15,
+	"FieldFunction":	{
+		"$NodeId":	"SumDensityNode-9956f4b5-a30d-4972-98df-9f5047c3fb8f",
+		"Type":	"Sum",
+		"Skip":	false,
+		"Inputs":	[{
+				"$NodeId":	"CellNoise2DDensityNode-a92bde0f-839f-4d97-a234-58cfeb0150ad",
+				"Type":	"CellNoise2D",
+				"Skip":	false,
+				"ScaleX":	40,
+				"ScaleZ":	40,
+				"Jitter":	0.2,
+				"CellType":	"Distance2Div",
+				"Octaves":	1,
+				"Seed":	"A"
+			}, {
+				"$NodeId":	"SimplexNoise2DDensityNode-05920cd1-9676-441f-b956-b9b64052cc4b",
+				"Type":	"SimplexNoise2D",
+				"ExportAs":	"City_Assignment_Density",
+				"Skip":	false,
+				"Lacunarity":	2,
+				"Persistence":	0.5,
+				"Octaves":	1,
+				"Scale":	50,
+				"Seed":	"A"
+			}]
+	},
+	"Delimiters":	[{
+			"$NodeId":	"Delimiter.FieldFunction.Assignments-de1eb2b2-f3da-4467-99bc-5d0f5c14db96",
+			"Max":	0.3,
+			"Min":	-1,
 			"Assignments":	{
-				"$NodeId":	"Constant.Assignments-0ca85dfa-3aee-4e5f-807c-0a4de4bb8055",
-				"Type":	"Constant",
-				"Prop":	{
-					"$NodeId":	"Locator.Prop-61e11371-bef1-48a0-90ca-c1c9442032f2",
-					"Type":	"Locator",
-					"Skip":	false,
-					"PlacementCap":	1,
-					"Prop":	{
-						"$NodeId":	"RandomRotator.Prop-c704bb93-626e-4482-9686-859dac846065",
-						"Type":	"RandomRotator",
-						"Skip":	false,
-						"Seed":	"AC",
-						"HorizontalRotations":	true,
-						"Prop":	{
-							"$NodeId":	"Union.Prop-95d4082f-bee7-4507-a64c-050df86ef5ad",
-							"Type":	"Union",
-							"Skip":	false,
-							"Props":	[{
-									"$NodeId":	"Prefab.Prop-4c46ab9a-2691-45fa-b465-396a8f8bec3a",
-									"Type":	"Prefab",
+				"$NodeId":	"Weighted.Assignments-b646a6b5-7d6c-4ddf-bfc6-88d4b476e6e0",
+				"Type":	"Weighted",
+				"ExportAs":	"City_Roads",
+				"SkipChance":	0,
+				"Seed":	"A",
+				"WeightedAssignments":	[{
+						"$NodeId":	"Weight.Weighted.Assignments-c67a4e66-7d07-49f1-aff5-1a1d6ba6d1a1",
+						"Weight":	15,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-0ca85dfa-3aee-4e5f-807c-0a4de4bb8055",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-61e11371-bef1-48a0-90ca-c1c9442032f2",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"RandomRotator.Prop-c704bb93-626e-4482-9686-859dac846065",
+									"Type":	"RandomRotator",
 									"Skip":	false,
-									"WeightedPrefabPaths":	[{
-											"$NodeId":	"WeightedPath.Prefab.Prop-d50c2832-e653-4306-a219-d205ff89524c",
-											"Path":	"City/Roads/City_Roads_Straight.prefab.json",
-											"Weight":	1
-										}],
-									"LegacyPath":	false,
-									"LoadEntities":	true,
-									"MoldingDirection":	"NONE",
-									"MoldingChildren":	false
-								}, {
-									"$NodeId":	"Weighted.Prop-4090cdd1-4435-456a-ba89-20dacd00828f",
-									"Type":	"Weighted",
-									"Skip":	false,
-									"Entries":	[{
-											"$NodeId":	"Entry.Weighted.Prop-1f71af1f-aa81-46cd-9521-dcc4b00f7cb1",
-											"Prop":	{
-												"$NodeId":	"Queue.Prop-8c1b2e75-5bf1-40b5-9bb3-c1cc96bbe2db",
-												"Type":	"Queue",
+									"Seed":	"AC",
+									"HorizontalRotations":	true,
+									"Prop":	{
+										"$NodeId":	"Union.Prop-95d4082f-bee7-4507-a64c-050df86ef5ad",
+										"Type":	"Union",
+										"Skip":	false,
+										"Props":	[{
+												"$NodeId":	"Prefab.Prop-4c46ab9a-2691-45fa-b465-396a8f8bec3a",
+												"Type":	"Prefab",
 												"Skip":	false,
-												"Props":	[{
-														"$NodeId":	"Offset.Prop-e3d50af0-1a72-4ee8-98bb-669ac25a7844",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-f217b56f-7ea5-4650-8a38-6604f246dad2",
-															"X":	3,
-															"Y":	0,
-															"Z":	3
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-a1c5bb60-39ae-4411-a9d1-1069d6ef8583",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"A",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-a01c04d9-5f70-45b0-814d-ac56383f7f9c",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-dfac9dbf-e228-402f-acde-13e0a165f052",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-e2ee37cf-abb6-4b01-8f70-bb0365e409b2",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-9ed8a082-54a9-4227-a814-4a96f1478f5a",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-cf89f434-7daf-497b-a393-deebb02ac40f",
-															"X":	-10,
-															"Y":	0,
-															"Z":	3
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-b2fd260a-1159-458b-850b-7653e8215187",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"B",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-9d44b289-1ea6-44b3-b654-a9e3feb25054",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-b62933cc-5c9b-413d-93f7-4d97d52995ad",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-2d30aa67-c098-4aca-9e24-7ea201855464",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-7d130d60-448a-423c-8cbb-40fe1a017e60",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-e405b5a8-227e-4a62-a141-99d0b64a8786",
-															"X":	3,
-															"Y":	0,
-															"Z":	-10
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-891232a2-7201-4fa5-a838-ea8b0a91a613",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"C",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-d468a054-eda4-4907-9262-72399c8f9582",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-d8accbe5-ece7-4b53-b31c-17dccf420977",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-4515ccf9-f73c-4fc5-8f33-b99c8af7edc9",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-7f3ab6be-de9e-4f4d-b733-fd0c40827412",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-f5efd5d6-4bf9-4808-90b3-6d90c33825e8",
-															"X":	-10,
-															"Y":	0,
-															"Z":	-10
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-8d755383-833d-4442-a1d5-9a5c7eebc6aa",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"D",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-8150e12f-128d-4243-a227-18f7cfdf5a2d",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-a6e5e9fe-bb27-47f6-8041-738201e114de",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-fb74d999-b834-4d15-ab57-65052d6532fa",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}]
-											},
-											"Weight":	1
-										}, {
-											"$NodeId":	"Entry.Weighted.Prop-41765cbd-0d72-4af4-98cb-747fa7b9d6e6",
-											"Prop":	{
-												"$NodeId":	"Queue.Prop-463c3763-36d4-4937-bbc6-4c16464d3ccf",
-												"Type":	"Queue",
-												"Skip":	false,
-												"Props":	[{
-														"$NodeId":	"Offset.Prop-ecd4627d-f05b-4539-a175-c53402eb10d1",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-8509d7ec-b0a3-4e51-a9fe-51c7b6a4f34a",
-															"X":	0,
-															"Y":	0,
-															"Z":	3
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-0298bde1-3d61-46f2-990b-dafe2a52e820",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"E",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-176b8a38-9004-484a-af09-e934eba49bfe",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-63d51b9a-89e7-4191-ae91-621acae7e8c1",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-5201d006-cc75-40be-a6bf-54f8dffdc93a",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-53396a31-41a3-4e2c-b9bc-f405f14246e5",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-c9cc5586-e607-4d50-be9c-1636bc3e9df4",
-															"X":	0,
-															"Y":	0,
-															"Z":	-10
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-d90ecdf9-3b7a-4715-b1a9-e437d77efd1e",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"F",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-6d484f9d-d3bb-4403-8233-004b076b3b18",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-f2203b77-9b26-4fee-851e-2078b869434a",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-ed2cc886-60e8-4f5e-8f13-0dc7f55e332e",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}]
-											},
-											"Weight":	1
-										}]
-								}]
-						}
-					},
-					"Pattern":	{
-						"$NodeId":	"Floor.Pattern-dc553fcc-3f38-4abd-974e-c1f3aa27cf9a",
-						"Type":	"Floor",
-						"Skip":	false,
-						"Origin":	{
-							"$NodeId":	"BlockType.Pattern-e807baad-b5b0-410a-a8fa-9dce076e9a0b",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-d100ac2f-fbff-4c97-831a-1204553d06ae",
-								"Solid":	"Empty",
-								"SolidBottomUp":	false
-							}
-						},
-						"Floor":	{
-							"$NodeId":	"BlockType.Pattern-4b7efade-aca7-40d0-96b6-49878cab7ada",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-79318886-a408-4517-9805-7ef73623f780",
-								"Solid":	"Rock_Stone",
-								"SolidBottomUp":	false
-							}
-						}
-					},
-					"Scanner":	{
-						"$NodeId":	"Origin.Scanner-490538e6-2e99-45b9-aca9-91a8f4646225",
-						"Type":	"Origin",
-						"Skip":	false
-					}
-				}
-			}
-		}, {
-			"$NodeId":	"Weight.Weighted.Assignments-be207949-146f-40ab-b474-39f85d231659",
-			"Weight":	8,
-			"Assignments":	{
-				"$NodeId":	"Constant.Assignments-851196de-4090-4f37-bdef-d89f3246778e",
-				"Type":	"Constant",
-				"Prop":	{
-					"$NodeId":	"Locator.Prop-b951ec4f-5ee3-46ee-9b9a-26f6a7f340f5",
-					"Type":	"Locator",
-					"Skip":	false,
-					"PlacementCap":	1,
-					"Prop":	{
-						"$NodeId":	"RandomRotator.Prop-1324fe33-241c-4655-9a01-423d17a4ffcd",
-						"Type":	"RandomRotator",
-						"Skip":	false,
-						"Seed":	"AB",
-						"HorizontalRotations":	true,
-						"Prop":	{
-							"$NodeId":	"Union.Prop-e1a864a6-7889-4f69-b55e-d31df43627f8",
-							"Type":	"Union",
-							"Skip":	false,
-							"Props":	[{
-									"$NodeId":	"Prefab.Prop-7ffa494b-21af-4143-b8fd-472b14310152",
-									"Type":	"Prefab",
-									"Skip":	false,
-									"WeightedPrefabPaths":	[{
-											"$NodeId":	"WeightedPath.Prefab.Prop-b91d4b1b-157e-4507-be09-1675b4ee6a5c",
-											"Path":	"City/Roads/City_Roads_Cross.prefab.json",
-											"Weight":	1
-										}],
-									"LegacyPath":	false,
-									"LoadEntities":	true,
-									"MoldingDirection":	"NONE",
-									"MoldingChildren":	false
-								}, {
-									"$NodeId":	"Offset.Prop-7b328a47-7ec3-48c1-b8b8-007fe3e6998d",
-									"Type":	"Offset",
-									"Skip":	false,
-									"Offset":	{
-										"$NodeId":	"Point3D-1ce91576-cb1c-42c6-bcff-3deacc5850c1",
-										"X":	3,
-										"Y":	0,
-										"Z":	3
-									},
-									"Prop":	{
-										"$NodeId":	"RandomRotator.Prop-3e7e1457-67f4-4887-a687-c6e126329e8b",
-										"Type":	"RandomRotator",
-										"Skip":	false,
-										"Seed":	"G",
-										"HorizontalRotations":	false,
-										"Prop":	{
-											"$NodeId":	"Prefab.Prop-a97ca32d-b1f7-4b80-8511-04e81c58d072",
-											"Type":	"Prefab",
-											"Skip":	false,
-											"WeightedPrefabPaths":	[{
-													"$NodeId":	"WeightedPath.Prefab.Prop-c049a18c-1763-4b3a-91b7-3c8f49041ea5",
-													"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-													"Weight":	1
-												}],
-											"LegacyPath":	false,
-											"LoadEntities":	true,
-											"MoldingDirection":	"NONE",
-											"MoldingChildren":	false
-										},
-										"Rotations":	[{
-												"$NodeId":	"OrthogonalRotation-095ba250-0869-4e73-9433-e30aa40aea26",
-												"Yaw":	"None",
-												"Pitch":	"None",
-												"Roll":	"None"
-											}]
-									}
-								}, {
-									"$NodeId":	"Offset.Prop-d8d181b5-d812-48c1-8d0e-c558c523a426",
-									"Type":	"Offset",
-									"Skip":	false,
-									"Offset":	{
-										"$NodeId":	"Point3D-75aae20b-5519-4f6f-a882-30ddffeb584e",
-										"X":	-10,
-										"Y":	0,
-										"Z":	3
-									},
-									"Prop":	{
-										"$NodeId":	"RandomRotator.Prop-1a3cbdac-2a14-472d-90a9-97977ee7def6",
-										"Type":	"RandomRotator",
-										"Skip":	false,
-										"Seed":	"H",
-										"HorizontalRotations":	false,
-										"Prop":	{
-											"$NodeId":	"Prefab.Prop-92c3964d-4828-4836-b805-194621112b28",
-											"Type":	"Prefab",
-											"Skip":	false,
-											"WeightedPrefabPaths":	[{
-													"$NodeId":	"WeightedPath.Prefab.Prop-6cf583bb-227f-484e-9516-07e4c736ffe9",
-													"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-													"Weight":	1
-												}],
-											"LegacyPath":	false,
-											"LoadEntities":	true,
-											"MoldingDirection":	"NONE",
-											"MoldingChildren":	false
-										},
-										"Rotations":	[{
-												"$NodeId":	"OrthogonalRotation-a220aaf3-0026-4310-af88-47baaa944114",
-												"Yaw":	"None",
-												"Pitch":	"None",
-												"Roll":	"None"
-											}]
-									}
-								}, {
-									"$NodeId":	"Offset.Prop-ca817f7d-eab0-4dc8-b6a6-f0a3755001ef",
-									"Type":	"Offset",
-									"Skip":	false,
-									"Offset":	{
-										"$NodeId":	"Point3D-761b4233-45bf-498b-a393-af5efe92bf36",
-										"X":	3,
-										"Y":	0,
-										"Z":	-10
-									},
-									"Prop":	{
-										"$NodeId":	"RandomRotator.Prop-fedaa461-9212-47fd-ae26-aaf4d3e13cf2",
-										"Type":	"RandomRotator",
-										"Skip":	false,
-										"Seed":	"I",
-										"HorizontalRotations":	false,
-										"Prop":	{
-											"$NodeId":	"Prefab.Prop-c0f1c03a-f008-410d-b197-fd9f81993628",
-											"Type":	"Prefab",
-											"Skip":	false,
-											"WeightedPrefabPaths":	[{
-													"$NodeId":	"WeightedPath.Prefab.Prop-3714d72d-9698-4caf-b607-10ade29ae897",
-													"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-													"Weight":	1
-												}],
-											"LegacyPath":	false,
-											"LoadEntities":	true,
-											"MoldingDirection":	"NONE",
-											"MoldingChildren":	false
-										},
-										"Rotations":	[{
-												"$NodeId":	"OrthogonalRotation-77361941-5477-4b05-bb37-78b5a5ed103c",
-												"Yaw":	"None",
-												"Pitch":	"None",
-												"Roll":	"None"
-											}]
-									}
-								}, {
-									"$NodeId":	"Offset.Prop-96cbe314-7b86-45d9-8065-81ef9c390c3d",
-									"Type":	"Offset",
-									"Skip":	false,
-									"Offset":	{
-										"$NodeId":	"Point3D-ff0677ae-fab7-4736-ab07-a3b22e6e73a6",
-										"X":	-10,
-										"Y":	0,
-										"Z":	-10
-									},
-									"Prop":	{
-										"$NodeId":	"RandomRotator.Prop-7a2007d9-2400-4d90-a0db-27d64ca8042e",
-										"Type":	"RandomRotator",
-										"Skip":	false,
-										"Seed":	"J",
-										"HorizontalRotations":	false,
-										"Prop":	{
-											"$NodeId":	"Prefab.Prop-0f9d06cb-8e25-4268-a468-ed2259faffb9",
-											"Type":	"Prefab",
-											"Skip":	false,
-											"WeightedPrefabPaths":	[{
-													"$NodeId":	"WeightedPath.Prefab.Prop-04bc2660-0d62-4029-9879-cd568cab1d8c",
-													"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-													"Weight":	1
-												}],
-											"LegacyPath":	false,
-											"LoadEntities":	true,
-											"MoldingDirection":	"NONE",
-											"MoldingChildren":	false
-										},
-										"Rotations":	[{
-												"$NodeId":	"OrthogonalRotation-d8c8d26e-73c1-487f-94ba-9b1c0869674d",
-												"Yaw":	"None",
-												"Pitch":	"None",
-												"Roll":	"None"
-											}]
-									}
-								}]
-						},
-						"Rotations":	[]
-					},
-					"Pattern":	{
-						"$NodeId":	"Floor.Pattern-454249ad-1091-4530-a389-37fa26a21b66",
-						"Type":	"Floor",
-						"Skip":	false,
-						"Origin":	{
-							"$NodeId":	"BlockType.Pattern-db92bb1e-66ad-476a-9d55-8908b0a02a52",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-7db2900e-0407-466c-b9ce-4304fe3f4377",
-								"Solid":	"Empty",
-								"SolidBottomUp":	false
-							}
-						},
-						"Floor":	{
-							"$NodeId":	"BlockType.Pattern-6af01979-2fa6-4fb5-9b38-4ec2f10418a2",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-4fb1960e-d097-4b57-82b4-c78b6918ec37",
-								"Solid":	"Rock_Stone",
-								"SolidBottomUp":	false
-							}
-						}
-					},
-					"Scanner":	{
-						"$NodeId":	"Origin.Scanner-8733eef9-b310-4cdf-8e85-a432aa06b697",
-						"Type":	"Origin",
-						"Skip":	false
-					}
-				}
-			}
-		}, {
-			"$NodeId":	"Weight.Weighted.Assignments-9fa6e5b7-aca4-4ff1-9be2-5850f7346289",
-			"Weight":	3,
-			"Assignments":	{
-				"$NodeId":	"Constant.Assignments-ddb0ef47-187f-4cf6-8d34-a9e235561c68",
-				"Type":	"Constant",
-				"Prop":	{
-					"$NodeId":	"Locator.Prop-82c72a4e-43c0-46c7-9690-759bd8411faf",
-					"Type":	"Locator",
-					"Skip":	false,
-					"PlacementCap":	1,
-					"Prop":	{
-						"$NodeId":	"RandomRotator.Prop-470123ed-ad15-4d50-b8bf-47716f8df1d6",
-						"Type":	"RandomRotator",
-						"Skip":	false,
-						"Seed":	"AA",
-						"HorizontalRotations":	true,
-						"Prop":	{
-							"$NodeId":	"Union.Prop-337b8f74-5d8d-4af7-9158-769c392d92be",
-							"Type":	"Union",
-							"Skip":	false,
-							"Props":	[{
-									"$NodeId":	"Prefab.Prop-3ff904f6-0c79-4f26-ac8a-494683f9555b",
-									"Type":	"Prefab",
-									"Skip":	false,
-									"WeightedPrefabPaths":	[{
-											"$NodeId":	"WeightedPath.Prefab.Prop-1845f16e-1753-4a78-9ecb-fca452310b8b",
-											"Path":	"City/Roads/City_Roads_T.prefab.json",
-											"Weight":	1
-										}],
-									"LegacyPath":	false,
-									"LoadEntities":	true,
-									"MoldingDirection":	"NONE",
-									"MoldingChildren":	false
-								}, {
-									"$NodeId":	"Queue.Prop-1301f25c-8a46-464c-aaf8-281cf344c7bf",
-									"Type":	"Queue",
-									"Skip":	false,
-									"Props":	[{
-											"$NodeId":	"Queue.Prop-06de3d9e-54ab-46d1-b9cd-97af217f1f38",
-											"Type":	"Queue",
-											"Skip":	false,
-											"Props":	[{
-													"$NodeId":	"Offset.Prop-b31eb9da-1a6a-40b0-8904-72dc732e1625",
-													"Type":	"Offset",
-													"Skip":	false,
-													"Offset":	{
-														"$NodeId":	"Point3D-7f5c47dc-1c89-4dc4-bb23-d2d42c96a933",
-														"X":	3,
-														"Y":	0,
-														"Z":	3
-													},
-													"Prop":	{
-														"$NodeId":	"RandomRotator.Prop-0dcee866-947a-482a-b29d-2983bfa85233",
-														"Type":	"RandomRotator",
-														"Skip":	false,
-														"Seed":	"K",
-														"HorizontalRotations":	false,
-														"Prop":	{
-															"$NodeId":	"Prefab.Prop-817b4964-5101-4b73-83ab-fc762f6ae998",
-															"Type":	"Prefab",
-															"Skip":	false,
-															"WeightedPrefabPaths":	[{
-																	"$NodeId":	"WeightedPath.Prefab.Prop-830a9132-525f-49f4-b5e9-fe13b38e3a1e",
-																	"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																	"Weight":	1
-																}],
-															"LegacyPath":	false,
-															"LoadEntities":	true,
-															"MoldingDirection":	"NONE",
-															"MoldingChildren":	false
-														},
-														"Rotations":	[{
-																"$NodeId":	"OrthogonalRotation-1e24c725-ea66-40b8-b114-821eb62f2a7b",
-																"Yaw":	"None",
-																"Pitch":	"None",
-																"Roll":	"None"
-															}]
-													}
-												}, {
-													"$NodeId":	"Offset.Prop-86e5bf18-92b1-40e1-b553-79b34cd7b87c",
-													"Type":	"Offset",
-													"Skip":	false,
-													"Offset":	{
-														"$NodeId":	"Point3D-07385a74-2356-43f3-a6da-e9069d093047",
-														"X":	-10,
-														"Y":	0,
-														"Z":	3
-													},
-													"Prop":	{
-														"$NodeId":	"RandomRotator.Prop-fbf38a12-760a-473c-b273-eada2548d85b",
-														"Type":	"RandomRotator",
-														"Skip":	false,
-														"Seed":	"L",
-														"HorizontalRotations":	false,
-														"Prop":	{
-															"$NodeId":	"Prefab.Prop-d5e9ab32-d16a-411d-82b7-39fe11f9c837",
-															"Type":	"Prefab",
-															"Skip":	false,
-															"WeightedPrefabPaths":	[{
-																	"$NodeId":	"WeightedPath.Prefab.Prop-e726baa8-cee2-425c-818a-4150d1c10ab1",
-																	"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																	"Weight":	1
-																}],
-															"LegacyPath":	false,
-															"LoadEntities":	true,
-															"MoldingDirection":	"NONE",
-															"MoldingChildren":	false
-														},
-														"Rotations":	[{
-																"$NodeId":	"OrthogonalRotation-3d0a8524-867c-45b6-b567-e4e3c9cac673",
-																"Yaw":	"None",
-																"Pitch":	"None",
-																"Roll":	"None"
-															}]
-													}
-												}]
-										}, {
-											"$NodeId":	"Weighted.Prop-6dc1ee1f-1ec5-4b5b-8897-1333ff8acf32",
-											"Type":	"Weighted",
-											"Skip":	false,
-											"Entries":	[{
-													"$NodeId":	"Entry.Weighted.Prop-0266ab97-5e6a-401b-8ee2-1da0e4368afa",
-													"Prop":	{
-														"$NodeId":	"Queue.Prop-bde622d0-99aa-426a-8dfc-eec67e1551c2",
-														"Type":	"Queue",
-														"Skip":	false,
-														"Props":	[{
-																"$NodeId":	"Offset.Prop-8b4937be-0d7f-4689-86b2-58cfbcd7bc9c",
-																"Type":	"Offset",
-																"Skip":	false,
-																"Offset":	{
-																	"$NodeId":	"Point3D-113817cb-f018-4b61-b2bf-46490a6b0e87",
-																	"X":	3,
-																	"Y":	0,
-																	"Z":	-10
-																},
-																"Prop":	{
-																	"$NodeId":	"RandomRotator.Prop-3a003ad4-94a0-4fc9-9b95-60606376dc84",
-																	"Type":	"RandomRotator",
-																	"Skip":	false,
-																	"Seed":	"M",
-																	"HorizontalRotations":	false,
-																	"Prop":	{
-																		"$NodeId":	"Prefab.Prop-82bf4edf-0640-4b50-a103-70a01218300d",
-																		"Type":	"Prefab",
-																		"Skip":	false,
-																		"WeightedPrefabPaths":	[{
-																				"$NodeId":	"WeightedPath.Prefab.Prop-988f1a54-aada-46c3-8db1-7c8f233d6d15",
-																				"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																				"Weight":	1
-																			}],
-																		"LegacyPath":	false,
-																		"LoadEntities":	true,
-																		"MoldingDirection":	"NONE",
-																		"MoldingChildren":	false
-																	},
-																	"Rotations":	[{
-																			"$NodeId":	"OrthogonalRotation-2dc0f7b9-a32e-42a2-a8f2-95f5856197e5",
-																			"Yaw":	"None",
-																			"Pitch":	"None",
-																			"Roll":	"None"
-																		}]
-																}
-															}, {
-																"$NodeId":	"Offset.Prop-bac24da5-c97e-4d29-ac73-ae039a455e1a",
-																"Type":	"Offset",
-																"Skip":	false,
-																"Offset":	{
-																	"$NodeId":	"Point3D-7c4cebc2-a1fb-4fac-a2f5-bd7ea27911be",
-																	"X":	-10,
-																	"Y":	0,
-																	"Z":	-10
-																},
-																"Prop":	{
-																	"$NodeId":	"RandomRotator.Prop-cfc8f9cf-fef8-4cdb-bae7-e277ccead4cf",
-																	"Type":	"RandomRotator",
-																	"Skip":	false,
-																	"Seed":	"N",
-																	"HorizontalRotations":	false,
-																	"Prop":	{
-																		"$NodeId":	"Prefab.Prop-fe5df050-4b78-4b27-946d-6843cff932c9",
-																		"Type":	"Prefab",
-																		"Skip":	false,
-																		"WeightedPrefabPaths":	[{
-																				"$NodeId":	"WeightedPath.Prefab.Prop-b7bbd30f-7881-47ea-9419-3409000b4f72",
-																				"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																				"Weight":	1
-																			}],
-																		"LegacyPath":	false,
-																		"LoadEntities":	true,
-																		"MoldingDirection":	"NONE",
-																		"MoldingChildren":	false
-																	},
-																	"Rotations":	[{
-																			"$NodeId":	"OrthogonalRotation-a1293c57-7da5-44e7-bd45-e3c8bbc7a454",
-																			"Yaw":	"None",
-																			"Pitch":	"None",
-																			"Roll":	"None"
-																		}]
-																}
-															}]
-													},
-													"Weight":	1
-												}, {
-													"$NodeId":	"Entry.Weighted.Prop-df1f526a-02e2-4d3f-be1c-27a855d3c37f",
-													"Prop":	{
-														"$NodeId":	"Offset.Prop-f5afff5e-69e5-41ac-95fd-445883b03641",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-57b4aa48-36fc-4d61-88c7-a5c7883c7221",
-															"X":	0,
-															"Y":	0,
-															"Z":	-10
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-ab0f3f7c-e134-4d54-bfef-069ad9e2e3f4",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"O",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-103080cd-3e41-4244-a826-c91442b9a45c",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-d1d3200c-9c55-47ba-b38b-e95397e4a5e5",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-d28a5ad7-35e7-4609-830b-c2b546a5ad02",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													},
-													"Weight":	1
-												}]
-										}]
-								}]
-						},
-						"Rotations":	[]
-					},
-					"Pattern":	{
-						"$NodeId":	"Floor.Pattern-312b27c5-559c-4d30-bbb0-a6b9878dcc38",
-						"Type":	"Floor",
-						"Skip":	false,
-						"Origin":	{
-							"$NodeId":	"BlockType.Pattern-f2aca8bc-e6e9-4749-b935-381f01b7153b",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-0d318069-42d7-4c54-aeeb-600ae1f319a4",
-								"Solid":	"Empty",
-								"SolidBottomUp":	false
-							}
-						},
-						"Floor":	{
-							"$NodeId":	"BlockType.Pattern-f9e69781-4b92-4c73-840f-aef0bb8f5362",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-54d323eb-8f8e-48b2-9dcb-6526a24a408a",
-								"Solid":	"Rock_Stone",
-								"SolidBottomUp":	false
-							}
-						}
-					},
-					"Scanner":	{
-						"$NodeId":	"Origin.Scanner-b0cfc056-3bc2-4ab4-b5f6-2c558400141d",
-						"Type":	"Origin",
-						"Skip":	false
-					}
-				}
-			}
-		}, {
-			"$NodeId":	"Weight.Weighted.Assignments-3036d30e-825d-48d8-96eb-4ff758a6e325",
-			"Weight":	2,
-			"Assignments":	{
-				"$NodeId":	"Constant.Assignments-dddcea1c-4de9-4cbc-bddf-e8e879b5c255",
-				"Type":	"Constant",
-				"Prop":	{
-					"$NodeId":	"Locator.Prop-03d70567-d3a1-422c-9007-cfc35b996fa5",
-					"Type":	"Locator",
-					"Skip":	false,
-					"PlacementCap":	1,
-					"Prop":	{
-						"$NodeId":	"RandomRotator.Prop-9edac0d2-e006-4bff-8ca2-27cbf3881099",
-						"Type":	"RandomRotator",
-						"Skip":	false,
-						"Seed":	"Z",
-						"HorizontalRotations":	true,
-						"Prop":	{
-							"$NodeId":	"Union.Prop-6a874415-0595-4c63-b5e1-a572f5704baa",
-							"Type":	"Union",
-							"Skip":	false,
-							"Props":	[{
-									"$NodeId":	"Offset.Prop-12f7fc58-48ef-46cf-ab62-0f2601279856",
-									"Type":	"Offset",
-									"Skip":	false,
-									"Offset":	{
-										"$NodeId":	"Point3D-9df94536-aa70-4896-b3c5-23de8fa7c281",
-										"X":	-10,
-										"Y":	0,
-										"Z":	-10
-									},
-									"Prop":	{
-										"$NodeId":	"RandomRotator.Prop-b0e0887b-ccf1-4274-ac59-1ab7e73f903d",
-										"Type":	"RandomRotator",
-										"Skip":	false,
-										"Seed":	"P",
-										"HorizontalRotations":	false,
-										"Prop":	{
-											"$NodeId":	"Prefab.Prop-37d6caa4-3d68-469f-8b76-bfa43607911c",
-											"Type":	"Prefab",
-											"Skip":	false,
-											"WeightedPrefabPaths":	[{
-													"$NodeId":	"WeightedPath.Prefab.Prop-090645c0-c41d-4b7b-904b-1d4150087e1e",
-													"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-													"Weight":	1
-												}],
-											"LegacyPath":	false,
-											"LoadEntities":	true,
-											"MoldingDirection":	"NONE",
-											"MoldingChildren":	false
-										},
-										"Rotations":	[{
-												"$NodeId":	"OrthogonalRotation-dbce4763-54d7-4735-b1eb-7014a1e11e40",
-												"Yaw":	"None",
-												"Pitch":	"None",
-												"Roll":	"None"
-											}]
-									}
-								}, {
-									"$NodeId":	"Prefab.Prop-e63f8551-8e2e-41ab-a033-3b23e4244673",
-									"Type":	"Prefab",
-									"Skip":	false,
-									"WeightedPrefabPaths":	[{
-											"$NodeId":	"WeightedPath.Prefab.Prop-b7fff0b3-9cd7-4d94-88c9-f3af41ef72ca",
-											"Path":	"City/Roads/City_Roads_L.prefab.json",
-											"Weight":	1
-										}],
-									"LegacyPath":	false,
-									"LoadEntities":	true,
-									"MoldingDirection":	"NONE",
-									"MoldingChildren":	false
-								}, {
-									"$NodeId":	"Weighted.Prop-b9dc4f79-2c5d-44ac-abdf-77a7dd4534fe",
-									"Type":	"Weighted",
-									"Skip":	false,
-									"Entries":	[{
-											"$NodeId":	"Entry.Weighted.Prop-7ce067ad-3fae-4bd2-9b9a-947da84d8fda",
-											"Prop":	{
-												"$NodeId":	"Queue.Prop-13a29810-1d2b-4c72-8178-e771ddb06251",
-												"Type":	"Queue",
-												"Skip":	false,
-												"Props":	[{
-														"$NodeId":	"Offset.Prop-26702dbc-69cb-4f05-8656-68850e177c8d",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-377e0211-3de9-4f64-a318-f8b353e762fa",
-															"X":	3,
-															"Y":	0,
-															"Z":	3
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-b8803dd0-9f3e-4007-bdb5-17cf0cad2a81",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"Q",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-1bb05573-f010-48fd-ba19-3ccfcaab2c83",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-4325f5ee-4a4d-4176-a8ec-d279252cf1f5",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-8857824e-44d2-4b57-90d1-f1c78eca5590",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-7306369b-099a-4f43-9e57-0647512f3633",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-440b4e02-eda5-483b-acfd-19050b71b4fc",
-															"X":	-10,
-															"Y":	0,
-															"Z":	3
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-255a7c78-72e6-4efd-b104-02531f6eefa9",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"R",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-3fdd6ff3-d914-491d-81b8-0c04ddfd7368",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-8615536d-2349-4489-a836-64c8d2fe3d9f",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-145b145f-f675-4771-8401-690dabda88ac",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}, {
-														"$NodeId":	"Offset.Prop-f42adaa8-21df-42c5-84e7-ad51b274c53f",
-														"Type":	"Offset",
-														"Skip":	false,
-														"Offset":	{
-															"$NodeId":	"Point3D-f1ac9f13-7fe3-4430-9d3a-f59131fd1030",
-															"X":	3,
-															"Y":	0,
-															"Z":	-10
-														},
-														"Prop":	{
-															"$NodeId":	"RandomRotator.Prop-d2a3129b-98ea-4661-ba9a-22099c103539",
-															"Type":	"RandomRotator",
-															"Skip":	false,
-															"Seed":	"S",
-															"HorizontalRotations":	false,
-															"Prop":	{
-																"$NodeId":	"Prefab.Prop-95140258-28ff-402b-8452-3befc85811fa",
-																"Type":	"Prefab",
-																"Skip":	false,
-																"WeightedPrefabPaths":	[{
-																		"$NodeId":	"WeightedPath.Prefab.Prop-29c21101-d01c-4617-aede-7e2f1b436cda",
-																		"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
-																		"Weight":	1
-																	}],
-																"LegacyPath":	false,
-																"LoadEntities":	true,
-																"MoldingDirection":	"NONE",
-																"MoldingChildren":	false
-															},
-															"Rotations":	[{
-																	"$NodeId":	"OrthogonalRotation-039ac535-1f37-4c42-b1e8-a60215d9c04b",
-																	"Yaw":	"None",
-																	"Pitch":	"None",
-																	"Roll":	"None"
-																}]
-														}
-													}]
-											},
-											"Weight":	1
-										}, {
-											"$NodeId":	"Entry.Weighted.Prop-2354da0a-0895-47d7-9093-79e1c959268d",
-											"Prop":	{
-												"$NodeId":	"Weighted.Prop-464f8972-af54-4377-a284-201575e47812",
+												"WeightedPrefabPaths":	[{
+														"$NodeId":	"WeightedPath.Prefab.Prop-d50c2832-e653-4306-a219-d205ff89524c",
+														"Path":	"City/Roads/City_Roads_Straight.prefab.json",
+														"Weight":	1
+													}],
+												"LegacyPath":	false,
+												"LoadEntities":	true,
+												"MoldingDirection":	"NONE",
+												"MoldingChildren":	false
+											}, {
+												"$NodeId":	"Weighted.Prop-4090cdd1-4435-456a-ba89-20dacd00828f",
 												"Type":	"Weighted",
+												"ExportAs":	"StraightRoadProps",
 												"Skip":	false,
 												"Entries":	[{
-														"$NodeId":	"Entry.Weighted.Prop-7cf326be-21b5-45fd-9b1a-a27bdd274b30",
+														"$NodeId":	"Entry.Weighted.Prop-1f71af1f-aa81-46cd-9521-dcc4b00f7cb1",
 														"Prop":	{
-															"$NodeId":	"Queue.Prop-d53e5574-2fd0-46b8-8eea-52dc1cec2b23",
+															"$NodeId":	"Queue.Prop-8c1b2e75-5bf1-40b5-9bb3-c1cc96bbe2db",
 															"Type":	"Queue",
+															"ExportAs":	"queueProp",
 															"Skip":	false,
 															"Props":	[{
-																	"$NodeId":	"Offset.Prop-ccf26109-0caf-4f98-bf86-9042879a12ae",
+																	"$NodeId":	"Offset.Prop-e3d50af0-1a72-4ee8-98bb-669ac25a7844",
 																	"Type":	"Offset",
 																	"Skip":	false,
 																	"Offset":	{
-																		"$NodeId":	"Point3D-6b36f030-775e-41e9-8b89-2a26770fe4e1",
+																		"$NodeId":	"Point3D-f217b56f-7ea5-4650-8a38-6604f246dad2",
 																		"X":	3,
 																		"Y":	0,
-																		"Z":	0
+																		"Z":	3
 																	},
 																	"Prop":	{
-																		"$NodeId":	"RandomRotator.Prop-17862d01-7cae-429a-a731-adfff42fd64a",
+																		"$NodeId":	"RandomRotator.Prop-a1c5bb60-39ae-4411-a9d1-1069d6ef8583",
 																		"Type":	"RandomRotator",
 																		"Skip":	false,
-																		"Seed":	"T",
+																		"Seed":	"A",
 																		"HorizontalRotations":	false,
 																		"Prop":	{
-																			"$NodeId":	"Prefab.Prop-8d063b9d-da3e-458d-b39f-0a642a167227",
+																			"$NodeId":	"Prefab.Prop-a01c04d9-5f70-45b0-814d-ac56383f7f9c",
 																			"Type":	"Prefab",
 																			"Skip":	false,
 																			"WeightedPrefabPaths":	[{
-																					"$NodeId":	"WeightedPath.Prefab.Prop-5e6a6ba1-603f-4f3a-bcfa-5836020adc72",
-																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
+																					"$NodeId":	"WeightedPath.Prefab.Prop-dfac9dbf-e228-402f-acde-13e0a165f052",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
 																					"Weight":	1
 																				}],
 																			"LegacyPath":	false,
@@ -1057,34 +115,34 @@
 																			"MoldingChildren":	false
 																		},
 																		"Rotations":	[{
-																				"$NodeId":	"OrthogonalRotation-95682428-2aaa-47f5-8a70-f5574ce456c2",
-																				"Yaw":	"Ninety",
+																				"$NodeId":	"OrthogonalRotation-e2ee37cf-abb6-4b01-8f70-bb0365e409b2",
+																				"Yaw":	"None",
 																				"Pitch":	"None",
 																				"Roll":	"None"
 																			}]
 																	}
 																}, {
-																	"$NodeId":	"Offset.Prop-66ca94da-50b0-49ac-85ac-7b760d68f69e",
+																	"$NodeId":	"Offset.Prop-9ed8a082-54a9-4227-a814-4a96f1478f5a",
 																	"Type":	"Offset",
 																	"Skip":	false,
 																	"Offset":	{
-																		"$NodeId":	"Point3D-ea19cca2-194e-49c4-a124-fe95169f6a86",
+																		"$NodeId":	"Point3D-cf89f434-7daf-497b-a393-deebb02ac40f",
 																		"X":	-10,
 																		"Y":	0,
 																		"Z":	3
 																	},
 																	"Prop":	{
-																		"$NodeId":	"RandomRotator.Prop-84a89e8b-96a7-4eda-9f45-701ee0e97389",
+																		"$NodeId":	"RandomRotator.Prop-b2fd260a-1159-458b-850b-7653e8215187",
 																		"Type":	"RandomRotator",
 																		"Skip":	false,
-																		"Seed":	"U",
+																		"Seed":	"B",
 																		"HorizontalRotations":	false,
 																		"Prop":	{
-																			"$NodeId":	"Prefab.Prop-1a73904f-e7b6-462b-82b8-e8c5b278e622",
+																			"$NodeId":	"Prefab.Prop-9d44b289-1ea6-44b3-b654-a9e3feb25054",
 																			"Type":	"Prefab",
 																			"Skip":	false,
 																			"WeightedPrefabPaths":	[{
-																					"$NodeId":	"WeightedPath.Prefab.Prop-fdc45fc8-867b-4a99-ba46-30618a76c6cd",
+																					"$NodeId":	"WeightedPath.Prefab.Prop-b62933cc-5c9b-413d-93f7-4d97d52995ad",
 																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
 																					"Weight":	1
 																				}],
@@ -1094,7 +152,81 @@
 																			"MoldingChildren":	false
 																		},
 																		"Rotations":	[{
-																				"$NodeId":	"OrthogonalRotation-451354ca-f737-4871-baa1-13f3b04f4fa5",
+																				"$NodeId":	"OrthogonalRotation-2d30aa67-c098-4aca-9e24-7ea201855464",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																}, {
+																	"$NodeId":	"Offset.Prop-7d130d60-448a-423c-8cbb-40fe1a017e60",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-e405b5a8-227e-4a62-a141-99d0b64a8786",
+																		"X":	3,
+																		"Y":	0,
+																		"Z":	-10
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-891232a2-7201-4fa5-a838-ea8b0a91a613",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"C",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-d468a054-eda4-4907-9262-72399c8f9582",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-d8accbe5-ece7-4b53-b31c-17dccf420977",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-4515ccf9-f73c-4fc5-8f33-b99c8af7edc9",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																}, {
+																	"$NodeId":	"Offset.Prop-7f3ab6be-de9e-4f4d-b733-fd0c40827412",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-f5efd5d6-4bf9-4808-90b3-6d90c33825e8",
+																		"X":	-10,
+																		"Y":	0,
+																		"Z":	-10
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-8d755383-833d-4442-a1d5-9a5c7eebc6aa",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"D",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-8150e12f-128d-4243-a227-18f7cfdf5a2d",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-a6e5e9fe-bb27-47f6-8041-738201e114de",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-fb74d999-b834-4d15-ab57-65052d6532fa",
 																				"Yaw":	"None",
 																				"Pitch":	"None",
 																				"Roll":	"None"
@@ -1104,33 +236,33 @@
 														},
 														"Weight":	1
 													}, {
-														"$NodeId":	"Entry.Weighted.Prop-af563b6f-ba53-429e-b31d-0367cf2d93ad",
+														"$NodeId":	"Entry.Weighted.Prop-41765cbd-0d72-4af4-98cb-747fa7b9d6e6",
 														"Prop":	{
-															"$NodeId":	"Queue.Prop-ea0f4afa-3dcf-48a9-abb2-783a8640458e",
+															"$NodeId":	"Queue.Prop-463c3763-36d4-4937-bbc6-4c16464d3ccf",
 															"Type":	"Queue",
 															"Skip":	false,
 															"Props":	[{
-																	"$NodeId":	"Offset.Prop-17383483-096d-4f11-8cd7-0ec9af3f5d2b",
+																	"$NodeId":	"Offset.Prop-ecd4627d-f05b-4539-a175-c53402eb10d1",
 																	"Type":	"Offset",
 																	"Skip":	false,
 																	"Offset":	{
-																		"$NodeId":	"Point3D-6f750426-ff02-441e-9631-7a26b61a3105",
+																		"$NodeId":	"Point3D-8509d7ec-b0a3-4e51-a9fe-51c7b6a4f34a",
 																		"X":	0,
 																		"Y":	0,
 																		"Z":	3
 																	},
 																	"Prop":	{
-																		"$NodeId":	"RandomRotator.Prop-098b79c2-ad91-4a37-8102-8e099c9f81d0",
+																		"$NodeId":	"RandomRotator.Prop-0298bde1-3d61-46f2-990b-dafe2a52e820",
 																		"Type":	"RandomRotator",
 																		"Skip":	false,
-																		"Seed":	"V",
+																		"Seed":	"E",
 																		"HorizontalRotations":	false,
 																		"Prop":	{
-																			"$NodeId":	"Prefab.Prop-8543ca80-44f4-44ce-8956-356b975f3182",
+																			"$NodeId":	"Prefab.Prop-176b8a38-9004-484a-af09-e934eba49bfe",
 																			"Type":	"Prefab",
 																			"Skip":	false,
 																			"WeightedPrefabPaths":	[{
-																					"$NodeId":	"WeightedPath.Prefab.Prop-cb3e3c22-bc96-4e84-aafd-318c20c85c8a",
+																					"$NodeId":	"WeightedPath.Prefab.Prop-63d51b9a-89e7-4191-ae91-621acae7e8c1",
 																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
 																					"Weight":	1
 																				}],
@@ -1140,35 +272,35 @@
 																			"MoldingChildren":	false
 																		},
 																		"Rotations":	[{
-																				"$NodeId":	"OrthogonalRotation-dc40ef1b-2adb-4f4e-b3d1-a9021614d202",
+																				"$NodeId":	"OrthogonalRotation-5201d006-cc75-40be-a6bf-54f8dffdc93a",
 																				"Yaw":	"None",
 																				"Pitch":	"None",
 																				"Roll":	"None"
 																			}]
 																	}
 																}, {
-																	"$NodeId":	"Offset.Prop-6a2911b2-1e89-40c0-b86f-ebea976595ca",
+																	"$NodeId":	"Offset.Prop-53396a31-41a3-4e2c-b9bc-f405f14246e5",
 																	"Type":	"Offset",
 																	"Skip":	false,
 																	"Offset":	{
-																		"$NodeId":	"Point3D-384dc1a7-b396-41af-8671-4301dcf2aca5",
-																		"X":	3,
+																		"$NodeId":	"Point3D-c9cc5586-e607-4d50-be9c-1636bc3e9df4",
+																		"X":	0,
 																		"Y":	0,
 																		"Z":	-10
 																	},
 																	"Prop":	{
-																		"$NodeId":	"RandomRotator.Prop-a657a9b7-272b-41fc-8f01-0931bdb39a44",
+																		"$NodeId":	"RandomRotator.Prop-d90ecdf9-3b7a-4715-b1a9-e437d77efd1e",
 																		"Type":	"RandomRotator",
 																		"Skip":	false,
-																		"Seed":	"X",
+																		"Seed":	"F",
 																		"HorizontalRotations":	false,
 																		"Prop":	{
-																			"$NodeId":	"Prefab.Prop-8d1d4a83-9b8e-49a2-a3bb-f37853f823aa",
+																			"$NodeId":	"Prefab.Prop-6d484f9d-d3bb-4403-8233-004b076b3b18",
 																			"Type":	"Prefab",
 																			"Skip":	false,
 																			"WeightedPrefabPaths":	[{
-																					"$NodeId":	"WeightedPath.Prefab.Prop-89ce1af8-25e4-46dc-a47b-e778f7b5f350",
-																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"$NodeId":	"WeightedPath.Prefab.Prop-f2203b77-9b26-4fee-851e-2078b869434a",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
 																					"Weight":	1
 																				}],
 																			"LegacyPath":	false,
@@ -1177,7 +309,7 @@
 																			"MoldingChildren":	false
 																		},
 																		"Rotations":	[{
-																				"$NodeId":	"OrthogonalRotation-8027147f-ca23-465f-a1c7-b22e93943e2c",
+																				"$NodeId":	"OrthogonalRotation-ed2cc886-60e8-4f5e-8f13-0dc7f55e332e",
 																				"Yaw":	"None",
 																				"Pitch":	"None",
 																				"Roll":	"None"
@@ -1185,33 +317,100 @@
 																	}
 																}]
 														},
-														"Weight":	1
+														"Weight":	2
 													}]
-											},
-											"Weight":	1
-										}, {
-											"$NodeId":	"Entry.Weighted.Prop-2b3e7ce8-24da-46bd-9a81-4298359099e8",
-											"Prop":	{
-												"$NodeId":	"Offset.Prop-2e4dafdb-eaa8-48b4-a783-c9b022b4fa22",
+											}]
+									}
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-dc553fcc-3f38-4abd-974e-c1f3aa27cf9a",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-e807baad-b5b0-410a-a8fa-9dce076e9a0b",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-d100ac2f-fbff-4c97-831a-1204553d06ae",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-4b7efade-aca7-40d0-96b6-49878cab7ada",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-79318886-a408-4517-9805-7ef73623f780",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-354673fc-ee0e-4e44-9dd6-dcc93d38d082",
+									"Type":	"Origin",
+									"Skip":	false
+								}
+							}
+						}
+					}, {
+						"$NodeId":	"Weight.Weighted.Assignments-be207949-146f-40ab-b474-39f85d231659",
+						"Weight":	5,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-851196de-4090-4f37-bdef-d89f3246778e",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-b951ec4f-5ee3-46ee-9b9a-26f6a7f340f5",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"RandomRotator.Prop-1324fe33-241c-4655-9a01-423d17a4ffcd",
+									"Type":	"RandomRotator",
+									"Skip":	false,
+									"Seed":	"AB",
+									"HorizontalRotations":	true,
+									"Prop":	{
+										"$NodeId":	"Union.Prop-e1a864a6-7889-4f69-b55e-d31df43627f8",
+										"Type":	"Union",
+										"Skip":	false,
+										"Props":	[{
+												"$NodeId":	"Prefab.Prop-7ffa494b-21af-4143-b8fd-472b14310152",
+												"Type":	"Prefab",
+												"Skip":	false,
+												"WeightedPrefabPaths":	[{
+														"$NodeId":	"WeightedPath.Prefab.Prop-b91d4b1b-157e-4507-be09-1675b4ee6a5c",
+														"Path":	"City/Roads/City_Roads_Cross.prefab.json",
+														"Weight":	1
+													}],
+												"LegacyPath":	false,
+												"LoadEntities":	true,
+												"MoldingDirection":	"NONE",
+												"MoldingChildren":	false
+											}, {
+												"$NodeId":	"Offset.Prop-7b328a47-7ec3-48c1-b8b8-007fe3e6998d",
 												"Type":	"Offset",
 												"Skip":	false,
 												"Offset":	{
-													"$NodeId":	"Point3D-555d4fb4-8ce8-4169-a5c3-8025a1455910",
-													"X":	2,
+													"$NodeId":	"Point3D-1ce91576-cb1c-42c6-bcff-3deacc5850c1",
+													"X":	3,
 													"Y":	0,
-													"Z":	2
+													"Z":	3
 												},
 												"Prop":	{
-													"$NodeId":	"StaticRotator.Prop-8e2c4cf8-c6d2-4fb6-b4e4-e602c591059a",
-													"Type":	"StaticRotator",
+													"$NodeId":	"RandomRotator.Prop-3e7e1457-67f4-4887-a687-c6e126329e8b",
+													"Type":	"RandomRotator",
 													"Skip":	false,
+													"Seed":	"G",
+													"HorizontalRotations":	false,
 													"Prop":	{
-														"$NodeId":	"Prefab.Prop-19800326-3ace-4621-9205-8b1c1078dcc5",
+														"$NodeId":	"Prefab.Prop-a97ca32d-b1f7-4b80-8511-04e81c58d072",
 														"Type":	"Prefab",
 														"Skip":	false,
 														"WeightedPrefabPaths":	[{
-																"$NodeId":	"WeightedPath.Prefab.Prop-0f6784f9-c2a7-40ed-9cfa-34478811dbc9",
-																"Path":	"City/Buildings/Tall/City_Buildings_Tall_L_001.prefab.json",
+																"$NodeId":	"WeightedPath.Prefab.Prop-c049a18c-1763-4b3a-91b7-3c8f49041ea5",
+																"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
 																"Weight":	1
 															}],
 														"LegacyPath":	false,
@@ -1219,76 +418,979 @@
 														"MoldingDirection":	"NONE",
 														"MoldingChildren":	false
 													},
-													"Rotation":	{
-														"$NodeId":	"OrthogonalRotation-2d95e8a5-a455-4e8a-8c0a-bb32d8e7c6c1",
-														"Yaw":	"TwoSeventy",
-														"Pitch":	"None",
-														"Roll":	"None"
-													}
+													"Rotations":	[{
+															"$NodeId":	"OrthogonalRotation-095ba250-0869-4e73-9433-e30aa40aea26",
+															"Yaw":	"None",
+															"Pitch":	"None",
+															"Roll":	"None"
+														}]
 												}
-											},
-											"Weight":	1
-										}]
-								}]
-						},
-						"Rotations":	[]
-					},
-					"Pattern":	{
-						"$NodeId":	"Floor.Pattern-b7296ca7-083c-46a2-9ef4-b0ce8c75df9b",
-						"Type":	"Floor",
-						"Skip":	false,
-						"Origin":	{
-							"$NodeId":	"BlockType.Pattern-12f0e73a-c117-4d9e-a91e-cc6234e8f84a",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-92abd1e5-105a-415a-82c6-923917908a10",
-								"Solid":	"Empty",
-								"SolidBottomUp":	false
-							}
-						},
-						"Floor":	{
-							"$NodeId":	"BlockType.Pattern-22f7f695-2034-4b93-afe6-4af02db05aa6",
-							"Type":	"BlockType",
-							"Skip":	false,
-							"Material":	{
-								"$NodeId":	"Material-78a575f0-a41c-40bb-bca5-4c7210ce0d07",
-								"Solid":	"Rock_Stone",
-								"SolidBottomUp":	false
+											}, {
+												"$NodeId":	"Offset.Prop-d8d181b5-d812-48c1-8d0e-c558c523a426",
+												"Type":	"Offset",
+												"Skip":	false,
+												"Offset":	{
+													"$NodeId":	"Point3D-75aae20b-5519-4f6f-a882-30ddffeb584e",
+													"X":	-10,
+													"Y":	0,
+													"Z":	3
+												},
+												"Prop":	{
+													"$NodeId":	"RandomRotator.Prop-1a3cbdac-2a14-472d-90a9-97977ee7def6",
+													"Type":	"RandomRotator",
+													"Skip":	false,
+													"Seed":	"H",
+													"HorizontalRotations":	false,
+													"Prop":	{
+														"$NodeId":	"Prefab.Prop-92c3964d-4828-4836-b805-194621112b28",
+														"Type":	"Prefab",
+														"Skip":	false,
+														"WeightedPrefabPaths":	[{
+																"$NodeId":	"WeightedPath.Prefab.Prop-6cf583bb-227f-484e-9516-07e4c736ffe9",
+																"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																"Weight":	1
+															}],
+														"LegacyPath":	false,
+														"LoadEntities":	true,
+														"MoldingDirection":	"NONE",
+														"MoldingChildren":	false
+													},
+													"Rotations":	[{
+															"$NodeId":	"OrthogonalRotation-a220aaf3-0026-4310-af88-47baaa944114",
+															"Yaw":	"None",
+															"Pitch":	"None",
+															"Roll":	"None"
+														}]
+												}
+											}, {
+												"$NodeId":	"Offset.Prop-ca817f7d-eab0-4dc8-b6a6-f0a3755001ef",
+												"Type":	"Offset",
+												"Skip":	false,
+												"Offset":	{
+													"$NodeId":	"Point3D-761b4233-45bf-498b-a393-af5efe92bf36",
+													"X":	3,
+													"Y":	0,
+													"Z":	-10
+												},
+												"Prop":	{
+													"$NodeId":	"RandomRotator.Prop-fedaa461-9212-47fd-ae26-aaf4d3e13cf2",
+													"Type":	"RandomRotator",
+													"Skip":	false,
+													"Seed":	"I",
+													"HorizontalRotations":	false,
+													"Prop":	{
+														"$NodeId":	"Prefab.Prop-c0f1c03a-f008-410d-b197-fd9f81993628",
+														"Type":	"Prefab",
+														"Skip":	false,
+														"WeightedPrefabPaths":	[{
+																"$NodeId":	"WeightedPath.Prefab.Prop-3714d72d-9698-4caf-b607-10ade29ae897",
+																"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																"Weight":	1
+															}],
+														"LegacyPath":	false,
+														"LoadEntities":	true,
+														"MoldingDirection":	"NONE",
+														"MoldingChildren":	false
+													},
+													"Rotations":	[{
+															"$NodeId":	"OrthogonalRotation-77361941-5477-4b05-bb37-78b5a5ed103c",
+															"Yaw":	"None",
+															"Pitch":	"None",
+															"Roll":	"None"
+														}]
+												}
+											}, {
+												"$NodeId":	"Offset.Prop-96cbe314-7b86-45d9-8065-81ef9c390c3d",
+												"Type":	"Offset",
+												"Skip":	false,
+												"Offset":	{
+													"$NodeId":	"Point3D-ff0677ae-fab7-4736-ab07-a3b22e6e73a6",
+													"X":	-10,
+													"Y":	0,
+													"Z":	-10
+												},
+												"Prop":	{
+													"$NodeId":	"RandomRotator.Prop-7a2007d9-2400-4d90-a0db-27d64ca8042e",
+													"Type":	"RandomRotator",
+													"Skip":	false,
+													"Seed":	"J",
+													"HorizontalRotations":	false,
+													"Prop":	{
+														"$NodeId":	"Prefab.Prop-0f9d06cb-8e25-4268-a468-ed2259faffb9",
+														"Type":	"Prefab",
+														"Skip":	false,
+														"WeightedPrefabPaths":	[{
+																"$NodeId":	"WeightedPath.Prefab.Prop-04bc2660-0d62-4029-9879-cd568cab1d8c",
+																"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																"Weight":	1
+															}],
+														"LegacyPath":	false,
+														"LoadEntities":	true,
+														"MoldingDirection":	"NONE",
+														"MoldingChildren":	false
+													},
+													"Rotations":	[{
+															"$NodeId":	"OrthogonalRotation-d8c8d26e-73c1-487f-94ba-9b1c0869674d",
+															"Yaw":	"None",
+															"Pitch":	"None",
+															"Roll":	"None"
+														}]
+												}
+											}]
+									},
+									"Rotations":	[]
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-454249ad-1091-4530-a389-37fa26a21b66",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-db92bb1e-66ad-476a-9d55-8908b0a02a52",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-7db2900e-0407-466c-b9ce-4304fe3f4377",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-6af01979-2fa6-4fb5-9b38-4ec2f10418a2",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-4fb1960e-d097-4b57-82b4-c78b6918ec37",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-8733eef9-b310-4cdf-8e85-a432aa06b697",
+									"Type":	"Origin",
+									"Skip":	false
+								}
 							}
 						}
-					},
-					"Scanner":	{
-						"$NodeId":	"Origin.Scanner-57e0a70d-9255-499d-8ef3-aa400fe049d3",
-						"Type":	"Origin",
-						"Skip":	false
-					}
-				}
+					}, {
+						"$NodeId":	"Weight.Weighted.Assignments-9fa6e5b7-aca4-4ff1-9be2-5850f7346289",
+						"Weight":	5,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-ddb0ef47-187f-4cf6-8d34-a9e235561c68",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-82c72a4e-43c0-46c7-9690-759bd8411faf",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"RandomRotator.Prop-470123ed-ad15-4d50-b8bf-47716f8df1d6",
+									"Type":	"RandomRotator",
+									"Skip":	false,
+									"Seed":	"AA",
+									"HorizontalRotations":	true,
+									"Prop":	{
+										"$NodeId":	"Union.Prop-337b8f74-5d8d-4af7-9158-769c392d92be",
+										"Type":	"Union",
+										"Skip":	false,
+										"Props":	[{
+												"$NodeId":	"Prefab.Prop-3ff904f6-0c79-4f26-ac8a-494683f9555b",
+												"Type":	"Prefab",
+												"Skip":	false,
+												"WeightedPrefabPaths":	[{
+														"$NodeId":	"WeightedPath.Prefab.Prop-1845f16e-1753-4a78-9ecb-fca452310b8b",
+														"Path":	"City/Roads/City_Roads_T.prefab.json",
+														"Weight":	1
+													}],
+												"LegacyPath":	false,
+												"LoadEntities":	true,
+												"MoldingDirection":	"NONE",
+												"MoldingChildren":	false
+											}, {
+												"$NodeId":	"Queue.Prop-1301f25c-8a46-464c-aaf8-281cf344c7bf",
+												"Type":	"Queue",
+												"Skip":	false,
+												"Props":	[{
+														"$NodeId":	"Queue.Prop-06de3d9e-54ab-46d1-b9cd-97af217f1f38",
+														"Type":	"Queue",
+														"Skip":	false,
+														"Props":	[{
+																"$NodeId":	"Offset.Prop-b31eb9da-1a6a-40b0-8904-72dc732e1625",
+																"Type":	"Offset",
+																"Skip":	false,
+																"Offset":	{
+																	"$NodeId":	"Point3D-7f5c47dc-1c89-4dc4-bb23-d2d42c96a933",
+																	"X":	3,
+																	"Y":	0,
+																	"Z":	3
+																},
+																"Prop":	{
+																	"$NodeId":	"RandomRotator.Prop-0dcee866-947a-482a-b29d-2983bfa85233",
+																	"Type":	"RandomRotator",
+																	"Skip":	false,
+																	"Seed":	"K",
+																	"HorizontalRotations":	false,
+																	"Prop":	{
+																		"$NodeId":	"Prefab.Prop-817b4964-5101-4b73-83ab-fc762f6ae998",
+																		"Type":	"Prefab",
+																		"Skip":	false,
+																		"WeightedPrefabPaths":	[{
+																				"$NodeId":	"WeightedPath.Prefab.Prop-830a9132-525f-49f4-b5e9-fe13b38e3a1e",
+																				"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																				"Weight":	1
+																			}],
+																		"LegacyPath":	false,
+																		"LoadEntities":	true,
+																		"MoldingDirection":	"NONE",
+																		"MoldingChildren":	false
+																	},
+																	"Rotations":	[{
+																			"$NodeId":	"OrthogonalRotation-1e24c725-ea66-40b8-b114-821eb62f2a7b",
+																			"Yaw":	"None",
+																			"Pitch":	"None",
+																			"Roll":	"None"
+																		}]
+																}
+															}, {
+																"$NodeId":	"Offset.Prop-86e5bf18-92b1-40e1-b553-79b34cd7b87c",
+																"Type":	"Offset",
+																"Skip":	false,
+																"Offset":	{
+																	"$NodeId":	"Point3D-07385a74-2356-43f3-a6da-e9069d093047",
+																	"X":	-10,
+																	"Y":	0,
+																	"Z":	3
+																},
+																"Prop":	{
+																	"$NodeId":	"RandomRotator.Prop-fbf38a12-760a-473c-b273-eada2548d85b",
+																	"Type":	"RandomRotator",
+																	"Skip":	false,
+																	"Seed":	"L",
+																	"HorizontalRotations":	false,
+																	"Prop":	{
+																		"$NodeId":	"Prefab.Prop-d5e9ab32-d16a-411d-82b7-39fe11f9c837",
+																		"Type":	"Prefab",
+																		"Skip":	false,
+																		"WeightedPrefabPaths":	[{
+																				"$NodeId":	"WeightedPath.Prefab.Prop-e726baa8-cee2-425c-818a-4150d1c10ab1",
+																				"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																				"Weight":	1
+																			}],
+																		"LegacyPath":	false,
+																		"LoadEntities":	true,
+																		"MoldingDirection":	"NONE",
+																		"MoldingChildren":	false
+																	},
+																	"Rotations":	[{
+																			"$NodeId":	"OrthogonalRotation-3d0a8524-867c-45b6-b567-e4e3c9cac673",
+																			"Yaw":	"None",
+																			"Pitch":	"None",
+																			"Roll":	"None"
+																		}]
+																}
+															}]
+													}, {
+														"$NodeId":	"Weighted.Prop-6dc1ee1f-1ec5-4b5b-8897-1333ff8acf32",
+														"Type":	"Weighted",
+														"Skip":	false,
+														"Entries":	[{
+																"$NodeId":	"Entry.Weighted.Prop-0266ab97-5e6a-401b-8ee2-1da0e4368afa",
+																"Prop":	{
+																	"$NodeId":	"Queue.Prop-bde622d0-99aa-426a-8dfc-eec67e1551c2",
+																	"Type":	"Queue",
+																	"Skip":	false,
+																	"Props":	[{
+																			"$NodeId":	"Offset.Prop-8b4937be-0d7f-4689-86b2-58cfbcd7bc9c",
+																			"Type":	"Offset",
+																			"Skip":	false,
+																			"Offset":	{
+																				"$NodeId":	"Point3D-113817cb-f018-4b61-b2bf-46490a6b0e87",
+																				"X":	3,
+																				"Y":	0,
+																				"Z":	-10
+																			},
+																			"Prop":	{
+																				"$NodeId":	"RandomRotator.Prop-3a003ad4-94a0-4fc9-9b95-60606376dc84",
+																				"Type":	"RandomRotator",
+																				"Skip":	false,
+																				"Seed":	"M",
+																				"HorizontalRotations":	false,
+																				"Prop":	{
+																					"$NodeId":	"Prefab.Prop-82bf4edf-0640-4b50-a103-70a01218300d",
+																					"Type":	"Prefab",
+																					"Skip":	false,
+																					"WeightedPrefabPaths":	[{
+																							"$NodeId":	"WeightedPath.Prefab.Prop-988f1a54-aada-46c3-8db1-7c8f233d6d15",
+																							"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																							"Weight":	1
+																						}],
+																					"LegacyPath":	false,
+																					"LoadEntities":	true,
+																					"MoldingDirection":	"NONE",
+																					"MoldingChildren":	false
+																				},
+																				"Rotations":	[{
+																						"$NodeId":	"OrthogonalRotation-2dc0f7b9-a32e-42a2-a8f2-95f5856197e5",
+																						"Yaw":	"None",
+																						"Pitch":	"None",
+																						"Roll":	"None"
+																					}]
+																			}
+																		}, {
+																			"$NodeId":	"Offset.Prop-bac24da5-c97e-4d29-ac73-ae039a455e1a",
+																			"Type":	"Offset",
+																			"Skip":	false,
+																			"Offset":	{
+																				"$NodeId":	"Point3D-7c4cebc2-a1fb-4fac-a2f5-bd7ea27911be",
+																				"X":	-10,
+																				"Y":	0,
+																				"Z":	-10
+																			},
+																			"Prop":	{
+																				"$NodeId":	"RandomRotator.Prop-cfc8f9cf-fef8-4cdb-bae7-e277ccead4cf",
+																				"Type":	"RandomRotator",
+																				"Skip":	false,
+																				"Seed":	"N",
+																				"HorizontalRotations":	false,
+																				"Prop":	{
+																					"$NodeId":	"Prefab.Prop-fe5df050-4b78-4b27-946d-6843cff932c9",
+																					"Type":	"Prefab",
+																					"Skip":	false,
+																					"WeightedPrefabPaths":	[{
+																							"$NodeId":	"WeightedPath.Prefab.Prop-b7bbd30f-7881-47ea-9419-3409000b4f72",
+																							"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																							"Weight":	1
+																						}],
+																					"LegacyPath":	false,
+																					"LoadEntities":	true,
+																					"MoldingDirection":	"NONE",
+																					"MoldingChildren":	false
+																				},
+																				"Rotations":	[{
+																						"$NodeId":	"OrthogonalRotation-a1293c57-7da5-44e7-bd45-e3c8bbc7a454",
+																						"Yaw":	"None",
+																						"Pitch":	"None",
+																						"Roll":	"None"
+																					}]
+																			}
+																		}]
+																},
+																"Weight":	1
+															}, {
+																"$NodeId":	"Entry.Weighted.Prop-df1f526a-02e2-4d3f-be1c-27a855d3c37f",
+																"Prop":	{
+																	"$NodeId":	"Offset.Prop-f5afff5e-69e5-41ac-95fd-445883b03641",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-57b4aa48-36fc-4d61-88c7-a5c7883c7221",
+																		"X":	0,
+																		"Y":	0,
+																		"Z":	-10
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-ab0f3f7c-e134-4d54-bfef-069ad9e2e3f4",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"O",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-103080cd-3e41-4244-a826-c91442b9a45c",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-d1d3200c-9c55-47ba-b38b-e95397e4a5e5",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-d28a5ad7-35e7-4609-830b-c2b546a5ad02",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																},
+																"Weight":	1
+															}]
+													}]
+											}]
+									},
+									"Rotations":	[]
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-312b27c5-559c-4d30-bbb0-a6b9878dcc38",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-f2aca8bc-e6e9-4749-b935-381f01b7153b",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-0d318069-42d7-4c54-aeeb-600ae1f319a4",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-f9e69781-4b92-4c73-840f-aef0bb8f5362",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-54d323eb-8f8e-48b2-9dcb-6526a24a408a",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-b0cfc056-3bc2-4ab4-b5f6-2c558400141d",
+									"Type":	"Origin",
+									"Skip":	false
+								}
+							}
+						}
+					}, {
+						"$NodeId":	"Weight.Weighted.Assignments-3036d30e-825d-48d8-96eb-4ff758a6e325",
+						"Weight":	3,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-dddcea1c-4de9-4cbc-bddf-e8e879b5c255",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-03d70567-d3a1-422c-9007-cfc35b996fa5",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"RandomRotator.Prop-9edac0d2-e006-4bff-8ca2-27cbf3881099",
+									"Type":	"RandomRotator",
+									"Skip":	false,
+									"Seed":	"Z",
+									"HorizontalRotations":	true,
+									"Prop":	{
+										"$NodeId":	"Union.Prop-6a874415-0595-4c63-b5e1-a572f5704baa",
+										"Type":	"Union",
+										"Skip":	false,
+										"Props":	[{
+												"$NodeId":	"Offset.Prop-12f7fc58-48ef-46cf-ab62-0f2601279856",
+												"Type":	"Offset",
+												"Skip":	false,
+												"Offset":	{
+													"$NodeId":	"Point3D-9df94536-aa70-4896-b3c5-23de8fa7c281",
+													"X":	-10,
+													"Y":	0,
+													"Z":	-10
+												},
+												"Prop":	{
+													"$NodeId":	"RandomRotator.Prop-b0e0887b-ccf1-4274-ac59-1ab7e73f903d",
+													"Type":	"RandomRotator",
+													"Skip":	false,
+													"Seed":	"P",
+													"HorizontalRotations":	false,
+													"Prop":	{
+														"$NodeId":	"Prefab.Prop-37d6caa4-3d68-469f-8b76-bfa43607911c",
+														"Type":	"Prefab",
+														"Skip":	false,
+														"WeightedPrefabPaths":	[{
+																"$NodeId":	"WeightedPath.Prefab.Prop-090645c0-c41d-4b7b-904b-1d4150087e1e",
+																"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																"Weight":	1
+															}],
+														"LegacyPath":	false,
+														"LoadEntities":	true,
+														"MoldingDirection":	"NONE",
+														"MoldingChildren":	false
+													},
+													"Rotations":	[{
+															"$NodeId":	"OrthogonalRotation-dbce4763-54d7-4735-b1eb-7014a1e11e40",
+															"Yaw":	"None",
+															"Pitch":	"None",
+															"Roll":	"None"
+														}]
+												}
+											}, {
+												"$NodeId":	"Prefab.Prop-e63f8551-8e2e-41ab-a033-3b23e4244673",
+												"Type":	"Prefab",
+												"Skip":	false,
+												"WeightedPrefabPaths":	[{
+														"$NodeId":	"WeightedPath.Prefab.Prop-b7fff0b3-9cd7-4d94-88c9-f3af41ef72ca",
+														"Path":	"City/Roads/City_Roads_L.prefab.json",
+														"Weight":	1
+													}],
+												"LegacyPath":	false,
+												"LoadEntities":	true,
+												"MoldingDirection":	"NONE",
+												"MoldingChildren":	false
+											}, {
+												"$NodeId":	"Weighted.Prop-b9dc4f79-2c5d-44ac-abdf-77a7dd4534fe",
+												"Type":	"Weighted",
+												"Skip":	false,
+												"Entries":	[{
+														"$NodeId":	"Entry.Weighted.Prop-7ce067ad-3fae-4bd2-9b9a-947da84d8fda",
+														"Prop":	{
+															"$NodeId":	"Queue.Prop-13a29810-1d2b-4c72-8178-e771ddb06251",
+															"Type":	"Queue",
+															"Skip":	false,
+															"Props":	[{
+																	"$NodeId":	"Offset.Prop-26702dbc-69cb-4f05-8656-68850e177c8d",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-377e0211-3de9-4f64-a318-f8b353e762fa",
+																		"X":	3,
+																		"Y":	0,
+																		"Z":	3
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-b8803dd0-9f3e-4007-bdb5-17cf0cad2a81",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"Q",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-1bb05573-f010-48fd-ba19-3ccfcaab2c83",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-4325f5ee-4a4d-4176-a8ec-d279252cf1f5",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-8857824e-44d2-4b57-90d1-f1c78eca5590",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																}, {
+																	"$NodeId":	"Offset.Prop-7306369b-099a-4f43-9e57-0647512f3633",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-440b4e02-eda5-483b-acfd-19050b71b4fc",
+																		"X":	-10,
+																		"Y":	0,
+																		"Z":	3
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-255a7c78-72e6-4efd-b104-02531f6eefa9",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"R",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-3fdd6ff3-d914-491d-81b8-0c04ddfd7368",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-8615536d-2349-4489-a836-64c8d2fe3d9f",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-145b145f-f675-4771-8401-690dabda88ac",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																}, {
+																	"$NodeId":	"Offset.Prop-f42adaa8-21df-42c5-84e7-ad51b274c53f",
+																	"Type":	"Offset",
+																	"Skip":	false,
+																	"Offset":	{
+																		"$NodeId":	"Point3D-f1ac9f13-7fe3-4430-9d3a-f59131fd1030",
+																		"X":	3,
+																		"Y":	0,
+																		"Z":	-10
+																	},
+																	"Prop":	{
+																		"$NodeId":	"RandomRotator.Prop-d2a3129b-98ea-4661-ba9a-22099c103539",
+																		"Type":	"RandomRotator",
+																		"Skip":	false,
+																		"Seed":	"S",
+																		"HorizontalRotations":	false,
+																		"Prop":	{
+																			"$NodeId":	"Prefab.Prop-95140258-28ff-402b-8452-3befc85811fa",
+																			"Type":	"Prefab",
+																			"Skip":	false,
+																			"WeightedPrefabPaths":	[{
+																					"$NodeId":	"WeightedPath.Prefab.Prop-29c21101-d01c-4617-aede-7e2f1b436cda",
+																					"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																					"Weight":	1
+																				}],
+																			"LegacyPath":	false,
+																			"LoadEntities":	true,
+																			"MoldingDirection":	"NONE",
+																			"MoldingChildren":	false
+																		},
+																		"Rotations":	[{
+																				"$NodeId":	"OrthogonalRotation-039ac535-1f37-4c42-b1e8-a60215d9c04b",
+																				"Yaw":	"None",
+																				"Pitch":	"None",
+																				"Roll":	"None"
+																			}]
+																	}
+																}]
+														},
+														"Weight":	1
+													}, {
+														"$NodeId":	"Entry.Weighted.Prop-2354da0a-0895-47d7-9093-79e1c959268d",
+														"Prop":	{
+															"$NodeId":	"Weighted.Prop-464f8972-af54-4377-a284-201575e47812",
+															"Type":	"Weighted",
+															"Skip":	false,
+															"Entries":	[{
+																	"$NodeId":	"Entry.Weighted.Prop-7cf326be-21b5-45fd-9b1a-a27bdd274b30",
+																	"Prop":	{
+																		"$NodeId":	"Queue.Prop-d53e5574-2fd0-46b8-8eea-52dc1cec2b23",
+																		"Type":	"Queue",
+																		"Skip":	false,
+																		"Props":	[{
+																				"$NodeId":	"Offset.Prop-ccf26109-0caf-4f98-bf86-9042879a12ae",
+																				"Type":	"Offset",
+																				"Skip":	false,
+																				"Offset":	{
+																					"$NodeId":	"Point3D-6b36f030-775e-41e9-8b89-2a26770fe4e1",
+																					"X":	3,
+																					"Y":	0,
+																					"Z":	0
+																				},
+																				"Prop":	{
+																					"$NodeId":	"RandomRotator.Prop-17862d01-7cae-429a-a731-adfff42fd64a",
+																					"Type":	"RandomRotator",
+																					"Skip":	false,
+																					"Seed":	"T",
+																					"HorizontalRotations":	false,
+																					"Prop":	{
+																						"$NodeId":	"Prefab.Prop-8d063b9d-da3e-458d-b39f-0a642a167227",
+																						"Type":	"Prefab",
+																						"Skip":	false,
+																						"WeightedPrefabPaths":	[{
+																								"$NodeId":	"WeightedPath.Prefab.Prop-5e6a6ba1-603f-4f3a-bcfa-5836020adc72",
+																								"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
+																								"Weight":	1
+																							}],
+																						"LegacyPath":	false,
+																						"LoadEntities":	true,
+																						"MoldingDirection":	"NONE",
+																						"MoldingChildren":	false
+																					},
+																					"Rotations":	[{
+																							"$NodeId":	"OrthogonalRotation-95682428-2aaa-47f5-8a70-f5574ce456c2",
+																							"Yaw":	"Ninety",
+																							"Pitch":	"None",
+																							"Roll":	"None"
+																						}]
+																				}
+																			}, {
+																				"$NodeId":	"Offset.Prop-66ca94da-50b0-49ac-85ac-7b760d68f69e",
+																				"Type":	"Offset",
+																				"Skip":	false,
+																				"Offset":	{
+																					"$NodeId":	"Point3D-ea19cca2-194e-49c4-a124-fe95169f6a86",
+																					"X":	-10,
+																					"Y":	0,
+																					"Z":	3
+																				},
+																				"Prop":	{
+																					"$NodeId":	"RandomRotator.Prop-84a89e8b-96a7-4eda-9f45-701ee0e97389",
+																					"Type":	"RandomRotator",
+																					"Skip":	false,
+																					"Seed":	"U",
+																					"HorizontalRotations":	false,
+																					"Prop":	{
+																						"$NodeId":	"Prefab.Prop-1a73904f-e7b6-462b-82b8-e8c5b278e622",
+																						"Type":	"Prefab",
+																						"Skip":	false,
+																						"WeightedPrefabPaths":	[{
+																								"$NodeId":	"WeightedPath.Prefab.Prop-fdc45fc8-867b-4a99-ba46-30618a76c6cd",
+																								"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																								"Weight":	1
+																							}],
+																						"LegacyPath":	false,
+																						"LoadEntities":	true,
+																						"MoldingDirection":	"NONE",
+																						"MoldingChildren":	false
+																					},
+																					"Rotations":	[{
+																							"$NodeId":	"OrthogonalRotation-451354ca-f737-4871-baa1-13f3b04f4fa5",
+																							"Yaw":	"None",
+																							"Pitch":	"None",
+																							"Roll":	"None"
+																						}]
+																				}
+																			}]
+																	},
+																	"Weight":	1
+																}, {
+																	"$NodeId":	"Entry.Weighted.Prop-af563b6f-ba53-429e-b31d-0367cf2d93ad",
+																	"Prop":	{
+																		"$NodeId":	"Queue.Prop-ea0f4afa-3dcf-48a9-abb2-783a8640458e",
+																		"Type":	"Queue",
+																		"Skip":	false,
+																		"Props":	[{
+																				"$NodeId":	"Offset.Prop-17383483-096d-4f11-8cd7-0ec9af3f5d2b",
+																				"Type":	"Offset",
+																				"Skip":	false,
+																				"Offset":	{
+																					"$NodeId":	"Point3D-6f750426-ff02-441e-9631-7a26b61a3105",
+																					"X":	0,
+																					"Y":	0,
+																					"Z":	3
+																				},
+																				"Prop":	{
+																					"$NodeId":	"RandomRotator.Prop-098b79c2-ad91-4a37-8102-8e099c9f81d0",
+																					"Type":	"RandomRotator",
+																					"Skip":	false,
+																					"Seed":	"V",
+																					"HorizontalRotations":	false,
+																					"Prop":	{
+																						"$NodeId":	"Prefab.Prop-8543ca80-44f4-44ce-8956-356b975f3182",
+																						"Type":	"Prefab",
+																						"Skip":	false,
+																						"WeightedPrefabPaths":	[{
+																								"$NodeId":	"WeightedPath.Prefab.Prop-cb3e3c22-bc96-4e84-aafd-318c20c85c8a",
+																								"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x2_001.prefab.json",
+																								"Weight":	1
+																							}],
+																						"LegacyPath":	false,
+																						"LoadEntities":	true,
+																						"MoldingDirection":	"NONE",
+																						"MoldingChildren":	false
+																					},
+																					"Rotations":	[{
+																							"$NodeId":	"OrthogonalRotation-dc40ef1b-2adb-4f4e-b3d1-a9021614d202",
+																							"Yaw":	"None",
+																							"Pitch":	"None",
+																							"Roll":	"None"
+																						}]
+																				}
+																			}, {
+																				"$NodeId":	"Offset.Prop-6a2911b2-1e89-40c0-b86f-ebea976595ca",
+																				"Type":	"Offset",
+																				"Skip":	false,
+																				"Offset":	{
+																					"$NodeId":	"Point3D-384dc1a7-b396-41af-8671-4301dcf2aca5",
+																					"X":	3,
+																					"Y":	0,
+																					"Z":	-10
+																				},
+																				"Prop":	{
+																					"$NodeId":	"RandomRotator.Prop-a657a9b7-272b-41fc-8f01-0931bdb39a44",
+																					"Type":	"RandomRotator",
+																					"Skip":	false,
+																					"Seed":	"X",
+																					"HorizontalRotations":	false,
+																					"Prop":	{
+																						"$NodeId":	"Prefab.Prop-8d1d4a83-9b8e-49a2-a3bb-f37853f823aa",
+																						"Type":	"Prefab",
+																						"Skip":	false,
+																						"WeightedPrefabPaths":	[{
+																								"$NodeId":	"WeightedPath.Prefab.Prop-89ce1af8-25e4-46dc-a47b-e778f7b5f350",
+																								"Path":	"City/Buildings/Tall/City_Buildings_Tall_1x1_001.prefab.json",
+																								"Weight":	1
+																							}],
+																						"LegacyPath":	false,
+																						"LoadEntities":	true,
+																						"MoldingDirection":	"NONE",
+																						"MoldingChildren":	false
+																					},
+																					"Rotations":	[{
+																							"$NodeId":	"OrthogonalRotation-8027147f-ca23-465f-a1c7-b22e93943e2c",
+																							"Yaw":	"None",
+																							"Pitch":	"None",
+																							"Roll":	"None"
+																						}]
+																				}
+																			}]
+																	},
+																	"Weight":	1
+																}]
+														},
+														"Weight":	1
+													}, {
+														"$NodeId":	"Entry.Weighted.Prop-2b3e7ce8-24da-46bd-9a81-4298359099e8",
+														"Prop":	{
+															"$NodeId":	"Offset.Prop-2e4dafdb-eaa8-48b4-a783-c9b022b4fa22",
+															"Type":	"Offset",
+															"Skip":	false,
+															"Offset":	{
+																"$NodeId":	"Point3D-555d4fb4-8ce8-4169-a5c3-8025a1455910",
+																"X":	2,
+																"Y":	0,
+																"Z":	2
+															},
+															"Prop":	{
+																"$NodeId":	"StaticRotator.Prop-8e2c4cf8-c6d2-4fb6-b4e4-e602c591059a",
+																"Type":	"StaticRotator",
+																"Skip":	false,
+																"Prop":	{
+																	"$NodeId":	"Prefab.Prop-19800326-3ace-4621-9205-8b1c1078dcc5",
+																	"Type":	"Prefab",
+																	"Skip":	false,
+																	"WeightedPrefabPaths":	[{
+																			"$NodeId":	"WeightedPath.Prefab.Prop-0f6784f9-c2a7-40ed-9cfa-34478811dbc9",
+																			"Path":	"City/Buildings/Tall/City_Buildings_Tall_L_001.prefab.json",
+																			"Weight":	1
+																		}],
+																	"LegacyPath":	false,
+																	"LoadEntities":	true,
+																	"MoldingDirection":	"NONE",
+																	"MoldingChildren":	false
+																},
+																"Rotation":	{
+																	"$NodeId":	"OrthogonalRotation-2d95e8a5-a455-4e8a-8c0a-bb32d8e7c6c1",
+																	"Yaw":	"TwoSeventy",
+																	"Pitch":	"None",
+																	"Roll":	"None"
+																}
+															}
+														},
+														"Weight":	1
+													}]
+											}]
+									},
+									"Rotations":	[]
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-b7296ca7-083c-46a2-9ef4-b0ce8c75df9b",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-12f0e73a-c117-4d9e-a91e-cc6234e8f84a",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-92abd1e5-105a-415a-82c6-923917908a10",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-22f7f695-2034-4b93-afe6-4af02db05aa6",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-78a575f0-a41c-40bb-bca5-4c7210ce0d07",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-57e0a70d-9255-499d-8ef3-aa400fe049d3",
+									"Type":	"Origin",
+									"Skip":	false
+								}
+							}
+						}
+					}, {
+						"$NodeId":	"Weight.Weighted.Assignments-d3eb1126-0bec-4eb3-a22e-55f57c037787",
+						"Weight":	2,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-4ecef757-f3a8-4afe-bace-322b84467a89",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-c18f80dc-e8c1-443c-8f8a-8c5c744e00b8",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"RandomRotator.Prop-aa96d4dd-e3ce-4683-a65f-4ae511f63871",
+									"Type":	"RandomRotator",
+									"Skip":	false,
+									"Seed":	"Y",
+									"HorizontalRotations":	true,
+									"Prop":	{
+										"$NodeId":	"Prefab.Prop-eb59b10b-b6f9-4263-b7d5-9acae7d0aebe",
+										"Type":	"Prefab",
+										"Skip":	false,
+										"WeightedPrefabPaths":	[{
+												"$NodeId":	"WeightedPath.Prefab.Prop-91ea5298-ebda-4bad-b3aa-6618e2c196d4",
+												"Path":	"City/Buildings/Tall/City_Buildings_Tall_2x2_001.prefab.json",
+												"Weight":	1
+											}],
+										"LegacyPath":	false,
+										"LoadEntities":	true,
+										"MoldingDirection":	"NONE",
+										"MoldingChildren":	false
+									},
+									"Rotations":	[]
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-2a900885-fa44-4c62-bb57-f7073c61734c",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-53b566ee-289f-4d6f-99c4-445454a95abd",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-1227d0a7-7cf2-4712-af8e-150d02d7c63c",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-8abeb595-28e5-4f9a-98b2-97fb16987897",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-a8afc381-956d-42db-b87d-7204b2b08958",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-bc4eae68-5e88-410a-a989-a299591ec24d",
+									"Type":	"Origin",
+									"Skip":	false
+								}
+							}
+						}
+					}]
 			}
 		}, {
-			"$NodeId":	"Weight.Weighted.Assignments-d3eb1126-0bec-4eb3-a22e-55f57c037787",
-			"Weight":	1,
+			"$NodeId":	"Delimiter.FieldFunction.Assignments-c68eac0e-ca43-4bd4-9f07-89a30806d263",
+			"Max":	0.45,
+			"Min":	0.3,
 			"Assignments":	{
-				"$NodeId":	"Constant.Assignments-4ecef757-f3a8-4afe-bace-322b84467a89",
+				"$NodeId":	"Constant.Assignments-c224e285-d382-4449-b7e2-1f66235f2694",
 				"Type":	"Constant",
 				"Prop":	{
-					"$NodeId":	"Locator.Prop-c18f80dc-e8c1-443c-8f8a-8c5c744e00b8",
+					"$NodeId":	"Locator.Prop-53eff8db-03b5-4032-9e38-7cc6a1d7ce25",
 					"Type":	"Locator",
 					"Skip":	false,
 					"PlacementCap":	1,
 					"Prop":	{
-						"$NodeId":	"RandomRotator.Prop-aa96d4dd-e3ce-4683-a65f-4ae511f63871",
-						"Type":	"RandomRotator",
+						"$NodeId":	"StaticRotator.Prop-6b9c61e6-4533-4130-8085-fec1830f1dea",
+						"Type":	"StaticRotator",
 						"Skip":	false,
-						"Seed":	"Y",
-						"HorizontalRotations":	true,
 						"Prop":	{
-							"$NodeId":	"Prefab.Prop-eb59b10b-b6f9-4263-b7d5-9acae7d0aebe",
+							"$NodeId":	"Prefab.Prop-f7917640-6b87-4b2a-8bd7-1c332c6b3905",
 							"Type":	"Prefab",
 							"Skip":	false,
 							"WeightedPrefabPaths":	[{
-									"$NodeId":	"WeightedPath.Prefab.Prop-91ea5298-ebda-4bad-b3aa-6618e2c196d4",
-									"Path":	"City/Buildings/Tall/City_Buildings_Tall_2x2_001.prefab.json",
+									"$NodeId":	"WeightedPath.Prefab.Prop-20a766b6-6c9a-492e-ba5f-e3592f216a10",
+									"Path":	"City/Roads/Courtyards",
 									"Weight":	1
 								}],
 							"LegacyPath":	false,
@@ -1296,39 +1398,233 @@
 							"MoldingDirection":	"NONE",
 							"MoldingChildren":	false
 						},
-						"Rotations":	[]
+						"Rotation":	{
+							"$NodeId":	"OrthogonalRotation-6a474ca4-14eb-480e-a828-d6ba757b706c",
+							"Yaw":	"None",
+							"Pitch":	"None",
+							"Roll":	"None"
+						}
 					},
 					"Pattern":	{
-						"$NodeId":	"Floor.Pattern-2a900885-fa44-4c62-bb57-f7073c61734c",
+						"$NodeId":	"Floor.Pattern-22e6ad36-a576-49aa-b135-e1a38c9e1de5",
 						"Type":	"Floor",
 						"Skip":	false,
 						"Origin":	{
-							"$NodeId":	"BlockType.Pattern-53b566ee-289f-4d6f-99c4-445454a95abd",
+							"$NodeId":	"BlockType.Pattern-bdb448c4-cc07-4dc0-8bad-3029cdd4ba7e",
 							"Type":	"BlockType",
 							"Skip":	false,
 							"Material":	{
-								"$NodeId":	"Material-1227d0a7-7cf2-4712-af8e-150d02d7c63c",
+								"$NodeId":	"Material-a2009e84-4d75-4973-a2b8-efc3f54a7c10",
 								"Solid":	"Empty",
 								"SolidBottomUp":	false
 							}
 						},
 						"Floor":	{
-							"$NodeId":	"BlockType.Pattern-8abeb595-28e5-4f9a-98b2-97fb16987897",
+							"$NodeId":	"BlockType.Pattern-7c030c72-2e11-4548-afb4-df25664c08c8",
 							"Type":	"BlockType",
 							"Skip":	false,
 							"Material":	{
-								"$NodeId":	"Material-a8afc381-956d-42db-b87d-7204b2b08958",
+								"$NodeId":	"Material-ddd6998b-8147-4f4b-bdd0-864538389142",
 								"Solid":	"Rock_Stone",
 								"SolidBottomUp":	false
 							}
 						}
 					},
 					"Scanner":	{
-						"$NodeId":	"Origin.Scanner-bc4eae68-5e88-410a-a989-a299591ec24d",
+						"$NodeId":	"Origin.Scanner-f8da4a14-14a6-434b-86d1-6552378a58e0",
 						"Type":	"Origin",
 						"Skip":	false
 					}
 				}
+			}
+		}, {
+			"$NodeId":	"Delimiter.FieldFunction.Assignments-40c6baa2-f859-4b4d-8e7d-c71955f1dcc3",
+			"Max":	1,
+			"Min":	0.45,
+			"Assignments":	{
+				"$NodeId":	"Weighted.Assignments-5f35e6ab-d819-4050-8049-b029737444e3",
+				"Type":	"Weighted",
+				"SkipChance":	0,
+				"Seed":	"B",
+				"WeightedAssignments":	[{
+						"$NodeId":	"Weight.Weighted.Assignments-44910a2a-b578-413a-92bf-e587dd1e516b",
+						"Weight":	1,
+						"Assignments":	{
+							"$NodeId":	"Constant.Assignments-41680a51-4c73-464e-8804-9f75947e6095",
+							"Type":	"Constant",
+							"Prop":	{
+								"$NodeId":	"Locator.Prop-12fc3bd3-eaf8-4195-ac98-74f556f00881",
+								"Type":	"Locator",
+								"Skip":	false,
+								"PlacementCap":	1,
+								"Prop":	{
+									"$NodeId":	"DensitySelector.Prop-2fe79a19-c67b-4bfd-a3e5-f2c2fdbe7e0f",
+									"Type":	"DensitySelector",
+									"Skip":	false,
+									"Delimiters":	[{
+											"$NodeId":	"Delimiter.DensitySelector.Prop-3b7761d4-d04c-40c6-981c-8ab9925c79a8",
+											"Prop":	{
+												"$NodeId":	"Union.Prop-15f44e43-1052-4b0d-ae00-9217596d8f73",
+												"Type":	"Union",
+												"ExportAs":	"BigBuildings",
+												"Skip":	false,
+												"Props":	[{
+														"$NodeId":	"Offset.Prop-052c6e4d-c238-4091-92b6-25afa1bce389",
+														"Type":	"Offset",
+														"Skip":	false,
+														"Offset":	{
+															"$NodeId":	"Point3D-b8a82f72-7e15-47b8-bbd2-ef17da99db33",
+															"X":	0,
+															"Y":	0,
+															"Z":	0
+														},
+														"Prop":	{
+															"$NodeId":	"Prefab.Prop-d787cc34-a2bb-4f25-84b9-14ae08eba8ff",
+															"Type":	"Prefab",
+															"Skip":	false,
+															"WeightedPrefabPaths":	[{
+																	"$NodeId":	"WeightedPath.Prefab.Prop-79116424-e4fd-4214-bd34-b8650ed1abbd",
+																	"Path":	"City/Buildings/Multi/City_Buildings_Multi_2x2_001_1-4.prefab.json",
+																	"Weight":	1
+																}],
+															"LegacyPath":	false,
+															"LoadEntities":	true,
+															"MoldingDirection":	"NONE",
+															"MoldingChildren":	false
+														}
+													}, {
+														"$NodeId":	"Offset.Prop-088dc979-72e7-48ff-9a0c-de9add3446e1",
+														"Type":	"Offset",
+														"Skip":	false,
+														"Offset":	{
+															"$NodeId":	"Point3D-94adbd12-caf8-45c5-b0ec-19e148ce4c90",
+															"X":	1,
+															"Y":	0,
+															"Z":	0
+														},
+														"Prop":	{
+															"$NodeId":	"Prefab.Prop-5a7ff02c-50d7-4231-a37a-29fb40be81b5",
+															"Type":	"Prefab",
+															"Skip":	false,
+															"WeightedPrefabPaths":	[{
+																	"$NodeId":	"WeightedPath.Prefab.Prop-096da4a9-f796-4dd4-8b06-01e493d4db04",
+																	"Path":	"City/Buildings/Multi/City_Buildings_Multi_2x2_001_2-4.prefab.json",
+																	"Weight":	1
+																}],
+															"LegacyPath":	false,
+															"LoadEntities":	true,
+															"MoldingDirection":	"NONE",
+															"MoldingChildren":	false
+														}
+													}, {
+														"$NodeId":	"Offset.Prop-4e4bb6c7-9849-4775-a4d3-2e54458cbf58",
+														"Type":	"Offset",
+														"Skip":	false,
+														"Offset":	{
+															"$NodeId":	"Point3D-26ee6355-1dd9-4d5c-b04d-f5706f45375b",
+															"X":	0,
+															"Y":	0,
+															"Z":	1
+														},
+														"Prop":	{
+															"$NodeId":	"Prefab.Prop-94fa9aeb-179a-46ac-b43f-ddf0564daad0",
+															"Type":	"Prefab",
+															"Skip":	false,
+															"WeightedPrefabPaths":	[{
+																	"$NodeId":	"WeightedPath.Prefab.Prop-3c9ab1ed-f204-4621-8bc2-107569b73a3f",
+																	"Path":	"City/Buildings/Multi/City_Buildings_Multi_2x2_001_3-4.prefab.json",
+																	"Weight":	1
+																}],
+															"LegacyPath":	false,
+															"LoadEntities":	true,
+															"MoldingDirection":	"NONE",
+															"MoldingChildren":	false
+														}
+													}, {
+														"$NodeId":	"Offset.Prop-15a70f77-05ba-498c-94da-7b3dcacafc86",
+														"Type":	"Offset",
+														"Skip":	false,
+														"Offset":	{
+															"$NodeId":	"Point3D-7d02a40e-68e5-4d6f-a104-0c0f1d8f1e82",
+															"X":	1,
+															"Y":	0,
+															"Z":	1
+														},
+														"Prop":	{
+															"$NodeId":	"Prefab.Prop-d4ee07d6-7a51-46bb-a5ab-e4a25595f876",
+															"Type":	"Prefab",
+															"Skip":	false,
+															"WeightedPrefabPaths":	[{
+																	"$NodeId":	"WeightedPath.Prefab.Prop-65b71b72-8105-4611-935d-e3699f1a0425",
+																	"Path":	"City/Buildings/Multi/City_Buildings_Multi_2x2_001_4-4.prefab.json",
+																	"Weight":	1
+																}],
+															"LegacyPath":	false,
+															"LoadEntities":	true,
+															"MoldingDirection":	"NONE",
+															"MoldingChildren":	false
+														}
+													}]
+											},
+											"Range":	{
+												"$NodeId":	"Decimal.Range-5e34292c-2c65-40dd-96b0-dfabb9bd6b03",
+												"MinInclusive":	0,
+												"MaxExclusive":	0.2
+											}
+										}, {
+											"$NodeId":	"Delimiter.DensitySelector.Prop-25d13bdd-d25a-4ef2-be49-287bcb936ac4",
+											"Prop":	{
+												"$NodeId":	"Imported.Prop-a33ba3e3-b6ba-4f51-abac-23a4caa153c6",
+												"Type":	"Imported",
+												"Name":	"BigBuildings",
+												"Skip":	false
+											},
+											"Range":	{
+												"$NodeId":	"Decimal.Range-b0369b4f-d79a-422b-b99d-33a671f64a21",
+												"MinInclusive":	0.6,
+												"MaxExclusive":	0.8
+											}
+										}],
+									"Density":	{
+										"$NodeId":	"ImportedDensityNode-f0c96ead-8449-4036-b39b-b6f971de9f54",
+										"Type":	"Imported",
+										"Skip":	false,
+										"Name":	"City_Assignment_Density"
+									}
+								},
+								"Pattern":	{
+									"$NodeId":	"Floor.Pattern-1acda01b-b537-4761-a15c-3722d320602d",
+									"Type":	"Floor",
+									"Skip":	false,
+									"Origin":	{
+										"$NodeId":	"BlockType.Pattern-5539f755-ad68-44fc-97ae-580afa8fac3e",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-25c51cb7-b509-4286-8a29-e835c3fd2521",
+											"Solid":	"Empty",
+											"SolidBottomUp":	false
+										}
+									},
+									"Floor":	{
+										"$NodeId":	"BlockType.Pattern-7bc68e0f-c91f-4c0f-b261-90ae3b2af9ac",
+										"Type":	"BlockType",
+										"Skip":	false,
+										"Material":	{
+											"$NodeId":	"Material-85f39deb-ac52-44ec-8e49-d4cb39e4ce39",
+											"Solid":	"Rock_Stone",
+											"SolidBottomUp":	false
+										}
+									}
+								},
+								"Scanner":	{
+									"$NodeId":	"Origin.Scanner-6bde6479-4d8b-4cf4-9a52-9d768b381f1f",
+									"Type":	"Origin",
+									"Skip":	false
+								}
+							}
+						}
+					}]
 			}
 		}],
 	"$NodeEditorMetadata":	{
@@ -1337,367 +1633,318 @@
 				"$Position":	{
 					"$x":	-3164,
 					"$y":	5020
-				},
-				"$Title":	"[ROOT] Weighted Assignments"
-			},
-			"Weight.Weighted.Assignments-9fa6e5b7-aca4-4ff1-9be2-5850f7346289":	{
-				"$Position":	{
-					"$x":	857,
-					"$y":	5050
-				}
-			},
-			"Constant.Assignments-ddb0ef47-187f-4cf6-8d34-a9e235561c68":	{
-				"$Position":	{
-					"$x":	1419,
-					"$y":	5050
-				}
-			},
-			"Locator.Prop-82c72a4e-43c0-46c7-9690-759bd8411faf":	{
-				"$Position":	{
-					"$x":	2135,
-					"$y":	4985
-				}
-			},
-			"RandomRotator.Prop-470123ed-ad15-4d50-b8bf-47716f8df1d6":	{
-				"$Position":	{
-					"$x":	2823,
-					"$y":	4786
-				}
-			},
-			"Prefab.Prop-3ff904f6-0c79-4f26-ac8a-494683f9555b":	{
-				"$Position":	{
-					"$x":	4249,
-					"$y":	4150
-				}
-			},
-			"WeightedPath.Prefab.Prop-1845f16e-1753-4a78-9ecb-fca452310b8b":	{
-				"$Position":	{
-					"$x":	4149,
-					"$y":	4010
-				}
-			},
-			"Floor.Pattern-312b27c5-559c-4d30-bbb0-a6b9878dcc38":	{
-				"$Position":	{
-					"$x":	2810,
-					"$y":	5259
-				}
-			},
-			"BlockType.Pattern-f2aca8bc-e6e9-4749-b935-381f01b7153b":	{
-				"$Position":	{
-					"$x":	3464,
-					"$y":	5260
-				}
-			},
-			"Material-0d318069-42d7-4c54-aeeb-600ae1f319a4":	{
-				"$Position":	{
-					"$x":	4082,
-					"$y":	5259
-				}
-			},
-			"BlockType.Pattern-f9e69781-4b92-4c73-840f-aef0bb8f5362":	{
-				"$Position":	{
-					"$x":	3464,
-					"$y":	5405
-				}
-			},
-			"Material-54d323eb-8f8e-48b2-9dcb-6526a24a408a":	{
-				"$Position":	{
-					"$x":	4084,
-					"$y":	5408
-				}
-			},
-			"Origin.Scanner-b0cfc056-3bc2-4ab4-b5f6-2c558400141d":	{
-				"$Position":	{
-					"$x":	2813,
-					"$y":	5404
 				}
 			},
 			"Weight.Weighted.Assignments-c67a4e66-7d07-49f1-aff5-1a1d6ba6d1a1":	{
 				"$Position":	{
-					"$x":	925,
-					"$y":	-1029
+					"$x":	891,
+					"$y":	-1035
 				}
 			},
 			"Constant.Assignments-0ca85dfa-3aee-4e5f-807c-0a4de4bb8055":	{
 				"$Position":	{
-					"$x":	1495,
-					"$y":	-1027
+					"$x":	1424,
+					"$y":	-1034
 				}
 			},
 			"Locator.Prop-61e11371-bef1-48a0-90ca-c1c9442032f2":	{
 				"$Position":	{
-					"$x":	2122,
-					"$y":	-1029
+					"$x":	2088,
+					"$y":	-1035
 				}
 			},
 			"RandomRotator.Prop-c704bb93-626e-4482-9686-859dac846065":	{
 				"$Position":	{
-					"$x":	2779,
-					"$y":	-1457
-				}
-			},
-			"Prefab.Prop-4c46ab9a-2691-45fa-b465-396a8f8bec3a":	{
-				"$Position":	{
-					"$x":	4063,
-					"$y":	-1916
-				}
-			},
-			"WeightedPath.Prefab.Prop-d50c2832-e653-4306-a219-d205ff89524c":	{
-				"$Position":	{
-					"$x":	3959,
-					"$y":	-2058
-				}
-			},
-			"Floor.Pattern-dc553fcc-3f38-4abd-974e-c1f3aa27cf9a":	{
-				"$Position":	{
-					"$x":	2821,
-					"$y":	-845
-				}
-			},
-			"BlockType.Pattern-e807baad-b5b0-410a-a8fa-9dce076e9a0b":	{
-				"$Position":	{
-					"$x":	3450,
-					"$y":	-846
-				}
-			},
-			"Material-d100ac2f-fbff-4c97-831a-1204553d06ae":	{
-				"$Position":	{
-					"$x":	4068,
-					"$y":	-847
-				}
-			},
-			"BlockType.Pattern-4b7efade-aca7-40d0-96b6-49878cab7ada":	{
-				"$Position":	{
-					"$x":	3450,
-					"$y":	-701
-				}
-			},
-			"Material-79318886-a408-4517-9805-7ef73623f780":	{
-				"$Position":	{
-					"$x":	4070,
-					"$y":	-698
-				}
-			},
-			"Origin.Scanner-490538e6-2e99-45b9-aca9-91a8f4646225":	{
-				"$Position":	{
-					"$x":	2824,
-					"$y":	-700
-				}
-			},
-			"Weight.Weighted.Assignments-3036d30e-825d-48d8-96eb-4ff758a6e325":	{
-				"$Position":	{
-					"$x":	810,
-					"$y":	7841
-				}
-			},
-			"Constant.Assignments-dddcea1c-4de9-4cbc-bddf-e8e879b5c255":	{
-				"$Position":	{
-					"$x":	1388,
-					"$y":	7840
-				}
-			},
-			"Locator.Prop-03d70567-d3a1-422c-9007-cfc35b996fa5":	{
-				"$Position":	{
-					"$x":	2056,
-					"$y":	7833
-				}
-			},
-			"Prefab.Prop-e63f8551-8e2e-41ab-a033-3b23e4244673":	{
-				"$Position":	{
-					"$x":	4117,
-					"$y":	7056
-				}
-			},
-			"WeightedPath.Prefab.Prop-b7fff0b3-9cd7-4d94-88c9-f3af41ef72ca":	{
-				"$Position":	{
-					"$x":	4032,
-					"$y":	6922
-				}
-			},
-			"Floor.Pattern-b7296ca7-083c-46a2-9ef4-b0ce8c75df9b":	{
-				"$Position":	{
-					"$x":	2730,
-					"$y":	8227
-				}
-			},
-			"BlockType.Pattern-12f0e73a-c117-4d9e-a91e-cc6234e8f84a":	{
-				"$Position":	{
-					"$x":	3517,
-					"$y":	8124
-				}
-			},
-			"Material-92abd1e5-105a-415a-82c6-923917908a10":	{
-				"$Position":	{
-					"$x":	4135,
-					"$y":	8123
-				}
-			},
-			"BlockType.Pattern-22f7f695-2034-4b93-afe6-4af02db05aa6":	{
-				"$Position":	{
-					"$x":	3517,
-					"$y":	8269
-				}
-			},
-			"Material-78a575f0-a41c-40bb-bca5-4c7210ce0d07":	{
-				"$Position":	{
-					"$x":	4137,
-					"$y":	8272
-				}
-			},
-			"Origin.Scanner-57e0a70d-9255-499d-8ef3-aa400fe049d3":	{
-				"$Position":	{
-					"$x":	2733,
-					"$y":	8372
+					"$x":	2745,
+					"$y":	-1463
 				}
 			},
 			"Union.Prop-95d4082f-bee7-4507-a64c-050df86ef5ad":	{
 				"$Position":	{
-					"$x":	3434,
-					"$y":	-1445
+					"$x":	3400,
+					"$y":	-1451
 				}
 			},
-			"RandomRotator.Prop-a1c5bb60-39ae-4411-a9d1-1069d6ef8583":	{
+			"Prefab.Prop-4c46ab9a-2691-45fa-b465-396a8f8bec3a":	{
 				"$Position":	{
-					"$x":	6853,
-					"$y":	-3122
+					"$x":	4029,
+					"$y":	-1922
 				}
 			},
-			"Prefab.Prop-a01c04d9-5f70-45b0-814d-ac56383f7f9c":	{
+			"WeightedPath.Prefab.Prop-d50c2832-e653-4306-a219-d205ff89524c":	{
 				"$Position":	{
-					"$x":	7502,
-					"$y":	-3204
+					"$x":	3925,
+					"$y":	-2064
 				}
 			},
-			"WeightedPath.Prefab.Prop-dfac9dbf-e228-402f-acde-13e0a165f052":	{
+			"Weighted.Prop-4090cdd1-4435-456a-ba89-20dacd00828f":	{
 				"$Position":	{
-					"$x":	8301,
-					"$y":	-3206
+					"$x":	4130,
+					"$y":	-1467
+				}
+			},
+			"Entry.Weighted.Prop-1f71af1f-aa81-46cd-9521-dcc4b00f7cb1":	{
+				"$Position":	{
+					"$x":	5192,
+					"$y":	-1565
+				}
+			},
+			"Queue.Prop-8c1b2e75-5bf1-40b5-9bb3-c1cc96bbe2db":	{
+				"$Position":	{
+					"$x":	5869,
+					"$y":	-2582
 				}
 			},
 			"Offset.Prop-e3d50af0-1a72-4ee8-98bb-669ac25a7844":	{
 				"$Position":	{
-					"$x":	6201,
-					"$y":	-3163
+					"$x":	6674,
+					"$y":	-3206
 				}
 			},
 			"Point3D-f217b56f-7ea5-4650-8a38-6604f246dad2":	{
 				"$Position":	{
-					"$x":	6853,
-					"$y":	-3303
+					"$x":	7326,
+					"$y":	-3346
 				}
 			},
-			"OrthogonalRotation-e2ee37cf-abb6-4b01-8f70-bb0365e409b2":	{
+			"RandomRotator.Prop-a1c5bb60-39ae-4411-a9d1-1069d6ef8583":	{
 				"$Position":	{
-					"$x":	7503,
-					"$y":	-2901
+					"$x":	7322,
+					"$y":	-3163
+				}
+			},
+			"Prefab.Prop-a01c04d9-5f70-45b0-814d-ac56383f7f9c":	{
+				"$Position":	{
+					"$x":	7971,
+					"$y":	-3247
+				}
+			},
+			"WeightedPath.Prefab.Prop-dfac9dbf-e228-402f-acde-13e0a165f052":	{
+				"$Position":	{
+					"$x":	8770,
+					"$y":	-3249
 				}
 			},
 			"Offset.Prop-9ed8a082-54a9-4227-a814-4a96f1478f5a":	{
 				"$Position":	{
-					"$x":	6200,
-					"$y":	-2668
+					"$x":	6667,
+					"$y":	-2711
 				}
 			},
 			"Point3D-cf89f434-7daf-497b-a393-deebb02ac40f":	{
 				"$Position":	{
-					"$x":	6852,
-					"$y":	-2808
+					"$x":	7319,
+					"$y":	-2851
 				}
 			},
 			"RandomRotator.Prop-b2fd260a-1159-458b-850b-7653e8215187":	{
 				"$Position":	{
-					"$x":	6851,
-					"$y":	-2627
+					"$x":	7318,
+					"$y":	-2670
 				}
 			},
 			"Prefab.Prop-9d44b289-1ea6-44b3-b654-a9e3feb25054":	{
 				"$Position":	{
-					"$x":	7501,
-					"$y":	-2709
+					"$x":	7968,
+					"$y":	-2752
 				}
 			},
 			"WeightedPath.Prefab.Prop-b62933cc-5c9b-413d-93f7-4d97d52995ad":	{
 				"$Position":	{
-					"$x":	8299,
-					"$y":	-2711
+					"$x":	8766,
+					"$y":	-2754
 				}
 			},
 			"OrthogonalRotation-2d30aa67-c098-4aca-9e24-7ea201855464":	{
 				"$Position":	{
-					"$x":	7502,
-					"$y":	-2406
+					"$x":	7969,
+					"$y":	-2449
 				}
 			},
 			"Offset.Prop-7d130d60-448a-423c-8cbb-40fe1a017e60":	{
 				"$Position":	{
-					"$x":	6204,
-					"$y":	-2178
+					"$x":	6671,
+					"$y":	-2221
 				}
 			},
 			"Point3D-e405b5a8-227e-4a62-a141-99d0b64a8786":	{
 				"$Position":	{
-					"$x":	6856,
-					"$y":	-2318
+					"$x":	7323,
+					"$y":	-2361
 				}
 			},
 			"RandomRotator.Prop-891232a2-7201-4fa5-a838-ea8b0a91a613":	{
 				"$Position":	{
-					"$x":	6855,
-					"$y":	-2137
+					"$x":	7322,
+					"$y":	-2180
 				}
 			},
 			"Prefab.Prop-d468a054-eda4-4907-9262-72399c8f9582":	{
 				"$Position":	{
-					"$x":	7505,
-					"$y":	-2219
+					"$x":	7972,
+					"$y":	-2262
 				}
 			},
 			"WeightedPath.Prefab.Prop-d8accbe5-ece7-4b53-b31c-17dccf420977":	{
 				"$Position":	{
-					"$x":	8303,
-					"$y":	-2221
+					"$x":	8770,
+					"$y":	-2264
 				}
 			},
 			"OrthogonalRotation-4515ccf9-f73c-4fc5-8f33-b99c8af7edc9":	{
 				"$Position":	{
-					"$x":	7506,
-					"$y":	-1916
+					"$x":	7973,
+					"$y":	-1959
 				}
 			},
 			"Offset.Prop-7f3ab6be-de9e-4f4d-b733-fd0c40827412":	{
 				"$Position":	{
-					"$x":	6208,
-					"$y":	-1684
+					"$x":	6675,
+					"$y":	-1727
 				}
 			},
 			"Point3D-f5efd5d6-4bf9-4808-90b3-6d90c33825e8":	{
 				"$Position":	{
-					"$x":	6860,
-					"$y":	-1824
+					"$x":	7327,
+					"$y":	-1867
 				}
 			},
 			"RandomRotator.Prop-8d755383-833d-4442-a1d5-9a5c7eebc6aa":	{
 				"$Position":	{
-					"$x":	6859,
-					"$y":	-1643
+					"$x":	7326,
+					"$y":	-1686
 				}
 			},
 			"Prefab.Prop-8150e12f-128d-4243-a227-18f7cfdf5a2d":	{
 				"$Position":	{
-					"$x":	7509,
-					"$y":	-1725
+					"$x":	7976,
+					"$y":	-1768
 				}
 			},
 			"WeightedPath.Prefab.Prop-a6e5e9fe-bb27-47f6-8041-738201e114de":	{
 				"$Position":	{
-					"$x":	8307,
-					"$y":	-1727
+					"$x":	8774,
+					"$y":	-1770
 				}
 			},
 			"OrthogonalRotation-fb74d999-b834-4d15-ab57-65052d6532fa":	{
 				"$Position":	{
-					"$x":	7510,
-					"$y":	-1422
+					"$x":	7977,
+					"$y":	-1465
+				}
+			},
+			"Entry.Weighted.Prop-41765cbd-0d72-4af4-98cb-747fa7b9d6e6":	{
+				"$Position":	{
+					"$x":	5195,
+					"$y":	-1303
+				}
+			},
+			"Queue.Prop-463c3763-36d4-4937-bbc6-4c16464d3ccf":	{
+				"$Position":	{
+					"$x":	5850,
+					"$y":	-1019
+				}
+			},
+			"Offset.Prop-ecd4627d-f05b-4539-a175-c53402eb10d1":	{
+				"$Position":	{
+					"$x":	6670,
+					"$y":	-1241
+				}
+			},
+			"Point3D-8509d7ec-b0a3-4e51-a9fe-51c7b6a4f34a":	{
+				"$Position":	{
+					"$x":	7322,
+					"$y":	-1381
+				}
+			},
+			"RandomRotator.Prop-0298bde1-3d61-46f2-990b-dafe2a52e820":	{
+				"$Position":	{
+					"$x":	7321,
+					"$y":	-1200
+				}
+			},
+			"Prefab.Prop-176b8a38-9004-484a-af09-e934eba49bfe":	{
+				"$Position":	{
+					"$x":	7971,
+					"$y":	-1282
+				}
+			},
+			"WeightedPath.Prefab.Prop-63d51b9a-89e7-4191-ae91-621acae7e8c1":	{
+				"$Position":	{
+					"$x":	8769,
+					"$y":	-1284
+				}
+			},
+			"OrthogonalRotation-5201d006-cc75-40be-a6bf-54f8dffdc93a":	{
+				"$Position":	{
+					"$x":	7972,
+					"$y":	-979
+				}
+			},
+			"Offset.Prop-53396a31-41a3-4e2c-b9bc-f405f14246e5":	{
+				"$Position":	{
+					"$x":	6674,
+					"$y":	-747
+				}
+			},
+			"Point3D-c9cc5586-e607-4d50-be9c-1636bc3e9df4":	{
+				"$Position":	{
+					"$x":	7326,
+					"$y":	-887
+				}
+			},
+			"RandomRotator.Prop-d90ecdf9-3b7a-4715-b1a9-e437d77efd1e":	{
+				"$Position":	{
+					"$x":	7325,
+					"$y":	-706
+				}
+			},
+			"Prefab.Prop-6d484f9d-d3bb-4403-8233-004b076b3b18":	{
+				"$Position":	{
+					"$x":	7975,
+					"$y":	-788
+				}
+			},
+			"WeightedPath.Prefab.Prop-f2203b77-9b26-4fee-851e-2078b869434a":	{
+				"$Position":	{
+					"$x":	8773,
+					"$y":	-790
+				}
+			},
+			"OrthogonalRotation-ed2cc886-60e8-4f5e-8f13-0dc7f55e332e":	{
+				"$Position":	{
+					"$x":	7976,
+					"$y":	-485
+				}
+			},
+			"Floor.Pattern-dc553fcc-3f38-4abd-974e-c1f3aa27cf9a":	{
+				"$Position":	{
+					"$x":	2787,
+					"$y":	-851
+				}
+			},
+			"BlockType.Pattern-e807baad-b5b0-410a-a8fa-9dce076e9a0b":	{
+				"$Position":	{
+					"$x":	3416,
+					"$y":	-852
+				}
+			},
+			"Material-d100ac2f-fbff-4c97-831a-1204553d06ae":	{
+				"$Position":	{
+					"$x":	4034,
+					"$y":	-853
+				}
+			},
+			"BlockType.Pattern-4b7efade-aca7-40d0-96b6-49878cab7ada":	{
+				"$Position":	{
+					"$x":	3416,
+					"$y":	-707
+				}
+			},
+			"Material-79318886-a408-4517-9805-7ef73623f780":	{
+				"$Position":	{
+					"$x":	4042,
+					"$y":	-704
 				}
 			},
 			"Weight.Weighted.Assignments-be207949-146f-40ab-b474-39f85d231659":	{
@@ -1718,15 +1965,15 @@
 					"$y":	1561
 				}
 			},
-			"Union.Prop-e1a864a6-7889-4f69-b55e-d31df43627f8":	{
-				"$Position":	{
-					"$x":	3431,
-					"$y":	1144
-				}
-			},
 			"RandomRotator.Prop-1324fe33-241c-4655-9a01-423d17a4ffcd":	{
 				"$Position":	{
 					"$x":	2779,
+					"$y":	1144
+				}
+			},
+			"Union.Prop-e1a864a6-7889-4f69-b55e-d31df43627f8":	{
+				"$Position":	{
+					"$x":	3431,
 					"$y":	1144
 				}
 			},
@@ -1922,112 +2169,52 @@
 					"$y":	1890
 				}
 			},
-			"Weighted.Prop-4090cdd1-4435-456a-ba89-20dacd00828f":	{
+			"Weight.Weighted.Assignments-9fa6e5b7-aca4-4ff1-9be2-5850f7346289":	{
 				"$Position":	{
-					"$x":	4085,
-					"$y":	-1444
+					"$x":	857,
+					"$y":	5050
 				}
 			},
-			"Entry.Weighted.Prop-1f71af1f-aa81-46cd-9521-dcc4b00f7cb1":	{
+			"Constant.Assignments-ddb0ef47-187f-4cf6-8d34-a9e235561c68":	{
 				"$Position":	{
-					"$x":	4725,
-					"$y":	-1522
+					"$x":	1419,
+					"$y":	5050
 				}
 			},
-			"Entry.Weighted.Prop-41765cbd-0d72-4af4-98cb-747fa7b9d6e6":	{
+			"Locator.Prop-82c72a4e-43c0-46c7-9690-759bd8411faf":	{
 				"$Position":	{
-					"$x":	4728,
-					"$y":	-1260
+					"$x":	2135,
+					"$y":	4985
 				}
 			},
-			"Queue.Prop-8c1b2e75-5bf1-40b5-9bb3-c1cc96bbe2db":	{
+			"RandomRotator.Prop-470123ed-ad15-4d50-b8bf-47716f8df1d6":	{
 				"$Position":	{
-					"$x":	5402,
-					"$y":	-2539
-				}
-			},
-			"Queue.Prop-463c3763-36d4-4937-bbc6-4c16464d3ccf":	{
-				"$Position":	{
-					"$x":	5383,
-					"$y":	-976
-				}
-			},
-			"Offset.Prop-ecd4627d-f05b-4539-a175-c53402eb10d1":	{
-				"$Position":	{
-					"$x":	6203,
-					"$y":	-1198
-				}
-			},
-			"Point3D-8509d7ec-b0a3-4e51-a9fe-51c7b6a4f34a":	{
-				"$Position":	{
-					"$x":	6855,
-					"$y":	-1338
-				}
-			},
-			"RandomRotator.Prop-0298bde1-3d61-46f2-990b-dafe2a52e820":	{
-				"$Position":	{
-					"$x":	6854,
-					"$y":	-1157
-				}
-			},
-			"Prefab.Prop-176b8a38-9004-484a-af09-e934eba49bfe":	{
-				"$Position":	{
-					"$x":	7504,
-					"$y":	-1239
-				}
-			},
-			"WeightedPath.Prefab.Prop-63d51b9a-89e7-4191-ae91-621acae7e8c1":	{
-				"$Position":	{
-					"$x":	8302,
-					"$y":	-1241
-				}
-			},
-			"OrthogonalRotation-5201d006-cc75-40be-a6bf-54f8dffdc93a":	{
-				"$Position":	{
-					"$x":	7505,
-					"$y":	-936
-				}
-			},
-			"Offset.Prop-53396a31-41a3-4e2c-b9bc-f405f14246e5":	{
-				"$Position":	{
-					"$x":	6207,
-					"$y":	-704
-				}
-			},
-			"Point3D-c9cc5586-e607-4d50-be9c-1636bc3e9df4":	{
-				"$Position":	{
-					"$x":	6859,
-					"$y":	-844
-				}
-			},
-			"RandomRotator.Prop-d90ecdf9-3b7a-4715-b1a9-e437d77efd1e":	{
-				"$Position":	{
-					"$x":	6858,
-					"$y":	-663
-				}
-			},
-			"Prefab.Prop-6d484f9d-d3bb-4403-8233-004b076b3b18":	{
-				"$Position":	{
-					"$x":	7508,
-					"$y":	-745
-				}
-			},
-			"WeightedPath.Prefab.Prop-f2203b77-9b26-4fee-851e-2078b869434a":	{
-				"$Position":	{
-					"$x":	8306,
-					"$y":	-747
-				}
-			},
-			"OrthogonalRotation-ed2cc886-60e8-4f5e-8f13-0dc7f55e332e":	{
-				"$Position":	{
-					"$x":	7509,
-					"$y":	-442
+					"$x":	2823,
+					"$y":	4786
 				}
 			},
 			"Union.Prop-337b8f74-5d8d-4af7-9158-769c392d92be":	{
 				"$Position":	{
 					"$x":	3534,
 					"$y":	4732
+				}
+			},
+			"Prefab.Prop-3ff904f6-0c79-4f26-ac8a-494683f9555b":	{
+				"$Position":	{
+					"$x":	4249,
+					"$y":	4150
+				}
+			},
+			"WeightedPath.Prefab.Prop-1845f16e-1753-4a78-9ecb-fca452310b8b":	{
+				"$Position":	{
+					"$x":	4149,
+					"$y":	4010
+				}
+			},
+			"Queue.Prop-1301f25c-8a46-464c-aaf8-281cf344c7bf":	{
+				"$Position":	{
+					"$x":	4410,
+					"$y":	4726
 				}
 			},
 			"Queue.Prop-06de3d9e-54ab-46d1-b9cd-97af217f1f38":	{
@@ -2108,6 +2295,24 @@
 					"$y":	3659
 				}
 			},
+			"Weighted.Prop-6dc1ee1f-1ec5-4b5b-8897-1333ff8acf32":	{
+				"$Position":	{
+					"$x":	5193,
+					"$y":	4721
+				}
+			},
+			"Entry.Weighted.Prop-0266ab97-5e6a-401b-8ee2-1da0e4368afa":	{
+				"$Position":	{
+					"$x":	5979,
+					"$y":	4161
+				}
+			},
+			"Queue.Prop-bde622d0-99aa-426a-8dfc-eec67e1551c2":	{
+				"$Position":	{
+					"$x":	6410,
+					"$y":	4159
+				}
+			},
 			"Offset.Prop-8b4937be-0d7f-4689-86b2-58cfbcd7bc9c":	{
 				"$Position":	{
 					"$x":	7217,
@@ -2180,10 +2385,10 @@
 					"$y":	4643
 				}
 			},
-			"Queue.Prop-1301f25c-8a46-464c-aaf8-281cf344c7bf":	{
+			"Entry.Weighted.Prop-df1f526a-02e2-4d3f-be1c-27a855d3c37f":	{
 				"$Position":	{
-					"$x":	4410,
-					"$y":	4726
+					"$x":	5987,
+					"$y":	4893
 				}
 			},
 			"Offset.Prop-f5afff5e-69e5-41ac-95fd-445883b03641":	{
@@ -2222,424 +2427,502 @@
 					"$y":	5154
 				}
 			},
-			"Weighted.Prop-6dc1ee1f-1ec5-4b5b-8897-1333ff8acf32":	{
+			"Floor.Pattern-312b27c5-559c-4d30-bbb0-a6b9878dcc38":	{
 				"$Position":	{
-					"$x":	5193,
-					"$y":	4721
+					"$x":	2810,
+					"$y":	5259
 				}
 			},
-			"Entry.Weighted.Prop-0266ab97-5e6a-401b-8ee2-1da0e4368afa":	{
+			"BlockType.Pattern-f2aca8bc-e6e9-4749-b935-381f01b7153b":	{
 				"$Position":	{
-					"$x":	5979,
-					"$y":	4161
+					"$x":	3464,
+					"$y":	5260
 				}
 			},
-			"Queue.Prop-bde622d0-99aa-426a-8dfc-eec67e1551c2":	{
+			"Material-0d318069-42d7-4c54-aeeb-600ae1f319a4":	{
 				"$Position":	{
-					"$x":	6410,
-					"$y":	4159
+					"$x":	4082,
+					"$y":	5259
 				}
 			},
-			"Entry.Weighted.Prop-df1f526a-02e2-4d3f-be1c-27a855d3c37f":	{
+			"BlockType.Pattern-f9e69781-4b92-4c73-840f-aef0bb8f5362":	{
 				"$Position":	{
-					"$x":	5987,
-					"$y":	4893
+					"$x":	3464,
+					"$y":	5405
+				}
+			},
+			"Material-54d323eb-8f8e-48b2-9dcb-6526a24a408a":	{
+				"$Position":	{
+					"$x":	4084,
+					"$y":	5408
+				}
+			},
+			"Origin.Scanner-b0cfc056-3bc2-4ab4-b5f6-2c558400141d":	{
+				"$Position":	{
+					"$x":	2813,
+					"$y":	5404
+				}
+			},
+			"Weight.Weighted.Assignments-3036d30e-825d-48d8-96eb-4ff758a6e325":	{
+				"$Position":	{
+					"$x":	853,
+					"$y":	7841
+				}
+			},
+			"Constant.Assignments-dddcea1c-4de9-4cbc-bddf-e8e879b5c255":	{
+				"$Position":	{
+					"$x":	1431,
+					"$y":	7840
+				}
+			},
+			"Locator.Prop-03d70567-d3a1-422c-9007-cfc35b996fa5":	{
+				"$Position":	{
+					"$x":	2099,
+					"$y":	7833
 				}
 			},
 			"RandomRotator.Prop-9edac0d2-e006-4bff-8ca2-27cbf3881099":	{
 				"$Position":	{
-					"$x":	2700,
+					"$x":	2743,
 					"$y":	7688
 				}
 			},
 			"Union.Prop-6a874415-0595-4c63-b5e1-a572f5704baa":	{
 				"$Position":	{
-					"$x":	3474,
+					"$x":	3517,
 					"$y":	7655
-				}
-			},
-			"Queue.Prop-13a29810-1d2b-4c72-8178-e771ddb06251":	{
-				"$Position":	{
-					"$x":	6621,
-					"$y":	7078
-				}
-			},
-			"Offset.Prop-26702dbc-69cb-4f05-8656-68850e177c8d":	{
-				"$Position":	{
-					"$x":	7424,
-					"$y":	6577
-				}
-			},
-			"Point3D-377e0211-3de9-4f64-a318-f8b353e762fa":	{
-				"$Position":	{
-					"$x":	8076,
-					"$y":	6437
-				}
-			},
-			"RandomRotator.Prop-b8803dd0-9f3e-4007-bdb5-17cf0cad2a81":	{
-				"$Position":	{
-					"$x":	8076,
-					"$y":	6618
-				}
-			},
-			"Prefab.Prop-1bb05573-f010-48fd-ba19-3ccfcaab2c83":	{
-				"$Position":	{
-					"$x":	8725,
-					"$y":	6536
-				}
-			},
-			"WeightedPath.Prefab.Prop-4325f5ee-4a4d-4176-a8ec-d279252cf1f5":	{
-				"$Position":	{
-					"$x":	9524,
-					"$y":	6534
-				}
-			},
-			"OrthogonalRotation-8857824e-44d2-4b57-90d1-f1c78eca5590":	{
-				"$Position":	{
-					"$x":	8726,
-					"$y":	6839
-				}
-			},
-			"Offset.Prop-7306369b-099a-4f43-9e57-0647512f3633":	{
-				"$Position":	{
-					"$x":	7423,
-					"$y":	7072
-				}
-			},
-			"Point3D-440b4e02-eda5-483b-acfd-19050b71b4fc":	{
-				"$Position":	{
-					"$x":	8075,
-					"$y":	6932
-				}
-			},
-			"RandomRotator.Prop-255a7c78-72e6-4efd-b104-02531f6eefa9":	{
-				"$Position":	{
-					"$x":	8074,
-					"$y":	7113
-				}
-			},
-			"Prefab.Prop-3fdd6ff3-d914-491d-81b8-0c04ddfd7368":	{
-				"$Position":	{
-					"$x":	8724,
-					"$y":	7031
-				}
-			},
-			"WeightedPath.Prefab.Prop-8615536d-2349-4489-a836-64c8d2fe3d9f":	{
-				"$Position":	{
-					"$x":	9522,
-					"$y":	7029
-				}
-			},
-			"OrthogonalRotation-145b145f-f675-4771-8401-690dabda88ac":	{
-				"$Position":	{
-					"$x":	8725,
-					"$y":	7334
-				}
-			},
-			"Offset.Prop-f42adaa8-21df-42c5-84e7-ad51b274c53f":	{
-				"$Position":	{
-					"$x":	7427,
-					"$y":	7562
-				}
-			},
-			"Point3D-f1ac9f13-7fe3-4430-9d3a-f59131fd1030":	{
-				"$Position":	{
-					"$x":	8079,
-					"$y":	7422
-				}
-			},
-			"RandomRotator.Prop-d2a3129b-98ea-4661-ba9a-22099c103539":	{
-				"$Position":	{
-					"$x":	8078,
-					"$y":	7603
-				}
-			},
-			"Prefab.Prop-95140258-28ff-402b-8452-3befc85811fa":	{
-				"$Position":	{
-					"$x":	8728,
-					"$y":	7521
-				}
-			},
-			"WeightedPath.Prefab.Prop-29c21101-d01c-4617-aede-7e2f1b436cda":	{
-				"$Position":	{
-					"$x":	9526,
-					"$y":	7519
-				}
-			},
-			"OrthogonalRotation-039ac535-1f37-4c42-b1e8-a60215d9c04b":	{
-				"$Position":	{
-					"$x":	8729,
-					"$y":	7824
-				}
-			},
-			"Weighted.Prop-b9dc4f79-2c5d-44ac-abdf-77a7dd4534fe":	{
-				"$Position":	{
-					"$x":	4563,
-					"$y":	7652
-				}
-			},
-			"Entry.Weighted.Prop-7ce067ad-3fae-4bd2-9b9a-947da84d8fda":	{
-				"$Position":	{
-					"$x":	6173,
-					"$y":	7074
-				}
-			},
-			"Entry.Weighted.Prop-2354da0a-0895-47d7-9093-79e1c959268d":	{
-				"$Position":	{
-					"$x":	6181,
-					"$y":	8932
-				}
-			},
-			"Queue.Prop-d53e5574-2fd0-46b8-8eea-52dc1cec2b23":	{
-				"$Position":	{
-					"$x":	7858,
-					"$y":	8420
-				}
-			},
-			"Offset.Prop-6a2911b2-1e89-40c0-b86f-ebea976595ca":	{
-				"$Position":	{
-					"$x":	8637,
-					"$y":	9770
-				}
-			},
-			"Point3D-384dc1a7-b396-41af-8671-4301dcf2aca5":	{
-				"$Position":	{
-					"$x":	9289,
-					"$y":	9630
-				}
-			},
-			"RandomRotator.Prop-a657a9b7-272b-41fc-8f01-0931bdb39a44":	{
-				"$Position":	{
-					"$x":	9289,
-					"$y":	9811
-				}
-			},
-			"Prefab.Prop-8d1d4a83-9b8e-49a2-a3bb-f37853f823aa":	{
-				"$Position":	{
-					"$x":	9938,
-					"$y":	9729
-				}
-			},
-			"WeightedPath.Prefab.Prop-89ce1af8-25e4-46dc-a47b-e778f7b5f350":	{
-				"$Position":	{
-					"$x":	10737,
-					"$y":	9727
-				}
-			},
-			"OrthogonalRotation-8027147f-ca23-465f-a1c7-b22e93943e2c":	{
-				"$Position":	{
-					"$x":	9939,
-					"$y":	10032
-				}
-			},
-			"Offset.Prop-66ca94da-50b0-49ac-85ac-7b760d68f69e":	{
-				"$Position":	{
-					"$x":	8650,
-					"$y":	8667
-				}
-			},
-			"Point3D-ea19cca2-194e-49c4-a124-fe95169f6a86":	{
-				"$Position":	{
-					"$x":	9302,
-					"$y":	8527
-				}
-			},
-			"RandomRotator.Prop-84a89e8b-96a7-4eda-9f45-701ee0e97389":	{
-				"$Position":	{
-					"$x":	9301,
-					"$y":	8708
-				}
-			},
-			"Prefab.Prop-1a73904f-e7b6-462b-82b8-e8c5b278e622":	{
-				"$Position":	{
-					"$x":	9951,
-					"$y":	8626
-				}
-			},
-			"WeightedPath.Prefab.Prop-fdc45fc8-867b-4a99-ba46-30618a76c6cd":	{
-				"$Position":	{
-					"$x":	10749,
-					"$y":	8624
-				}
-			},
-			"OrthogonalRotation-451354ca-f737-4871-baa1-13f3b04f4fa5":	{
-				"$Position":	{
-					"$x":	9952,
-					"$y":	8929
 				}
 			},
 			"Offset.Prop-12f7fc58-48ef-46cf-ab62-0f2601279856":	{
 				"$Position":	{
-					"$x":	6129,
+					"$x":	6172,
 					"$y":	6051
 				}
 			},
 			"Point3D-9df94536-aa70-4896-b3c5-23de8fa7c281":	{
 				"$Position":	{
-					"$x":	6781,
+					"$x":	6824,
 					"$y":	5911
 				}
 			},
 			"RandomRotator.Prop-b0e0887b-ccf1-4274-ac59-1ab7e73f903d":	{
 				"$Position":	{
-					"$x":	6780,
+					"$x":	6823,
 					"$y":	6092
 				}
 			},
 			"Prefab.Prop-37d6caa4-3d68-469f-8b76-bfa43607911c":	{
 				"$Position":	{
-					"$x":	7430,
+					"$x":	7473,
 					"$y":	6010
 				}
 			},
 			"WeightedPath.Prefab.Prop-090645c0-c41d-4b7b-904b-1d4150087e1e":	{
 				"$Position":	{
-					"$x":	8228,
+					"$x":	8271,
 					"$y":	6008
 				}
 			},
 			"OrthogonalRotation-dbce4763-54d7-4735-b1eb-7014a1e11e40":	{
 				"$Position":	{
-					"$x":	7431,
+					"$x":	7474,
 					"$y":	6313
+				}
+			},
+			"Prefab.Prop-e63f8551-8e2e-41ab-a033-3b23e4244673":	{
+				"$Position":	{
+					"$x":	4160,
+					"$y":	7056
+				}
+			},
+			"WeightedPath.Prefab.Prop-b7fff0b3-9cd7-4d94-88c9-f3af41ef72ca":	{
+				"$Position":	{
+					"$x":	4075,
+					"$y":	6922
+				}
+			},
+			"Weighted.Prop-b9dc4f79-2c5d-44ac-abdf-77a7dd4534fe":	{
+				"$Position":	{
+					"$x":	4606,
+					"$y":	7652
+				}
+			},
+			"Entry.Weighted.Prop-7ce067ad-3fae-4bd2-9b9a-947da84d8fda":	{
+				"$Position":	{
+					"$x":	6216,
+					"$y":	7074
+				}
+			},
+			"Queue.Prop-13a29810-1d2b-4c72-8178-e771ddb06251":	{
+				"$Position":	{
+					"$x":	6664,
+					"$y":	7078
+				}
+			},
+			"Offset.Prop-26702dbc-69cb-4f05-8656-68850e177c8d":	{
+				"$Position":	{
+					"$x":	7467,
+					"$y":	6577
+				}
+			},
+			"Point3D-377e0211-3de9-4f64-a318-f8b353e762fa":	{
+				"$Position":	{
+					"$x":	8119,
+					"$y":	6437
+				}
+			},
+			"RandomRotator.Prop-b8803dd0-9f3e-4007-bdb5-17cf0cad2a81":	{
+				"$Position":	{
+					"$x":	8119,
+					"$y":	6618
+				}
+			},
+			"Prefab.Prop-1bb05573-f010-48fd-ba19-3ccfcaab2c83":	{
+				"$Position":	{
+					"$x":	8768,
+					"$y":	6536
+				}
+			},
+			"WeightedPath.Prefab.Prop-4325f5ee-4a4d-4176-a8ec-d279252cf1f5":	{
+				"$Position":	{
+					"$x":	9567,
+					"$y":	6534
+				}
+			},
+			"OrthogonalRotation-8857824e-44d2-4b57-90d1-f1c78eca5590":	{
+				"$Position":	{
+					"$x":	8769,
+					"$y":	6839
+				}
+			},
+			"Offset.Prop-7306369b-099a-4f43-9e57-0647512f3633":	{
+				"$Position":	{
+					"$x":	7466,
+					"$y":	7072
+				}
+			},
+			"Point3D-440b4e02-eda5-483b-acfd-19050b71b4fc":	{
+				"$Position":	{
+					"$x":	8118,
+					"$y":	6932
+				}
+			},
+			"RandomRotator.Prop-255a7c78-72e6-4efd-b104-02531f6eefa9":	{
+				"$Position":	{
+					"$x":	8117,
+					"$y":	7113
+				}
+			},
+			"Prefab.Prop-3fdd6ff3-d914-491d-81b8-0c04ddfd7368":	{
+				"$Position":	{
+					"$x":	8767,
+					"$y":	7031
+				}
+			},
+			"WeightedPath.Prefab.Prop-8615536d-2349-4489-a836-64c8d2fe3d9f":	{
+				"$Position":	{
+					"$x":	9565,
+					"$y":	7029
+				}
+			},
+			"OrthogonalRotation-145b145f-f675-4771-8401-690dabda88ac":	{
+				"$Position":	{
+					"$x":	8768,
+					"$y":	7334
+				}
+			},
+			"Offset.Prop-f42adaa8-21df-42c5-84e7-ad51b274c53f":	{
+				"$Position":	{
+					"$x":	7470,
+					"$y":	7562
+				}
+			},
+			"Point3D-f1ac9f13-7fe3-4430-9d3a-f59131fd1030":	{
+				"$Position":	{
+					"$x":	8122,
+					"$y":	7422
+				}
+			},
+			"RandomRotator.Prop-d2a3129b-98ea-4661-ba9a-22099c103539":	{
+				"$Position":	{
+					"$x":	8121,
+					"$y":	7603
+				}
+			},
+			"Prefab.Prop-95140258-28ff-402b-8452-3befc85811fa":	{
+				"$Position":	{
+					"$x":	8771,
+					"$y":	7521
+				}
+			},
+			"WeightedPath.Prefab.Prop-29c21101-d01c-4617-aede-7e2f1b436cda":	{
+				"$Position":	{
+					"$x":	9569,
+					"$y":	7519
+				}
+			},
+			"OrthogonalRotation-039ac535-1f37-4c42-b1e8-a60215d9c04b":	{
+				"$Position":	{
+					"$x":	8772,
+					"$y":	7824
+				}
+			},
+			"Entry.Weighted.Prop-2354da0a-0895-47d7-9093-79e1c959268d":	{
+				"$Position":	{
+					"$x":	6224,
+					"$y":	8932
 				}
 			},
 			"Weighted.Prop-464f8972-af54-4377-a284-201575e47812":	{
 				"$Position":	{
-					"$x":	6642,
+					"$x":	6685,
 					"$y":	8927
 				}
 			},
 			"Entry.Weighted.Prop-7cf326be-21b5-45fd-9b1a-a27bdd274b30":	{
 				"$Position":	{
-					"$x":	7366,
+					"$x":	7409,
 					"$y":	8420
 				}
 			},
-			"Entry.Weighted.Prop-af563b6f-ba53-429e-b31d-0367cf2d93ad":	{
+			"Queue.Prop-d53e5574-2fd0-46b8-8eea-52dc1cec2b23":	{
 				"$Position":	{
-					"$x":	7359,
-					"$y":	9500
-				}
-			},
-			"Offset.Prop-17383483-096d-4f11-8cd7-0ec9af3f5d2b":	{
-				"$Position":	{
-					"$x":	8654,
-					"$y":	9274
-				}
-			},
-			"Point3D-6f750426-ff02-441e-9631-7a26b61a3105":	{
-				"$Position":	{
-					"$x":	9306,
-					"$y":	9134
-				}
-			},
-			"RandomRotator.Prop-098b79c2-ad91-4a37-8102-8e099c9f81d0":	{
-				"$Position":	{
-					"$x":	9305,
-					"$y":	9315
-				}
-			},
-			"Prefab.Prop-8543ca80-44f4-44ce-8956-356b975f3182":	{
-				"$Position":	{
-					"$x":	9955,
-					"$y":	9233
-				}
-			},
-			"WeightedPath.Prefab.Prop-cb3e3c22-bc96-4e84-aafd-318c20c85c8a":	{
-				"$Position":	{
-					"$x":	10753,
-					"$y":	9231
-				}
-			},
-			"OrthogonalRotation-dc40ef1b-2adb-4f4e-b3d1-a9021614d202":	{
-				"$Position":	{
-					"$x":	9956,
-					"$y":	9536
-				}
-			},
-			"Queue.Prop-ea0f4afa-3dcf-48a9-abb2-783a8640458e":	{
-				"$Position":	{
-					"$x":	7867,
-					"$y":	9502
+					"$x":	7901,
+					"$y":	8420
 				}
 			},
 			"Offset.Prop-ccf26109-0caf-4f98-bf86-9042879a12ae":	{
 				"$Position":	{
-					"$x":	8650,
+					"$x":	8693,
 					"$y":	8172
 				}
 			},
 			"Point3D-6b36f030-775e-41e9-8b89-2a26770fe4e1":	{
 				"$Position":	{
-					"$x":	9302,
+					"$x":	9345,
 					"$y":	8032
 				}
 			},
 			"RandomRotator.Prop-17862d01-7cae-429a-a731-adfff42fd64a":	{
 				"$Position":	{
-					"$x":	9301,
+					"$x":	9344,
 					"$y":	8213
 				}
 			},
 			"Prefab.Prop-8d063b9d-da3e-458d-b39f-0a642a167227":	{
 				"$Position":	{
-					"$x":	9951,
+					"$x":	9994,
 					"$y":	8131
 				}
 			},
 			"WeightedPath.Prefab.Prop-5e6a6ba1-603f-4f3a-bcfa-5836020adc72":	{
 				"$Position":	{
-					"$x":	10749,
+					"$x":	10792,
 					"$y":	8129
 				}
 			},
 			"OrthogonalRotation-95682428-2aaa-47f5-8a70-f5574ce456c2":	{
 				"$Position":	{
-					"$x":	9952,
+					"$x":	9995,
 					"$y":	8434
+				}
+			},
+			"Offset.Prop-66ca94da-50b0-49ac-85ac-7b760d68f69e":	{
+				"$Position":	{
+					"$x":	8693,
+					"$y":	8667
+				}
+			},
+			"Point3D-ea19cca2-194e-49c4-a124-fe95169f6a86":	{
+				"$Position":	{
+					"$x":	9345,
+					"$y":	8527
+				}
+			},
+			"RandomRotator.Prop-84a89e8b-96a7-4eda-9f45-701ee0e97389":	{
+				"$Position":	{
+					"$x":	9344,
+					"$y":	8708
+				}
+			},
+			"Prefab.Prop-1a73904f-e7b6-462b-82b8-e8c5b278e622":	{
+				"$Position":	{
+					"$x":	9994,
+					"$y":	8626
+				}
+			},
+			"WeightedPath.Prefab.Prop-fdc45fc8-867b-4a99-ba46-30618a76c6cd":	{
+				"$Position":	{
+					"$x":	10792,
+					"$y":	8624
+				}
+			},
+			"OrthogonalRotation-451354ca-f737-4871-baa1-13f3b04f4fa5":	{
+				"$Position":	{
+					"$x":	9995,
+					"$y":	8929
+				}
+			},
+			"Entry.Weighted.Prop-af563b6f-ba53-429e-b31d-0367cf2d93ad":	{
+				"$Position":	{
+					"$x":	7402,
+					"$y":	9500
+				}
+			},
+			"Queue.Prop-ea0f4afa-3dcf-48a9-abb2-783a8640458e":	{
+				"$Position":	{
+					"$x":	7910,
+					"$y":	9502
+				}
+			},
+			"Offset.Prop-17383483-096d-4f11-8cd7-0ec9af3f5d2b":	{
+				"$Position":	{
+					"$x":	8697,
+					"$y":	9274
+				}
+			},
+			"Point3D-6f750426-ff02-441e-9631-7a26b61a3105":	{
+				"$Position":	{
+					"$x":	9349,
+					"$y":	9134
+				}
+			},
+			"RandomRotator.Prop-098b79c2-ad91-4a37-8102-8e099c9f81d0":	{
+				"$Position":	{
+					"$x":	9348,
+					"$y":	9315
+				}
+			},
+			"Prefab.Prop-8543ca80-44f4-44ce-8956-356b975f3182":	{
+				"$Position":	{
+					"$x":	9998,
+					"$y":	9233
+				}
+			},
+			"WeightedPath.Prefab.Prop-cb3e3c22-bc96-4e84-aafd-318c20c85c8a":	{
+				"$Position":	{
+					"$x":	10796,
+					"$y":	9231
+				}
+			},
+			"OrthogonalRotation-dc40ef1b-2adb-4f4e-b3d1-a9021614d202":	{
+				"$Position":	{
+					"$x":	9999,
+					"$y":	9536
+				}
+			},
+			"Offset.Prop-6a2911b2-1e89-40c0-b86f-ebea976595ca":	{
+				"$Position":	{
+					"$x":	8680,
+					"$y":	9770
+				}
+			},
+			"Point3D-384dc1a7-b396-41af-8671-4301dcf2aca5":	{
+				"$Position":	{
+					"$x":	9332,
+					"$y":	9630
+				}
+			},
+			"RandomRotator.Prop-a657a9b7-272b-41fc-8f01-0931bdb39a44":	{
+				"$Position":	{
+					"$x":	9332,
+					"$y":	9811
+				}
+			},
+			"Prefab.Prop-8d1d4a83-9b8e-49a2-a3bb-f37853f823aa":	{
+				"$Position":	{
+					"$x":	9981,
+					"$y":	9729
+				}
+			},
+			"WeightedPath.Prefab.Prop-89ce1af8-25e4-46dc-a47b-e778f7b5f350":	{
+				"$Position":	{
+					"$x":	10780,
+					"$y":	9727
+				}
+			},
+			"OrthogonalRotation-8027147f-ca23-465f-a1c7-b22e93943e2c":	{
+				"$Position":	{
+					"$x":	9982,
+					"$y":	10032
 				}
 			},
 			"Entry.Weighted.Prop-2b3e7ce8-24da-46bd-9a81-4298359099e8":	{
 				"$Position":	{
-					"$x":	6140,
+					"$x":	6183,
 					"$y":	10848
-				}
-			},
-			"Prefab.Prop-19800326-3ace-4621-9205-8b1c1078dcc5":	{
-				"$Position":	{
-					"$x":	7919,
-					"$y":	10670
 				}
 			},
 			"Offset.Prop-2e4dafdb-eaa8-48b4-a783-c9b022b4fa22":	{
 				"$Position":	{
-					"$x":	6592,
+					"$x":	6635,
 					"$y":	10849
 				}
 			},
 			"Point3D-555d4fb4-8ce8-4169-a5c3-8025a1455910":	{
 				"$Position":	{
-					"$x":	7244,
+					"$x":	7287,
 					"$y":	10709
 				}
 			},
 			"StaticRotator.Prop-8e2c4cf8-c6d2-4fb6-b4e4-e602c591059a":	{
 				"$Position":	{
-					"$x":	7244,
+					"$x":	7287,
 					"$y":	10912
 				}
 			},
-			"OrthogonalRotation-2d95e8a5-a455-4e8a-8c0a-bb32d8e7c6c1":	{
+			"Prefab.Prop-19800326-3ace-4621-9205-8b1c1078dcc5":	{
 				"$Position":	{
-					"$x":	7921,
-					"$y":	10983
+					"$x":	7962,
+					"$y":	10670
 				}
 			},
 			"WeightedPath.Prefab.Prop-0f6784f9-c2a7-40ed-9cfa-34478811dbc9":	{
 				"$Position":	{
-					"$x":	8731,
+					"$x":	8774,
 					"$y":	10671
+				}
+			},
+			"OrthogonalRotation-2d95e8a5-a455-4e8a-8c0a-bb32d8e7c6c1":	{
+				"$Position":	{
+					"$x":	7964,
+					"$y":	10983
+				}
+			},
+			"Floor.Pattern-b7296ca7-083c-46a2-9ef4-b0ce8c75df9b":	{
+				"$Position":	{
+					"$x":	2773,
+					"$y":	8227
+				}
+			},
+			"BlockType.Pattern-12f0e73a-c117-4d9e-a91e-cc6234e8f84a":	{
+				"$Position":	{
+					"$x":	3560,
+					"$y":	8124
+				}
+			},
+			"Material-92abd1e5-105a-415a-82c6-923917908a10":	{
+				"$Position":	{
+					"$x":	4178,
+					"$y":	8123
+				}
+			},
+			"BlockType.Pattern-22f7f695-2034-4b93-afe6-4af02db05aa6":	{
+				"$Position":	{
+					"$x":	3560,
+					"$y":	8269
+				}
+			},
+			"Material-78a575f0-a41c-40bb-bca5-4c7210ce0d07":	{
+				"$Position":	{
+					"$x":	4180,
+					"$y":	8272
+				}
+			},
+			"Origin.Scanner-57e0a70d-9255-499d-8ef3-aa400fe049d3":	{
+				"$Position":	{
+					"$x":	2776,
+					"$y":	8372
 				}
 			},
 			"Weight.Weighted.Assignments-d3eb1126-0bec-4eb3-a22e-55f57c037787":	{
@@ -2713,9 +2996,373 @@
 					"$x":	2831,
 					"$y":	12473
 				}
+			},
+			"FieldFunction.Assignments-1868047f-1681-405c-8f8c-be743d7bc969":	{
+				"$Position":	{
+					"$x":	-4893,
+					"$y":	4995
+				},
+				"$Title":	"[ROOT] FieldFunction Assignments"
+			},
+			"Delimiter.FieldFunction.Assignments-de1eb2b2-f3da-4467-99bc-5d0f5c14db96":	{
+				"$Position":	{
+					"$x":	-3904,
+					"$y":	5000
+				}
+			},
+			"Delimiter.FieldFunction.Assignments-40c6baa2-f859-4b4d-8e7d-c71955f1dcc3":	{
+				"$Position":	{
+					"$x":	-107,
+					"$y":	17853
+				}
+			},
+			"Weighted.Assignments-5f35e6ab-d819-4050-8049-b029737444e3":	{
+				"$Position":	{
+					"$x":	481,
+					"$y":	17854
+				}
+			},
+			"Weight.Weighted.Assignments-44910a2a-b578-413a-92bf-e587dd1e516b":	{
+				"$Position":	{
+					"$x":	1261,
+					"$y":	17853
+				}
+			},
+			"Constant.Assignments-41680a51-4c73-464e-8804-9f75947e6095":	{
+				"$Position":	{
+					"$x":	1771,
+					"$y":	17859
+				}
+			},
+			"Union.Prop-15f44e43-1052-4b0d-ae00-9217596d8f73":	{
+				"$Position":	{
+					"$x":	4221,
+					"$y":	17362
+				}
+			},
+			"DensitySelector.Prop-2fe79a19-c67b-4bfd-a3e5-f2c2fdbe7e0f":	{
+				"$Position":	{
+					"$x":	3096,
+					"$y":	17855
+				}
+			},
+			"ImportedDensityNode-f0c96ead-8449-4036-b39b-b6f971de9f54":	{
+				"$Position":	{
+					"$x":	3797,
+					"$y":	18015
+				}
+			},
+			"Delimiter.DensitySelector.Prop-3b7761d4-d04c-40c6-981c-8ab9925c79a8":	{
+				"$Position":	{
+					"$x":	3804,
+					"$y":	17469
+				}
+			},
+			"Decimal.Range-5e34292c-2c65-40dd-96b0-dfabb9bd6b03":	{
+				"$Position":	{
+					"$x":	4223,
+					"$y":	17510
+				}
+			},
+			"Offset.Prop-052c6e4d-c238-4091-92b6-25afa1bce389":	{
+				"$Position":	{
+					"$x":	4949,
+					"$y":	16163
+				}
+			},
+			"Point3D-b8a82f72-7e15-47b8-bbd2-ef17da99db33":	{
+				"$Position":	{
+					"$x":	5598,
+					"$y":	15814
+				}
+			},
+			"Prefab.Prop-d787cc34-a2bb-4f25-84b9-14ae08eba8ff":	{
+				"$Position":	{
+					"$x":	6241,
+					"$y":	15843
+				}
+			},
+			"WeightedPath.Prefab.Prop-79116424-e4fd-4214-bd34-b8650ed1abbd":	{
+				"$Position":	{
+					"$x":	7031,
+					"$y":	15843
+				}
+			},
+			"Locator.Prop-12fc3bd3-eaf8-4195-ac98-74f556f00881":	{
+				"$Position":	{
+					"$x":	2441,
+					"$y":	17856
+				}
+			},
+			"Floor.Pattern-1acda01b-b537-4761-a15c-3722d320602d":	{
+				"$Position":	{
+					"$x":	3101,
+					"$y":	18004
+				}
+			},
+			"BlockType.Pattern-5539f755-ad68-44fc-97ae-580afa8fac3e":	{
+				"$Position":	{
+					"$x":	3794,
+					"$y":	18201
+				}
+			},
+			"Material-25c51cb7-b509-4286-8a29-e835c3fd2521":	{
+				"$Position":	{
+					"$x":	4412,
+					"$y":	18200
+				}
+			},
+			"BlockType.Pattern-7bc68e0f-c91f-4c0f-b261-90ae3b2af9ac":	{
+				"$Position":	{
+					"$x":	3794,
+					"$y":	18346
+				}
+			},
+			"Material-85f39deb-ac52-44ec-8e49-d4cb39e4ce39":	{
+				"$Position":	{
+					"$x":	4417,
+					"$y":	18340
+				}
+			},
+			"Origin.Scanner-6bde6479-4d8b-4cf4-9a52-9d768b381f1f":	{
+				"$Position":	{
+					"$x":	3094,
+					"$y":	18151
+				}
+			},
+			"Offset.Prop-088dc979-72e7-48ff-9a0c-de9add3446e1":	{
+				"$Position":	{
+					"$x":	4962,
+					"$y":	16663
+				}
+			},
+			"Point3D-94adbd12-caf8-45c5-b0ec-19e148ce4c90":	{
+				"$Position":	{
+					"$x":	5602,
+					"$y":	16488
+				}
+			},
+			"Prefab.Prop-5a7ff02c-50d7-4231-a37a-29fb40be81b5":	{
+				"$Position":	{
+					"$x":	6253,
+					"$y":	16343
+				}
+			},
+			"WeightedPath.Prefab.Prop-096da4a9-f796-4dd4-8b06-01e493d4db04":	{
+				"$Position":	{
+					"$x":	7044,
+					"$y":	16343
+				}
+			},
+			"OrthogonalRotation-5829306c-e2e9-4a1c-a7bf-8398bb48ab16":	{
+				"$Position":	{
+					"$x":	6256,
+					"$y":	16644
+				}
+			},
+			"Offset.Prop-4e4bb6c7-9849-4775-a4d3-2e54458cbf58":	{
+				"$Position":	{
+					"$x":	4962,
+					"$y":	17173
+				}
+			},
+			"Point3D-26ee6355-1dd9-4d5c-b04d-f5706f45375b":	{
+				"$Position":	{
+					"$x":	5602,
+					"$y":	16998
+				}
+			},
+			"Prefab.Prop-94fa9aeb-179a-46ac-b43f-ddf0564daad0":	{
+				"$Position":	{
+					"$x":	6253,
+					"$y":	16853
+				}
+			},
+			"WeightedPath.Prefab.Prop-3c9ab1ed-f204-4621-8bc2-107569b73a3f":	{
+				"$Position":	{
+					"$x":	7044,
+					"$y":	16853
+				}
+			},
+			"OrthogonalRotation-daea5dae-6e78-4103-b004-9477c01b104c":	{
+				"$Position":	{
+					"$x":	6256,
+					"$y":	17154
+				}
+			},
+			"Offset.Prop-15a70f77-05ba-498c-94da-7b3dcacafc86":	{
+				"$Position":	{
+					"$x":	4961,
+					"$y":	17680
+				}
+			},
+			"Point3D-7d02a40e-68e5-4d6f-a104-0c0f1d8f1e82":	{
+				"$Position":	{
+					"$x":	5601,
+					"$y":	17505
+				}
+			},
+			"Prefab.Prop-d4ee07d6-7a51-46bb-a5ab-e4a25595f876":	{
+				"$Position":	{
+					"$x":	6252,
+					"$y":	17360
+				}
+			},
+			"WeightedPath.Prefab.Prop-65b71b72-8105-4611-935d-e3699f1a0425":	{
+				"$Position":	{
+					"$x":	7043,
+					"$y":	17360
+				}
+			},
+			"OrthogonalRotation-341bd788-7b0a-4798-9670-33816202656c":	{
+				"$Position":	{
+					"$x":	6255,
+					"$y":	17661
+				}
+			},
+			"Delimiter.FieldFunction.Assignments-c68eac0e-ca43-4bd4-9f07-89a30806d263":	{
+				"$Position":	{
+					"$x":	-13,
+					"$y":	14375
+				}
+			},
+			"Constant.Assignments-c224e285-d382-4449-b7e2-1f66235f2694":	{
+				"$Position":	{
+					"$x":	482,
+					"$y":	14398
+				}
+			},
+			"Locator.Prop-53eff8db-03b5-4032-9e38-7cc6a1d7ce25":	{
+				"$Position":	{
+					"$x":	1152,
+					"$y":	14394
+				}
+			},
+			"Floor.Pattern-22e6ad36-a576-49aa-b135-e1a38c9e1de5":	{
+				"$Position":	{
+					"$x":	1802,
+					"$y":	14592
+				}
+			},
+			"BlockType.Pattern-bdb448c4-cc07-4dc0-8bad-3029cdd4ba7e":	{
+				"$Position":	{
+					"$x":	2457,
+					"$y":	14580
+				}
+			},
+			"Material-a2009e84-4d75-4973-a2b8-efc3f54a7c10":	{
+				"$Position":	{
+					"$x":	3075,
+					"$y":	14579
+				}
+			},
+			"BlockType.Pattern-7c030c72-2e11-4548-afb4-df25664c08c8":	{
+				"$Position":	{
+					"$x":	2457,
+					"$y":	14725
+				}
+			},
+			"Material-ddd6998b-8147-4f4b-bdd0-864538389142":	{
+				"$Position":	{
+					"$x":	3077,
+					"$y":	14728
+				}
+			},
+			"Origin.Scanner-f8da4a14-14a6-434b-86d1-6552378a58e0":	{
+				"$Position":	{
+					"$x":	1805,
+					"$y":	14737
+				}
+			},
+			"StaticRotator.Prop-6b9c61e6-4533-4130-8085-fec1830f1dea":	{
+				"$Position":	{
+					"$x":	1810,
+					"$y":	14298
+				}
+			},
+			"OrthogonalRotation-6a474ca4-14eb-480e-a828-d6ba757b706c":	{
+				"$Position":	{
+					"$x":	2454,
+					"$y":	14394
+				}
+			},
+			"Prefab.Prop-f7917640-6b87-4b2a-8bd7-1c332c6b3905":	{
+				"$Position":	{
+					"$x":	2457,
+					"$y":	14081
+				}
+			},
+			"WeightedPath.Prefab.Prop-20a766b6-6c9a-492e-ba5f-e3592f216a10":	{
+				"$Position":	{
+					"$x":	3300,
+					"$y":	13944
+				}
+			},
+			"Origin.Scanner-354673fc-ee0e-4e44-9dd6-dcc93d38d082":	{
+				"$Position":	{
+					"$x":	2788,
+					"$y":	-695
+				}
+			},
+			"OrthogonalRotation-e2ee37cf-abb6-4b01-8f70-bb0365e409b2":	{
+				"$Position":	{
+					"$x":	7972,
+					"$y":	-2942
+				}
+			},
+			"Decimal.Range-b0369b4f-d79a-422b-b99d-33a671f64a21":	{
+				"$Position":	{
+					"$x":	4232,
+					"$y":	17858
+				}
+			},
+			"Delimiter.DensitySelector.Prop-25d13bdd-d25a-4ef2-be49-287bcb936ac4":	{
+				"$Position":	{
+					"$x":	3811,
+					"$y":	17821
+				}
+			},
+			"Imported.Prop-a33ba3e3-b6ba-4f51-abac-23a4caa153c6":	{
+				"$Position":	{
+					"$x":	4226,
+					"$y":	17708
+				}
+			},
+			"SimplexNoise2DDensityNode-05920cd1-9676-441f-b956-b9b64052cc4b":	{
+				"$Position":	{
+					"$x":	-3325,
+					"$y":	4393
+				}
+			},
+			"CellNoise2DDensityNode-a92bde0f-839f-4d97-a234-58cfeb0150ad":	{
+				"$Position":	{
+					"$x":	-3326,
+					"$y":	4026
+				}
+			},
+			"SumDensityNode-9956f4b5-a30d-4972-98df-9f5047c3fb8f":	{
+				"$Position":	{
+					"$x":	-4097,
+					"$y":	4253
+				}
 			}
 		},
-		"$FloatingNodes":	[],
+		"$FloatingNodes":	[{
+				"$NodeId":	"OrthogonalRotation-5829306c-e2e9-4a1c-a7bf-8398bb48ab16",
+				"Yaw":	"Ninety",
+				"Pitch":	"None",
+				"Roll":	"None"
+			}, {
+				"$NodeId":	"OrthogonalRotation-daea5dae-6e78-4103-b004-9477c01b104c",
+				"Yaw":	"OneEighty",
+				"Pitch":	"None",
+				"Roll":	"None"
+			}, {
+				"$NodeId":	"OrthogonalRotation-341bd788-7b0a-4798-9670-33816202656c",
+				"Yaw":	"TwoSeventy",
+				"Pitch":	"None",
+				"Roll":	"None"
+			}],
 		"$Links":	{
 		},
 		"$Groups":	[{
@@ -2736,15 +3383,15 @@
 				"$name":	"Cross Roads"
 			}, {
 				"$Position":	{
-					"$x":	829.625,
-					"$y":	-3422.625
+					"$x":	795.875,
+					"$y":	-3782.5625
 				},
-				"$width":	8549.75,
-				"$height":	3235.375,
+				"$width":	9140.5,
+				"$height":	3588.625,
 				"$name":	"Straight Roads"
 			}, {
 				"$Position":	{
-					"$x":	712.875,
+					"$x":	756.75,
 					"$y":	5783.5625
 				},
 				"$width":	11119.5,
@@ -2758,6 +3405,22 @@
 				"$width":	4532,
 				"$height":	1049.125,
 				"$name":	"Full Grid Building"
+			}, {
+				"$Position":	{
+					"$x":	-133.5,
+					"$y":	13784.0625
+				},
+				"$width":	4518.75,
+				"$height":	1214.375,
+				"$name":	"Courtyards"
+			}, {
+				"$Position":	{
+					"$x":	-214.4375,
+					"$y":	15656.1875
+				},
+				"$width":	8472.75,
+				"$height":	2932,
+				"$name":	"Giant Buildings"
 			}],
 		"$Comments":	[],
 		"$WorkspaceID":	"HytaleGenerator - Assignments"
