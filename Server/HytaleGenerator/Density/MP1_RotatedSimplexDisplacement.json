@@ -1,0 +1,99 @@
+{
+	"$NodeId":	"Exported.Density-2bd7ea53-3a70-450a-b10f-1e006d57aa94",
+	"Type":	"Exported",
+	"ExportAs":	"MP1_RotatedSimplexDisplacement",
+	"SingleInstance":	true,
+	"Skip":	false,
+	"Inputs":	[{
+			"$NodeId":	"Cache.Density-eb3b8052-7f7c-4b96-8cb1-9721268da50b",
+			"Type":	"Cache",
+			"Skip":	false,
+			"Capacity":	3,
+			"Inputs":	[{
+					"$NodeId":	"MultiplierDensityNode-3b3a4373-5530-4dec-b1e0-9737255041ea",
+					"Type":	"Multiplier",
+					"Skip":	false,
+					"Inputs":	[{
+							"$NodeId":	"Rotator.Density-2a141c1f-52d5-4e2a-9ab9-f32beff770fb",
+							"Type":	"Rotator",
+							"Skip":	false,
+							"SpinAngle":	25,
+							"NewYAxis":	{
+								"$NodeId":	"Point3D-ae6ff1d2-2ae3-4aae-937a-d621656d089d",
+								"X":	0.3,
+								"Y":	1,
+								"Z":	0
+							},
+							"Inputs":	[{
+									"$NodeId":	"SimplexNoise3DDensityNode-d37aecfc-2f8e-4aed-93cf-59da24bb88a4",
+									"Type":	"SimplexNoise3D",
+									"Skip":	false,
+									"Lacunarity":	2,
+									"Persistence":	0.5,
+									"Octaves":	1,
+									"ScaleXZ":	250,
+									"ScaleY":	10,
+									"Seed":	"A"
+								}]
+						}, {
+							"$NodeId":	"ConstantDensityNode-3cf86437-62fc-46f7-bc32-5910f55183a8",
+							"Type":	"Constant",
+							"Skip":	false,
+							"Value":	0.2
+						}]
+				}]
+		}],
+	"$NodeEditorMetadata":	{
+		"$Nodes":	{
+			"Exported.Density-2bd7ea53-3a70-450a-b10f-1e006d57aa94":	{
+				"$Position":	{
+					"$x":	2329,
+					"$y":	-850
+				},
+				"$Title":	"[ROOT] [EXPERIMENTAL] Exported Density"
+			},
+			"Cache.Density-eb3b8052-7f7c-4b96-8cb1-9721268da50b":	{
+				"$Position":	{
+					"$x":	3107,
+					"$y":	-866
+				}
+			},
+			"MultiplierDensityNode-3b3a4373-5530-4dec-b1e0-9737255041ea":	{
+				"$Position":	{
+					"$x":	3776,
+					"$y":	-849
+				}
+			},
+			"Rotator.Density-2a141c1f-52d5-4e2a-9ab9-f32beff770fb":	{
+				"$Position":	{
+					"$x":	4464,
+					"$y":	-899
+				}
+			},
+			"Point3D-ae6ff1d2-2ae3-4aae-937a-d621656d089d":	{
+				"$Position":	{
+					"$x":	5132,
+					"$y":	-529
+				}
+			},
+			"SimplexNoise3DDensityNode-d37aecfc-2f8e-4aed-93cf-59da24bb88a4":	{
+				"$Position":	{
+					"$x":	5142,
+					"$y":	-892
+				}
+			},
+			"ConstantDensityNode-3cf86437-62fc-46f7-bc32-5910f55183a8":	{
+				"$Position":	{
+					"$x":	4455,
+					"$y":	-642
+				}
+			}
+		},
+		"$FloatingNodes":	[],
+		"$Links":	{
+		},
+		"$Groups":	[],
+		"$Comments":	[],
+		"$WorkspaceID":	"HytaleGenerator - Density"
+	}
+}
