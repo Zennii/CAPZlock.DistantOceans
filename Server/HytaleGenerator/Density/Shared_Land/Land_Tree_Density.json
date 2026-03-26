@@ -1,0 +1,88 @@
+{
+	"$NodeId":	"Exported.Density-b7d63f76-55af-4cd8-8767-3c62aa780fdf",
+	"Type":	"Exported",
+	"ExportAs":	"Land_Tree_Density",
+	"SingleInstance":	true,
+	"Skip":	false,
+	"Inputs":	[{
+			"$NodeId":	"Cache.Density-9cf595ec-2a0d-49d1-8c87-d8bd361cf8c2",
+			"Type":	"Cache",
+			"Skip":	false,
+			"Capacity":	1,
+			"Inputs":	[{
+					"$NodeId":	"ClampDensityNode-36e5f567-e8f0-4595-aafd-11c2ceafe3c8",
+					"Type":	"Clamp",
+					"ExportAs":	"",
+					"Skip":	false,
+					"WallA":	0.08,
+					"WallB":	1,
+					"Inputs":	[{
+							"$NodeId":	"SumDensityNode-959584dd-2311-4704-be46-85570febfd6b",
+							"Type":	"Sum",
+							"Skip":	false,
+							"Inputs":	[{
+									"$NodeId":	"SimplexNoise2DDensityNode-dddfcd82-322e-43ab-97e6-9821d67c420b",
+									"Type":	"SimplexNoise2D",
+									"Skip":	false,
+									"Lacunarity":	2,
+									"Persistence":	0.5,
+									"Octaves":	1,
+									"Scale":	140,
+									"Seed":	"Tree_Barren"
+								}, {
+									"$NodeId":	"ConstantDensityNode-5a731538-514e-4c6f-b1c4-5d94357b45b4",
+									"Type":	"Constant",
+									"Skip":	false,
+									"Value":	0.8
+								}]
+						}]
+				}]
+		}],
+	"$NodeEditorMetadata":	{
+		"$Nodes":	{
+			"Exported.Density-b7d63f76-55af-4cd8-8767-3c62aa780fdf":	{
+				"$Position":	{
+					"$x":	0,
+					"$y":	0
+				},
+				"$Title":	"[ROOT] [EXPERIMENTAL] Exported Density"
+			},
+			"Cache.Density-9cf595ec-2a0d-49d1-8c87-d8bd361cf8c2":	{
+				"$Position":	{
+					"$x":	722,
+					"$y":	0
+				}
+			},
+			"ClampDensityNode-36e5f567-e8f0-4595-aafd-11c2ceafe3c8":	{
+				"$Position":	{
+					"$x":	1379,
+					"$y":	-96
+				}
+			},
+			"SumDensityNode-959584dd-2311-4704-be46-85570febfd6b":	{
+				"$Position":	{
+					"$x":	2052,
+					"$y":	-182
+				}
+			},
+			"SimplexNoise2DDensityNode-dddfcd82-322e-43ab-97e6-9821d67c420b":	{
+				"$Position":	{
+					"$x":	2762,
+					"$y":	-524
+				}
+			},
+			"ConstantDensityNode-5a731538-514e-4c6f-b1c4-5d94357b45b4":	{
+				"$Position":	{
+					"$x":	2818,
+					"$y":	-75
+				}
+			}
+		},
+		"$FloatingNodes":	[],
+		"$Links":	{
+		},
+		"$Groups":	[],
+		"$Comments":	[],
+		"$WorkspaceID":	"HytaleGenerator - Density"
+	}
+}
