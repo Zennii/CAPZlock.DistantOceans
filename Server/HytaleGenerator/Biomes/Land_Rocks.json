@@ -937,15 +937,81 @@
 					"Skip":	false,
 					"BedName":	"Base",
 					"Positions":	{
-						"$NodeId":	"ListPositions-54a5ba55-6e72-45d7-b467-09f946ff208e",
-						"Type":	"List",
+						"$NodeId":	"FieldFunctionPositions-498b05c5-3abe-4dd4-8c0b-1131fe1fb8eb",
+						"Type":	"FieldFunction",
 						"Skip":	false,
-						"Positions":	[{
-								"$NodeId":	"Point3D-b2526710-3438-4bfe-a3ba-e7f322ffd993",
-								"X":	0,
+						"FieldFunction":	{
+							"$NodeId":	"YOverride.Density-b6983ed9-69c0-47ba-9a17-311da6963ed6",
+							"Type":	"YOverride",
+							"Skip":	false,
+							"Value":	0,
+							"Inputs":	[{
+									"$NodeId":	"Cache.Density-38483be6-c458-45e9-89fd-4230f160a085",
+									"Type":	"Cache",
+									"Skip":	false,
+									"Capacity":	1,
+									"Inputs":	[{
+											"$NodeId":	"Cuboid.Density-84d90aff-a118-474a-9d5e-a73ddf69b37e",
+											"Type":	"Cuboid",
+											"Skip":	false,
+											"Spin":	0,
+											"Curve":	{
+												"$NodeId":	"ManualCurve-3acffc95-dc6e-45d3-b1f1-6c7b9027f357",
+												"Type":	"Manual",
+												"Points":	[{
+														"$NodeId":	"CurvePoint-0bb98d0d-1a0b-4463-8d39-edcd0a703ef7",
+														"In":	0.999999,
+														"Out":	1
+													}, {
+														"$NodeId":	"CurvePoint-a810e60c-9bf0-4f8a-8ed3-cf562e0322c2",
+														"In":	1,
+														"Out":	0
+													}]
+											},
+											"Scale":	{
+												"$NodeId":	"Point3D-b1a60ab6-c85b-49e9-9bb6-e0781e699963",
+												"X":	33,
+												"Y":	33,
+												"Z":	33
+											}
+										}]
+								}]
+						},
+						"Delimiters":	[{
+								"$NodeId":	"Delimiter-535b9a99-4d47-4a86-8016-191f959e6cba",
+								"Min":	0.9,
+								"Max":	1.1
+							}],
+						"Positions":	{
+							"$NodeId":	"OffsetPositions-096db2b0-7475-4975-85d0-e4ff92ae4dae",
+							"Type":	"Offset",
+							"Skip":	false,
+							"OffsetX":	0,
+							"OffsetY":	0,
+							"OffsetZ":	0,
+							"Offset":	{
+								"$NodeId":	"Point3D-072219c0-a301-4075-b53a-0b7331ebd75b",
+								"X":	-51,
 								"Y":	0,
 								"Z":	0
-							}]
+							},
+							"Positions":	{
+								"$NodeId":	"Scaler.Positions-c93135e3-92ea-41e1-a031-23b4ae029a3f",
+								"Type":	"Scaler",
+								"Skip":	false,
+								"Scale":	{
+									"$NodeId":	"Point3D-c25a2283-e84a-4d73-8869-d9fa1c1b18dc",
+									"X":	60,
+									"Y":	1,
+									"Z":	60
+								},
+								"Positions":	{
+									"$NodeId":	"TriangularGrid2d.Positions-ee844689-702c-4c41-ae61-b7d65b586ad3",
+									"Type":	"TriangularGrid2d",
+									"Skip":	false
+								}
+							}
+						}
 					}
 				},
 				"Prop":	{
@@ -1001,6 +1067,10 @@
 									"$NodeId":	"Material-93613b64-0210-47f1-b495-5b0241ec07d1",
 									"Solid":	"Soil_Gravel",
 									"SolidBottomUp":	false
+								}, {
+									"$NodeId":	"Material-148de369-b23d-46b3-8659-4baf32bc92c4",
+									"Solid":	"Soil_Sand",
+									"SolidBottomUp":	false
 								}]
 						}
 					},
@@ -1012,7 +1082,7 @@
 						"AscendingOrder":	false,
 						"Range":	{
 							"$NodeId":	"Integer.Range-a2451bf7-a8ab-426f-927f-39d4b7a7289e",
-							"MinInclusive":	-15,
+							"MinInclusive":	0,
 							"MaxExclusive":	8
 						}
 					}
@@ -5531,18 +5601,6 @@
 					"$y":	13628
 				}
 			},
-			"ListPositions-54a5ba55-6e72-45d7-b467-09f946ff208e":	{
-				"$Position":	{
-					"$x":	-1120,
-					"$y":	13161
-				}
-			},
-			"Point3D-b2526710-3438-4bfe-a3ba-e7f322ffd993":	{
-				"$Position":	{
-					"$x":	-463,
-					"$y":	13072
-				}
-			},
 			"BaseHeight.Positions-091f2cf0-c055-4ca2-995a-b5657d581143":	{
 				"$Position":	{
 					"$x":	-1866,
@@ -5625,6 +5683,96 @@
 				"$Position":	{
 					"$x":	-135,
 					"$y":	14204
+				}
+			},
+			"Material-148de369-b23d-46b3-8659-4baf32bc92c4":	{
+				"$Position":	{
+					"$x":	946,
+					"$y":	14734
+				}
+			},
+			"TriangularGrid2d.Positions-ee844689-702c-4c41-ae61-b7d65b586ad3":	{
+				"$Position":	{
+					"$x":	1665,
+					"$y":	12453
+				}
+			},
+			"Scaler.Positions-c93135e3-92ea-41e1-a031-23b4ae029a3f":	{
+				"$Position":	{
+					"$x":	730,
+					"$y":	12580
+				}
+			},
+			"Point3D-c25a2283-e84a-4d73-8869-d9fa1c1b18dc":	{
+				"$Position":	{
+					"$x":	1762,
+					"$y":	12665
+				}
+			},
+			"OffsetPositions-096db2b0-7475-4975-85d0-e4ff92ae4dae":	{
+				"$Position":	{
+					"$x":	-28,
+					"$y":	12592
+				}
+			},
+			"Point3D-072219c0-a301-4075-b53a-0b7331ebd75b":	{
+				"$Position":	{
+					"$x":	740,
+					"$y":	12357
+				}
+			},
+			"FieldFunctionPositions-498b05c5-3abe-4dd4-8c0b-1131fe1fb8eb":	{
+				"$Position":	{
+					"$x":	-950,
+					"$y":	12868
+				}
+			},
+			"Delimiter-535b9a99-4d47-4a86-8016-191f959e6cba":	{
+				"$Position":	{
+					"$x":	-276,
+					"$y":	13195
+				}
+			},
+			"Cuboid.Density-84d90aff-a118-474a-9d5e-a73ddf69b37e":	{
+				"$Position":	{
+					"$x":	1183,
+					"$y":	12989
+				}
+			},
+			"ManualCurve-3acffc95-dc6e-45d3-b1f1-6c7b9027f357":	{
+				"$Position":	{
+					"$x":	1901,
+					"$y":	12927
+				}
+			},
+			"Point3D-b1a60ab6-c85b-49e9-9bb6-e0781e699963":	{
+				"$Position":	{
+					"$x":	1901,
+					"$y":	13150
+				}
+			},
+			"CurvePoint-0bb98d0d-1a0b-4463-8d39-edcd0a703ef7":	{
+				"$Position":	{
+					"$x":	2556,
+					"$y":	12811
+				}
+			},
+			"CurvePoint-a810e60c-9bf0-4f8a-8ed3-cf562e0322c2":	{
+				"$Position":	{
+					"$x":	2566,
+					"$y":	12986
+				}
+			},
+			"Cache.Density-38483be6-c458-45e9-89fd-4230f160a085":	{
+				"$Position":	{
+					"$x":	531,
+					"$y":	12976
+				}
+			},
+			"YOverride.Density-b6983ed9-69c0-47ba-9a17-311da6963ed6":	{
+				"$Position":	{
+					"$x":	-150,
+					"$y":	12934
 				}
 			}
 		},
@@ -6254,6 +6402,15 @@
 				"$height":	150,
 				"$name":	"Comment",
 				"$text":	"Modified version of rock density to not have interpolation and be fit to mask grass"
+			}, {
+				"$Position":	{
+					"$x":	-663.4375,
+					"$y":	12679.125
+				},
+				"$width":	250,
+				"$height":	150,
+				"$name":	"Comment",
+				"$text":	"Workaround until list positions is fixed, just makes one point at 0,0,0"
 			}],
 		"$WorkspaceID":	"HytaleGenerator - Biome"
 	}
