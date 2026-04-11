@@ -1,5 +1,5 @@
 {
-	"$NodeId":	"Constant.Assignments-066b103d-add8-4b93-8e5b-2ef499bcb148",
+	"$NodeId":	"Constant.PropDistribution-066b103d-add8-4b93-8e5b-2ef499bcb148",
 	"Type":	"Constant",
 	"ExportAs":	"City_Buildings_Small",
 	"Prop":	{
@@ -9,58 +9,219 @@
 		"Offset":	{
 			"$NodeId":	"Point3D-8ee26925-1ee5-4938-bda8-da3ff5e67481",
 			"X":	5,
-			"Y":	1,
+			"Y":	0,
 			"Z":	5
 		},
 		"Prop":	{
-			"$NodeId":	"RandomRotator.Prop-8d4a0c90-9a30-4d81-a036-86f9a3980121",
-			"Type":	"RandomRotator",
+			"$NodeId":	"Locator.Prop-506cff5f-78aa-45fd-8cab-3fe62403b311",
+			"Type":	"Locator",
 			"Skip":	false,
-			"HorizontalRotations":	true,
+			"PlacementCap":	1,
 			"Prop":	{
-				"$NodeId":	"Prefab.Prop-206aaec9-4cd2-458c-9394-a18687fc635f",
-				"Type":	"Prefab",
+				"$NodeId":	"RandomRotator.Prop-8d4a0c90-9a30-4d81-a036-86f9a3980121",
+				"Type":	"RandomRotator",
 				"Skip":	false,
-				"WeightedPrefabPaths":	[{
-						"$NodeId":	"WeightedPath.Prefab.Prop-a402892b-3c1a-45a8-8717-6a8a3fe22c4f",
-						"Path":	"City/Buildings/Block/1x1/Tall/",
-						"Weight":	1
+				"Seed":	"spin",
+				"HorizontalRotations":	true,
+				"Prop":	{
+					"$NodeId":	"Prefab.Prop-206aaec9-4cd2-458c-9394-a18687fc635f",
+					"Type":	"Prefab",
+					"Skip":	false,
+					"WeightedPrefabPaths":	[{
+							"$NodeId":	"WeightedPath.Prefab.Prop-2c2626b1-3620-42c1-ab82-c01b28e8916e",
+							"Path":	"City/Buildings/Block/1x1/Short/",
+							"Weight":	5
+						}],
+					"LegacyPath":	false,
+					"LoadEntities":	true,
+					"MoldingDirection":	"NONE",
+					"MoldingChildren":	false
+				}
+			},
+			"Pattern":	{
+				"$NodeId":	"Or.Pattern-7b169f82-896f-4f83-8458-90d41118f257",
+				"Type":	"Or",
+				"Skip":	false,
+				"Patterns":	[{
+						"$NodeId":	"Floor.Pattern-55889bc9-fcd8-4eb4-95e2-b13d4e25fa24",
+						"Type":	"Floor",
+						"Skip":	false,
+						"Origin":	{
+							"$NodeId":	"BlockType.Pattern-1f19c96d-501d-4d56-8a2d-ca5a9a43cef4",
+							"Type":	"BlockType",
+							"Skip":	false
+						},
+						"Floor":	{
+							"$NodeId":	"BlockType.Pattern-00c10aee-6d5c-44a0-9776-40121cdff6f7",
+							"Type":	"BlockType",
+							"Skip":	false,
+							"Material":	{
+								"$NodeId":	"Material-ba478223-c395-4ed1-87dd-41ab9bc1cd40",
+								"Solid":	"Rock_Sandstone_Brick",
+								"SolidBottomUp":	false
+							}
+						}
 					}, {
-						"$NodeId":	"WeightedPath.Prefab.Prop-2c2626b1-3620-42c1-ab82-c01b28e8916e",
-						"Path":	"City/Buildings/Block/1x1/Short/",
-						"Weight":	5
-					}],
-				"LegacyPath":	false,
-				"LoadEntities":	true,
-				"MoldingDirection":	"NONE",
-				"MoldingChildren":	false
+						"$NodeId":	"And.Pattern-8a96e96f-e87b-4800-8471-034e51ddbb3a",
+						"Type":	"And",
+						"Skip":	false,
+						"Patterns":	[{
+								"$NodeId":	"Offset.Pattern-5b99472d-cc8a-4e0e-9b72-0037d2718c0d",
+								"Type":	"Offset",
+								"Skip":	false,
+								"Pattern":	{
+									"$NodeId":	"BlockType.Pattern-0acb808c-ad85-4b1a-923d-44953bd0471f",
+									"Type":	"BlockType",
+									"Skip":	false,
+									"Material":	{
+										"$NodeId":	"Material-b4774858-8434-45ea-b9b9-86d6e3b08fff",
+										"Solid":	"Rock_Sandstone_Brick",
+										"SolidBottomUp":	false
+									}
+								},
+								"Offset":	{
+									"$NodeId":	"Point3D-d9aab0ad-0c24-42ba-a551-8e773b1ef4f4",
+									"X":	0,
+									"Y":	-1,
+									"Z":	0
+								}
+							}, {
+								"$NodeId":	"Offset.Pattern-c558f718-c8e5-4e30-93e9-2d8b66166968",
+								"Type":	"Offset",
+								"Skip":	false,
+								"Pattern":	{
+									"$NodeId":	"BlockType.Pattern-2c553906-d28d-4265-87ce-9ec4a2fb624f",
+									"Type":	"BlockType",
+									"Skip":	false
+								},
+								"Offset":	{
+									"$NodeId":	"Point3D-d6c68412-737f-45ca-97cf-0a8558cc6fed",
+									"X":	0,
+									"Y":	3,
+									"Z":	0
+								}
+							}]
+					}]
+			},
+			"Scanner":	{
+				"$NodeId":	"Radial.Scanner-72980d5e-3488-40b6-a474-4b5845848940",
+				"Type":	"Radial",
+				"Skip":	false,
+				"Bounds":	{
+					"$NodeId":	"DecimalBounds3d-2e845c0e-fe8c-4041-8f7b-7502bb7f5dc8",
+					"PointA":	{
+						"$NodeId":	"Point3D-1ebd323d-a0aa-4cec-b6d1-bc4dd9b1a5e3",
+						"X":	-5,
+						"Y":	0,
+						"Z":	-5
+					},
+					"PointB":	{
+						"$NodeId":	"Point3D-5e955f88-84fb-40fc-ab1c-ecc495d350b5",
+						"X":	5,
+						"Y":	1,
+						"Z":	5
+					}
+				}
 			}
 		}
 	},
 	"$NodeEditorMetadata":	{
 		"$Nodes":	{
+			"Constant.PropDistribution-066b103d-add8-4b93-8e5b-2ef499bcb148":	{
+				"$Position":	{
+					"$x":	-991,
+					"$y":	36
+				},
+				"$Title":	"[ROOT] Constant Assignments"
+			},
+			"Locator.Prop-506cff5f-78aa-45fd-8cab-3fe62403b311":	{
+				"$Position":	{
+					"$x":	269,
+					"$y":	125
+				}
+			},
 			"Offset.Prop-b468d66d-3124-4846-b6d5-ca4534a03bf7":	{
 				"$Position":	{
-					"$x":	200,
-					"$y":	81
+					"$x":	-345,
+					"$y":	78
 				}
 			},
 			"Point3D-8ee26925-1ee5-4938-bda8-da3ff5e67481":	{
 				"$Position":	{
-					"$x":	847,
-					"$y":	-274
+					"$x":	312,
+					"$y":	-143
+				}
+			},
+			"RandomRotator.Prop-8d4a0c90-9a30-4d81-a036-86f9a3980121":	{
+				"$Position":	{
+					"$x":	996,
+					"$y":	90
 				}
 			},
 			"Prefab.Prop-206aaec9-4cd2-458c-9394-a18687fc635f":	{
 				"$Position":	{
-					"$x":	1519,
-					"$y":	-42
+					"$x":	1657,
+					"$y":	-13
 				}
 			},
 			"WeightedPath.Prefab.Prop-a402892b-3c1a-45a8-8717-6a8a3fe22c4f":	{
 				"$Position":	{
-					"$x":	2330,
-					"$y":	-55
+					"$x":	2512,
+					"$y":	-149
+				}
+			},
+			"WeightedPath.Prefab.Prop-2c2626b1-3620-42c1-ab82-c01b28e8916e":	{
+				"$Position":	{
+					"$x":	2535,
+					"$y":	162
+				}
+			},
+			"Floor.Pattern-55889bc9-fcd8-4eb4-95e2-b13d4e25fa24":	{
+				"$Position":	{
+					"$x":	1730,
+					"$y":	416
+				}
+			},
+			"BlockType.Pattern-1f19c96d-501d-4d56-8a2d-ca5a9a43cef4":	{
+				"$Position":	{
+					"$x":	2380,
+					"$y":	382
+				}
+			},
+			"BlockType.Pattern-00c10aee-6d5c-44a0-9776-40121cdff6f7":	{
+				"$Position":	{
+					"$x":	2379,
+					"$y":	519
+				}
+			},
+			"Material-ba478223-c395-4ed1-87dd-41ab9bc1cd40":	{
+				"$Position":	{
+					"$x":	3001,
+					"$y":	519
+				}
+			},
+			"Radial.Scanner-72980d5e-3488-40b6-a474-4b5845848940":	{
+				"$Position":	{
+					"$x":	1023,
+					"$y":	1206
+				}
+			},
+			"DecimalBounds3d-2e845c0e-fe8c-4041-8f7b-7502bb7f5dc8":	{
+				"$Position":	{
+					"$x":	1671,
+					"$y":	1248
+				}
+			},
+			"Point3D-1ebd323d-a0aa-4cec-b6d1-bc4dd9b1a5e3":	{
+				"$Position":	{
+					"$x":	1936,
+					"$y":	1249
+				}
+			},
+			"Point3D-5e955f88-84fb-40fc-ab1c-ecc495d350b5":	{
+				"$Position":	{
+					"$x":	1939,
+					"$y":	1436
 				}
 			},
 			"Locator.Prop-7ed0e8a6-da4e-4ed5-b0fd-9f596d506377":	{
@@ -143,31 +304,70 @@
 			},
 			"WeightedPath.Prefab.Prop-a03888ed-c0d4-4108-917b-d9a5c9a251d2":	{
 				"$Position":	{
-					"$x":	2337,
-					"$y":	107
+					"$x":	2519,
+					"$y":	11
 				}
 			},
-			"WeightedPath.Prefab.Prop-2c2626b1-3620-42c1-ab82-c01b28e8916e":	{
+			"BlockType.Pattern-0acb808c-ad85-4b1a-923d-44953bd0471f":	{
 				"$Position":	{
-					"$x":	2353,
-					"$y":	258
+					"$x":	3028,
+					"$y":	689
 				}
 			},
-			"RandomRotator.Prop-8d4a0c90-9a30-4d81-a036-86f9a3980121":	{
+			"Or.Pattern-7b169f82-896f-4f83-8458-90d41118f257":	{
 				"$Position":	{
-					"$x":	858,
-					"$y":	62
+					"$x":	1057,
+					"$y":	431
 				}
 			},
-			"Constant.Assignments-066b103d-add8-4b93-8e5b-2ef499bcb148":	{
+			"And.Pattern-8a96e96f-e87b-4800-8471-034e51ddbb3a":	{
 				"$Position":	{
-					"$x":	-438,
-					"$y":	90
-				},
-				"$Title":	"[ROOT] Constant Assignments"
+					"$x":	1732,
+					"$y":	768
+				}
+			},
+			"Offset.Pattern-5b99472d-cc8a-4e0e-9b72-0037d2718c0d":	{
+				"$Position":	{
+					"$x":	2370,
+					"$y":	686
+				}
+			},
+			"Offset.Pattern-c558f718-c8e5-4e30-93e9-2d8b66166968":	{
+				"$Position":	{
+					"$x":	2378,
+					"$y":	1025
+				}
+			},
+			"Point3D-d9aab0ad-0c24-42ba-a551-8e773b1ef4f4":	{
+				"$Position":	{
+					"$x":	2600,
+					"$y":	826
+				}
+			},
+			"Point3D-d6c68412-737f-45ca-97cf-0a8558cc6fed":	{
+				"$Position":	{
+					"$x":	2600,
+					"$y":	1167
+				}
+			},
+			"BlockType.Pattern-2c553906-d28d-4265-87ce-9ec4a2fb624f":	{
+				"$Position":	{
+					"$x":	3001,
+					"$y":	1024
+				}
+			},
+			"Material-b4774858-8434-45ea-b9b9-86d6e3b08fff":	{
+				"$Position":	{
+					"$x":	3646,
+					"$y":	687
+				}
 			}
 		},
 		"$FloatingNodes":	[{
+				"$NodeId":	"WeightedPath.Prefab.Prop-a402892b-3c1a-45a8-8717-6a8a3fe22c4f",
+				"Path":	"City/Buildings/Block/1x1/Tall/",
+				"Weight":	1
+			}, {
 				"$NodeId":	"Locator.Prop-7ed0e8a6-da4e-4ed5-b0fd-9f596d506377",
 				"Type":	"Locator",
 				"Skip":	false,
