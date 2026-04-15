@@ -34,31 +34,12 @@
         },
         {
           "Type": "StatsCondition",
-          "Costs": {
-            "Diver_Boots": 0.5
-          },
           "Next": {
-            "Type": "Selector",
-            "HitBlock": {
-              "Interactions": [
-                {
-                  "Type": "RunRootInteraction",
-                  "RootInteraction": "Bubbles"
-                }
-              ]
+            "Type": "StatsCondition",
+            "Costs": {
+              "Diver_Boots": 0.5
             },
-            "Selector": {
-              "Id": "Raycast",
-              "IgnoreFluids": true,
-              "IgnoreEmptyCollisionMaterial": true,
-              "Distance": 0,
-              "Offset": {
-                "Y": -10
-              },
-              "BlockTag": "Bubbles"
-            },
-            "FailOn": "Block",
-            "Failed": {
+            "Next": {
               "Type": "Selector",
               "HitBlock": {
                 "Interactions": [
@@ -74,7 +55,7 @@
                 "IgnoreEmptyCollisionMaterial": true,
                 "Distance": 0,
                 "Offset": {
-                  "Y": 0
+                  "Y": -10
                 },
                 "BlockTag": "Bubbles"
               },
@@ -95,7 +76,7 @@
                   "IgnoreEmptyCollisionMaterial": true,
                   "Distance": 0,
                   "Offset": {
-                    "Y": -9
+                    "Y": 0
                   },
                   "BlockTag": "Bubbles"
                 },
@@ -116,7 +97,7 @@
                     "IgnoreEmptyCollisionMaterial": true,
                     "Distance": 0,
                     "Offset": {
-                      "Y": -1
+                      "Y": -9
                     },
                     "BlockTag": "Bubbles"
                   },
@@ -137,7 +118,7 @@
                       "IgnoreEmptyCollisionMaterial": true,
                       "Distance": 0,
                       "Offset": {
-                        "Y": -8
+                        "Y": -1
                       },
                       "BlockTag": "Bubbles"
                     },
@@ -158,7 +139,7 @@
                         "IgnoreEmptyCollisionMaterial": true,
                         "Distance": 0,
                         "Offset": {
-                          "Y": -2
+                          "Y": -8
                         },
                         "BlockTag": "Bubbles"
                       },
@@ -179,7 +160,7 @@
                           "IgnoreEmptyCollisionMaterial": true,
                           "Distance": 0,
                           "Offset": {
-                            "Y": -7
+                            "Y": -2
                           },
                           "BlockTag": "Bubbles"
                         },
@@ -200,7 +181,7 @@
                             "IgnoreEmptyCollisionMaterial": true,
                             "Distance": 0,
                             "Offset": {
-                              "Y": -3
+                              "Y": -7
                             },
                             "BlockTag": "Bubbles"
                           },
@@ -221,7 +202,7 @@
                               "IgnoreEmptyCollisionMaterial": true,
                               "Distance": 0,
                               "Offset": {
-                                "Y": -6
+                                "Y": -3
                               },
                               "BlockTag": "Bubbles"
                             },
@@ -242,7 +223,7 @@
                                 "IgnoreEmptyCollisionMaterial": true,
                                 "Distance": 0,
                                 "Offset": {
-                                  "Y": -4
+                                  "Y": -6
                                 },
                                 "BlockTag": "Bubbles"
                               },
@@ -263,11 +244,34 @@
                                   "IgnoreEmptyCollisionMaterial": true,
                                   "Distance": 0,
                                   "Offset": {
-                                    "Y": -5
+                                    "Y": -4
                                   },
                                   "BlockTag": "Bubbles"
                                 },
                                 "FailOn": "Block",
+                                "Failed": {
+                                  "Type": "Selector",
+                                  "HitBlock": {
+                                    "Interactions": [
+                                      {
+                                        "Type": "RunRootInteraction",
+                                        "RootInteraction": "Bubbles"
+                                      }
+                                    ]
+                                  },
+                                  "Selector": {
+                                    "Id": "Raycast",
+                                    "IgnoreFluids": true,
+                                    "IgnoreEmptyCollisionMaterial": true,
+                                    "Distance": 0,
+                                    "Offset": {
+                                      "Y": -5
+                                    },
+                                    "BlockTag": "Bubbles"
+                                  },
+                                  "FailOn": "Block",
+                                  "IgnoreOwner": true
+                                },
                                 "IgnoreOwner": true
                               },
                               "IgnoreOwner": true
@@ -288,45 +292,9 @@
               },
               "IgnoreOwner": true
             },
-            "IgnoreOwner": true
-          },
-          "LessThan": true,
-          "Failed": {
-            "Type": "Selector",
-            "HitBlock": {
-              "Interactions": [
-                {
-                  "Type": "ChangeStat",
-                  "StatModifiers": {
-                    "Oxygen": 25
-                  }
-                }
-              ]
-            },
-            "Selector": {
-              "Id": "Raycast",
-              "IgnoreFluids": true,
-              "IgnoreEmptyCollisionMaterial": true,
-              "Distance": 0,
-              "Offset": {
-                "Y": 0
-              },
-              "BlockTag": "Bubbles"
-            },
-            "FailOn": "Block",
+            "LessThan": true,
             "Failed": {
               "Type": "Selector",
-              "Selector": {
-                "Id": "Raycast",
-                "Offset": {
-                  "Y": -1
-                },
-                "IgnoreFluids": true,
-                "IgnoreEmptyCollisionMaterial": true,
-                "Distance": 0,
-                "BlockTag": "Bubbles"
-              },
-              "FailOn": "Block",
               "HitBlock": {
                 "Interactions": [
                   {
@@ -336,10 +304,48 @@
                     }
                   }
                 ]
+              },
+              "Selector": {
+                "Id": "Raycast",
+                "IgnoreFluids": true,
+                "IgnoreEmptyCollisionMaterial": true,
+                "Distance": 0,
+                "Offset": {
+                  "Y": 0
+                },
+                "BlockTag": "Bubbles"
+              },
+              "FailOn": "Block",
+              "Failed": {
+                "Type": "Selector",
+                "Selector": {
+                  "Id": "Raycast",
+                  "Offset": {
+                    "Y": -1
+                  },
+                  "IgnoreFluids": true,
+                  "IgnoreEmptyCollisionMaterial": true,
+                  "Distance": 0,
+                  "BlockTag": "Bubbles"
+                },
+                "FailOn": "Block",
+                "HitBlock": {
+                  "Interactions": [
+                    {
+                      "Type": "ChangeStat",
+                      "StatModifiers": {
+                        "Oxygen": 25
+                      }
+                    }
+                  ]
+                }
               }
-            }
+            },
+            "Lenient": false
           },
-          "Lenient": false
+          "Costs": {
+            "Is_Player": 0.5
+          }
         }
       ]
     }
