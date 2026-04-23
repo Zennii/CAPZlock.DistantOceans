@@ -1,0 +1,102 @@
+{
+	"$NodeId":	"DensitySelector.Prop-e3f2e9e5-e4ef-4f08-b611-1458f6012c1d",
+	"Type":	"DensitySelector",
+	"ExportAs":	"KF_BonsaiKelp",
+	"Skip":	false,
+	"Delimiters":	[{
+			"$NodeId":	"Delimiter.DensitySelector.Prop-a71f7bbf-b42d-48d5-8aaf-be263e29988a",
+			"Prop":	{
+				"$NodeId":	"Prefab.Prop-9a27819e-dcf0-4f94-a5d7-0dbb2e57ff8c",
+				"Type":	"Prefab",
+				"Skip":	false,
+				"WeightedPrefabPaths":	[{
+						"$NodeId":	"WeightedPath.Prefab.Prop-1c372187-9c61-4c52-aa14-416cab02b238",
+						"Path":	"BonsaiKelp",
+						"Weight":	1
+					}],
+				"LegacyPath":	false,
+				"LoadEntities":	true,
+				"MoldingDirection":	"NONE",
+				"MoldingChildren":	false
+			},
+			"Range":	{
+				"$NodeId":	"Decimal.Range-f905ec01-8256-4703-b72b-a22070fc3b2e",
+				"MinInclusive":	-1,
+				"MaxExclusive":	-0.5
+			}
+		}],
+	"Density":	{
+		"$NodeId":	"NormalizerDensityNode-2bae8c2c-3d40-41ee-a9b3-a7d9c2871d3a",
+		"Type":	"Normalizer",
+		"Skip":	false,
+		"FromMin":	-1,
+		"FromMax":	-0.75,
+		"ToMin":	-1,
+		"ToMax":	1,
+		"Inputs":	[{
+				"$NodeId":	"CellNoise3DDensityNode-0d494450-ea19-4a7c-94ea-293d44504299",
+				"Type":	"CellNoise3D",
+				"Skip":	false,
+				"ScaleX":	80,
+				"ScaleY":	80,
+				"ScaleZ":	80,
+				"Jitter":	0.5,
+				"CellType":	"Distance",
+				"Octaves":	1,
+				"Seed":	"A"
+			}]
+	},
+	"$NodeEditorMetadata":	{
+		"$Nodes":	{
+			"DensitySelector.Prop-e3f2e9e5-e4ef-4f08-b611-1458f6012c1d":	{
+				"$Position":	{
+					"$x":	1917,
+					"$y":	3279
+				},
+				"$Title":	"[ROOT] DensitySelector Prop"
+			},
+			"Delimiter.DensitySelector.Prop-a71f7bbf-b42d-48d5-8aaf-be263e29988a":	{
+				"$Position":	{
+					"$x":	2774,
+					"$y":	3220
+				}
+			},
+			"Prefab.Prop-9a27819e-dcf0-4f94-a5d7-0dbb2e57ff8c":	{
+				"$Position":	{
+					"$x":	3248,
+					"$y":	3068
+				}
+			},
+			"WeightedPath.Prefab.Prop-1c372187-9c61-4c52-aa14-416cab02b238":	{
+				"$Position":	{
+					"$x":	4053,
+					"$y":	3075
+				}
+			},
+			"Decimal.Range-f905ec01-8256-4703-b72b-a22070fc3b2e":	{
+				"$Position":	{
+					"$x":	3242,
+					"$y":	3380
+				}
+			},
+			"NormalizerDensityNode-2bae8c2c-3d40-41ee-a9b3-a7d9c2871d3a":	{
+				"$Position":	{
+					"$x":	3130,
+					"$y":	3546
+				}
+			},
+			"CellNoise3DDensityNode-0d494450-ea19-4a7c-94ea-293d44504299":	{
+				"$Position":	{
+					"$x":	3768,
+					"$y":	3548
+				}
+			}
+		},
+		"$FloatingNodes":	[],
+		"$Links":	{
+		},
+		"$Groups":	[],
+		"$Comments":	[],
+		"$WorkspaceID":	"HytaleGenerator - Prop"
+	}
+}

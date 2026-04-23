@@ -675,6 +675,22 @@
 			"$NodeId":	"QueueMaterialProvider-21f4a992-52c0-44a3-b80d-41cd688a8faa",
 			"Type":	"Queue",
 			"Queue":	[{
+					"$NodeId":	"SimpleHorizontalMaterialProvider-40e09d0e-849f-4551-9aaf-e4b6ddbc3874",
+					"Type":	"SimpleHorizontal",
+					"TopY":	0,
+					"TopBaseHeight":	"Water",
+					"BottomY":	0,
+					"BottomBaseHeight":	"Bedrock",
+					"Material":	{
+						"$NodeId":	"ConstantMaterialProvider-728f364f-24c1-4238-80b0-af8ee60cdccb",
+						"Type":	"Constant",
+						"Material":	{
+							"$NodeId":	"Material-331e3a44-47d2-4477-b916-f5f7dedc96bf",
+							"Fluid":	"Water_Source",
+							"SolidBottomUp":	false
+						}
+					}
+				}, {
 					"$NodeId":	"ConstantMaterialProvider-283c90ab-cd72-4658-ba8f-2d99f4bcc362",
 					"$Comment":	"REQUIRED",
 					"Type":	"Constant",
@@ -924,28 +940,18 @@
 						"Type":	"Queue",
 						"Skip":	false,
 						"Props":	[{
-								"$NodeId":	"Cuboid.Prop-6b58c58c-fe9d-4c28-a861-02468cd3d60f",
-								"Type":	"Cuboid",
+								"$NodeId":	"Prefab.Prop-63c69d4c-38ad-473d-af13-c4f3f9464392",
+								"Type":	"Prefab",
 								"Skip":	false,
-								"Bounds":	{
-									"$NodeId":	"Bounds3i-45f8a41d-09dc-4ff2-b068-a9066b5f8581",
-									"PointA":	{
-										"$NodeId":	"Vector3i-aa4235f2-5fa9-4283-838d-6b83d4b72237",
-										"X":	1,
-										"Y":	1,
-										"Z":	1
-									}
-								},
-								"Material":	{
-									"$NodeId":	"ConstantMaterialProvider-58bdcad9-000a-48b1-bfd5-102ac96a84b3",
-									"Type":	"Constant",
-									"Material":	{
-										"$NodeId":	"Material-64ad8a0a-eca5-41d8-b567-20f65c71d2f6",
-										"Solid":	"Deco_Naval_Proximity_Mine",
-										"Fluid":	"",
-										"SolidBottomUp":	false
-									}
-								}
+								"WeightedPrefabPaths":	[{
+										"$NodeId":	"WeightedPath.Prefab.Prop-aa899937-f0bd-4a76-90ee-7083a3a7daba",
+										"Path":	"City/Mines/City_Mines_Naval.prefab.json",
+										"Weight":	1
+									}],
+								"LegacyPath":	false,
+								"LoadEntities":	true,
+								"MoldingDirection":	"NONE",
+								"MoldingChildren":	false
 							}]
 					},
 					"Pattern":	{
@@ -974,6 +980,7 @@
 								"Materials":	[{
 										"$NodeId":	"Material-bcbb2641-049c-4a2e-b670-a4c7e0b9e9fb",
 										"Solid":	"Deco_Iron_Chain_Small",
+										"Fluid":	"Water_Source",
 										"SolidBottomUp":	false
 									}]
 							}
@@ -998,7 +1005,7 @@
 	"EnvironmentProvider":	{
 		"$NodeId":	"Constant.EnvironmentProvider-194e210a-6e08-40c6-8120-e44c09b377b2",
 		"Type":	"Constant",
-		"Environment":	"Env_Default_Flat"
+		"Environment":	"Env_Zone5_VolcanicWastes"
 	},
 	"TintProvider":	{
 		"$NodeId":	"DensityDelimited.TintProvider-77ecc156-338b-42ec-863d-2dbb748ce058",
@@ -1813,6 +1820,24 @@
 					"$y":	-3388
 				}
 			},
+			"SimpleHorizontalMaterialProvider-40e09d0e-849f-4551-9aaf-e4b6ddbc3874":	{
+				"$Position":	{
+					"$x":	2182,
+					"$y":	-3214
+				}
+			},
+			"ConstantMaterialProvider-728f364f-24c1-4238-80b0-af8ee60cdccb":	{
+				"$Position":	{
+					"$x":	2859,
+					"$y":	-3238
+				}
+			},
+			"Material-331e3a44-47d2-4477-b916-f5f7dedc96bf":	{
+				"$Position":	{
+					"$x":	3514,
+					"$y":	-3240
+				}
+			},
 			"ConstantMaterialProvider-283c90ab-cd72-4658-ba8f-2d99f4bcc362":	{
 				"$Position":	{
 					"$x":	2009,
@@ -2119,36 +2144,6 @@
 					"$y":	2636
 				}
 			},
-			"Cuboid.Prop-6b58c58c-fe9d-4c28-a861-02468cd3d60f":	{
-				"$Position":	{
-					"$x":	4812,
-					"$y":	3070
-				}
-			},
-			"Bounds3i-45f8a41d-09dc-4ff2-b068-a9066b5f8581":	{
-				"$Position":	{
-					"$x":	5550,
-					"$y":	2921
-				}
-			},
-			"Vector3i-aa4235f2-5fa9-4283-838d-6b83d4b72237":	{
-				"$Position":	{
-					"$x":	5810,
-					"$y":	2886
-				}
-			},
-			"ConstantMaterialProvider-58bdcad9-000a-48b1-bfd5-102ac96a84b3":	{
-				"$Position":	{
-					"$x":	5454,
-					"$y":	3098
-				}
-			},
-			"Material-64ad8a0a-eca5-41d8-b567-20f65c71d2f6":	{
-				"$Position":	{
-					"$x":	6388,
-					"$y":	3014
-				}
-			},
 			"Floor.Pattern-55c4614e-3fb7-46c5-9188-3d6bfe9e4b1f":	{
 				"$Position":	{
 					"$x":	3786,
@@ -2163,8 +2158,8 @@
 			},
 			"Material-593a65df-ef64-4590-bf4e-8fda2dce2b28":	{
 				"$Position":	{
-					"$x":	5156,
-					"$y":	3588
+					"$x":	5169,
+					"$y":	3660
 				}
 			},
 			"BlockSet.Pattern-78dc6ae2-9da8-4e05-90dd-7a9eb0476d54":	{
@@ -2175,14 +2170,14 @@
 			},
 			"BlockSet.BlockMask-7441a43b-8839-4688-90fb-f1d3727f9c11":	{
 				"$Position":	{
-					"$x":	5295,
-					"$y":	4384
+					"$x":	5133,
+					"$y":	3860
 				}
 			},
 			"Material-bcbb2641-049c-4a2e-b670-a4c7e0b9e9fb":	{
 				"$Position":	{
-					"$x":	5797,
-					"$y":	4361
+					"$x":	5635,
+					"$y":	3837
 				}
 			},
 			"Linear.Scanner-9cdcc769-fcbb-4148-bfc9-d4aeb8c04f1a":	{
@@ -2305,28 +2300,22 @@
 					"$y":	757518
 				}
 			},
-			"SimpleHorizontalMaterialProvider-baa28299-f337-4274-aa75-2c75c1962b18":	{
-				"$Position":	{
-					"$x":	1937,
-					"$y":	-3288
-				}
-			},
-			"ConstantMaterialProvider-9a512e97-d368-4c18-bb5d-558537cc5535":	{
-				"$Position":	{
-					"$x":	2738,
-					"$y":	-3229
-				}
-			},
-			"Material-9b3d2ab2-1c6e-4477-922b-70f416b2c3af":	{
-				"$Position":	{
-					"$x":	3449,
-					"$y":	-3219
-				}
-			},
 			"BaseHeight.Density-68268ad9-6b30-485c-9d46-ae98f5375dad":	{
 				"$Position":	{
 					"$x":	12950,
 					"$y":	-6623
+				}
+			},
+			"Prefab.Prop-63c69d4c-38ad-473d-af13-c4f3f9464392":	{
+				"$Position":	{
+					"$x":	4741,
+					"$y":	2633
+				}
+			},
+			"WeightedPath.Prefab.Prop-aa899937-f0bd-4a76-90ee-7083a3a7daba":	{
+				"$Position":	{
+					"$x":	5686,
+					"$y":	2707
 				}
 			}
 		},
@@ -2372,23 +2361,6 @@
 				"$NodeId":	"Runtime-045a0a8b-320c-4e3a-bbe7-dd9ff4ebfb31",
 				"Skip":	false,
 				"Runtime":	2
-			}, {
-				"$NodeId":	"SimpleHorizontalMaterialProvider-baa28299-f337-4274-aa75-2c75c1962b18",
-				"Type":	"SimpleHorizontal",
-				"TopY":	240,
-				"TopBaseHeight":	"Bedrock",
-				"BottomY":	0,
-				"BottomBaseHeight":	"Bedrock",
-				"Material":	{
-					"$NodeId":	"ConstantMaterialProvider-9a512e97-d368-4c18-bb5d-558537cc5535",
-					"Type":	"Constant",
-					"Material":	{
-						"$NodeId":	"Material-9b3d2ab2-1c6e-4477-922b-70f416b2c3af",
-						"Solid":	"",
-						"Fluid":	"Water_Source",
-						"SolidBottomUp":	false
-					}
-				}
 			}, {
 				"$NodeId":	"BaseHeight.Density-68268ad9-6b30-485c-9d46-ae98f5375dad",
 				"Type":	"BaseHeight",
