@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Portal_Return.name",
-    "Description": "server.items.Portal_Return.description"
+    "Name": "server.items.Portal_DistOceans.name",
+    "Description": ""
   },
   "Icon": "Icons/ItemsGenerated/Portal_Return.png",
   "Categories": [
@@ -38,17 +38,12 @@
       }
     ],
     "Interactions": {
-      "CollisionEnter": {
+      "Use": {
         "Interactions": [
           {
             "Type": "TeleportInstance",
-            "InstanceName": "SharedInstance",
-            "Next": {
-              "Type": "Simple",
-              "Effects": {
-                "LocalSoundEventId": "SFX_Portal_Neutral_Teleport_Local"
-              }
-            },
+            "InstanceName": "DistantOceansInstance",
+            "InstanceKey": "DistOceans",
             "OriginSource": "Block"
           }
         ]
