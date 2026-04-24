@@ -1,0 +1,67 @@
+{
+  "Icon": "Icons/ItemsGenerated/Deco_Navel_Proximity_MineBuried.png",
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Items_Metal",
+  "DropOnDeath": true,
+  "IconProperties": {
+    "Scale": 0.27,
+    "Rotation": [
+      1,
+      18,
+      6
+    ],
+    "Translation": [
+      -1,
+      8
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "Buried Naval Mine"
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "Opacity": "Solid",
+    "CustomModel": "Items/navalMine/navalMine_buried.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/navalMine/navalMineBuried.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Metal",
+    "VariantRotation": "UpDown",
+    "RandomRotation": "YawStep1",
+    "BlockParticleSetId": "Metal",
+    "ParticleColor": "#787674",
+    "BlockSoundSetId": "Metal",
+    "PhysicalMaterialId": "Metal",
+    "Material": "Solid",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks",
+        "ItemId": "Ingredient_Powder_Boom",
+        "Quantity": 5
+      }
+    },
+    "Components": {
+      "Hytale:BlockInteraction": {
+        "UseCollisionForInteraction": true
+      }
+    },
+    "Interactions": {
+      "CollisionEnter": "Proximity_Explosion"
+    },
+    "InteractionHitboxType": "Deco_Navel_MineBuried_Hitbox",
+    "HitboxType": "Deco_Navel_MineBuried_Hitbox"
+  },
+  "Interactions": {
+    "CollisionEnter": "Proximity_Explosion"
+  },
+  "InteractionConfig": {
+    "DisplayOutlines": true,
+    "DebugOutlines": true
+  }
+}
