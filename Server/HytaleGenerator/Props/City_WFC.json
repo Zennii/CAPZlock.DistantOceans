@@ -1,7 +1,7 @@
 {
 	"$NodeId":	"PropAlgo.GridWave-c55c1ede-9c29-486e-889b-01034c71d578",
 	"Type":	"PropAlgo",
-	"ExportAs":	"Venice",
+	"ExportAs":	"City_WFC",
 	"Skip":	false,
 	"GridPoints":	{
 		"$NodeId":	"GridGen2D.GridWave-e2691ace-b7ed-43ce-beb1-8709b96a2aea",
@@ -9,7 +9,7 @@
 		"Position":	{
 			"$NodeId":	"Point3D-71400629-925e-40fe-bd4c-4dd47e783857",
 			"X":	0,
-			"Y":	0,
+			"Y":	20,
 			"Z":	0
 		},
 		"OffsetX":	12,
@@ -105,7 +105,7 @@
 				}
 			},
 			"Features":	[],
-			"PrefabPath":	"BaseTiles/Foundations/Ruined1x1",
+			"PrefabPath":	"City/BaseTiles/Foundations/Ruined1x1",
 			"Weight":	0.6,
 			"MinimizeVariants":	true
 		}, {
@@ -154,7 +154,7 @@
 					}
 				}],
 			"Features":	[],
-			"PrefabPath":	"FancyTiles/Bridges_Small",
+			"PrefabPath":	"City/FancyTiles/Bridges_Small",
 			"SizeZ":	1,
 			"Weight":	0.8
 		}, {
@@ -199,7 +199,7 @@
 						"Skip":	false,
 						"WeightedPrefabPaths":	[{
 								"$NodeId":	"WeightedPath.Prefab.Prop-e6d72a0f-cefd-4e92-8445-65bd5e7378e2",
-								"Path":	"FancyTiles/2x2/22XX-X22X-2XX2-XX22",
+								"Path":	"City/FancyTiles/2x2/Tower",
 								"Weight":	1
 							}],
 						"LegacyPath":	false,
@@ -247,7 +247,7 @@
 						"Skip":	false,
 						"WeightedPrefabPaths":	[{
 								"$NodeId":	"WeightedPath.Prefab.Prop-ac5e6513-551b-4ac5-9c21-3cde762fe494",
-								"Path":	"BaseTiles/Buildings/1x1/2222",
+								"Path":	"City/BaseTiles/Buildings/1x1",
 								"Weight":	1
 							}],
 						"LegacyPath":	false,
@@ -260,13 +260,54 @@
 						"Skip":	false,
 						"WeightedPrefabPaths":	[{
 								"$NodeId":	"WeightedPath.Prefab.Prop-5150c5e2-502a-4512-877a-3a2050b56045",
-								"Path":	"BaseTiles/Foundations/Full1x1",
+								"Path":	"City/BaseTiles/Foundations/Full1x1",
 								"Weight":	1
 							}],
 						"LegacyPath":	false,
 						"LoadEntities":	true,
 						"MoldingDirection":	"NONE",
 						"MoldingChildren":	false
+					}, {
+						"$NodeId":	"Mask.Prop-81325343-11f2-4512-b5c8-07fafc4e19e7",
+						"Type":	"Mask",
+						"Skip":	false,
+						"Prop":	{
+							"$NodeId":	"Offset.Prop-cfe4c2e9-cf4e-4df2-b075-374d540c5384",
+							"Type":	"Offset",
+							"Skip":	false,
+							"Offset":	{
+								"$NodeId":	"Point3D-bbd8c5f5-ddb9-4d0d-979a-8a8f92f505ca",
+								"X":	0,
+								"Y":	-20,
+								"Z":	0
+							},
+							"Prop":	{
+								"$NodeId":	"Prefab.Prop-b93aec33-df5c-4ef8-b398-af72f0922fd6",
+								"Type":	"Prefab",
+								"Skip":	false,
+								"WeightedPrefabPaths":	[{
+										"$NodeId":	"WeightedPath.Prefab.Prop-4601213a-3e39-4362-8154-2ca441430d6e",
+										"Path":	"City/BaseTiles/Sewers",
+										"Weight":	1
+									}],
+								"LegacyPath":	false,
+								"LoadEntities":	true,
+								"MoldingDirection":	"NONE",
+								"MoldingChildren":	false
+							}
+						},
+						"Mask":	{
+							"$NodeId":	"BlockMask-66c4e6a2-2758-4576-8df1-2f661c94457c",
+							"DontReplace":	{
+								"$NodeId":	"BlockSet.BlockMask-dcd8e02b-b8a4-4390-92c5-be100643cba3",
+								"Inclusive":	true,
+								"Materials":	[{
+										"$NodeId":	"Material-461647f3-ed8a-4eb8-83a5-9c3c29d36b16",
+										"Fluid":	"Water_Source",
+										"SolidBottomUp":	false
+									}]
+							}
+						}
 					}]
 			},
 			"Features":	[],
@@ -294,21 +335,21 @@
 		"$Nodes":	{
 			"PropAlgo.GridWave-c55c1ede-9c29-486e-889b-01034c71d578":	{
 				"$Position":	{
-					"$x":	4710,
-					"$y":	-1792
+					"$x":	3506,
+					"$y":	-1877
 				},
 				"$Title":	"[ROOT] GridWave Algorithm (Prop)"
 			},
 			"GridGen2D.GridWave-e2691ace-b7ed-43ce-beb1-8709b96a2aea":	{
 				"$Position":	{
-					"$x":	4703,
-					"$y":	-2247
+					"$x":	4101,
+					"$y":	-2441
 				}
 			},
 			"Point3D-71400629-925e-40fe-bd4c-4dd47e783857":	{
 				"$Position":	{
-					"$x":	4877,
-					"$y":	-2476
+					"$x":	4271,
+					"$y":	-2621
 				}
 			},
 			"Single.TileSet.GridWave-51086fe4-e462-4ce9-b2b9-2ccc768c45c5":	{
@@ -391,129 +432,193 @@
 			},
 			"Prop.TileSet.GridWave-c85ca6a9-6db7-4507-a689-8c7d23eaafaf":	{
 				"$Position":	{
-					"$x":	6452,
-					"$y":	-94
+					"$x":	6456,
+					"$y":	-95
 				}
 			},
 			"Simple.RuleSet.GridWave-8573f859-1ab4-4268-bf48-120f1a90e17b":	{
 				"$Position":	{
-					"$x":	7199,
-					"$y":	-114
+					"$x":	7203,
+					"$y":	-115
 				}
 			},
 			"Simple.RuleSet.GridWave-8300c822-0f34-4a2a-948f-91f9d7bd3c05":	{
 				"$Position":	{
-					"$x":	7731,
-					"$y":	-93
+					"$x":	7735,
+					"$y":	-94
 				}
 			},
 			"Simple.RuleSet.GridWave-5d8234fc-21df-437d-89d4-29e4d7392008":	{
 				"$Position":	{
-					"$x":	7202,
-					"$y":	208
+					"$x":	7206,
+					"$y":	206
 				}
 			},
 			"Simple.RuleSet.GridWave-96b998ee-d297-4e26-8283-f813380868ed":	{
 				"$Position":	{
-					"$x":	7739,
-					"$y":	226
+					"$x":	7743,
+					"$y":	224
 				}
 			},
 			"Union.Prop-0e4a962b-eb3c-45dc-b949-9fb313efb349":	{
 				"$Position":	{
-					"$x":	6472,
-					"$y":	292
+					"$x":	6476,
+					"$y":	290
 				}
 			},
 			"Prefab.Prop-eefde675-b3d7-4e17-83e3-0ad294954b16":	{
 				"$Position":	{
-					"$x":	6466,
-					"$y":	543
+					"$x":	6470,
+					"$y":	541
 				}
 			},
 			"WeightedPath.Prefab.Prop-e6d72a0f-cefd-4e92-8445-65bd5e7378e2":	{
 				"$Position":	{
-					"$x":	6466,
-					"$y":	859
+					"$x":	6470,
+					"$y":	857
 				}
 			},
 			"Prefab.Prop-c226bd7b-a96e-41ac-b2f4-b8d3571a93e3":	{
 				"$Position":	{
-					"$x":	7255,
-					"$y":	552
+					"$x":	7259,
+					"$y":	550
 				}
 			},
 			"WeightedPath.Prefab.Prop-0a072e35-9894-4a96-acbb-19daf24399c1":	{
 				"$Position":	{
-					"$x":	7462,
-					"$y":	856
+					"$x":	7466,
+					"$y":	854
 				}
 			},
 			"Prop.TileSet.GridWave-1a10b7c2-c967-444b-a6a7-14ba213fc3e9":	{
 				"$Position":	{
-					"$x":	6399,
-					"$y":	1250
+					"$x":	6430,
+					"$y":	1322
 				}
 			},
 			"Simple.RuleSet.GridWave-f83f1978-c6f1-4813-be1a-9d9268f65ee4":	{
 				"$Position":	{
-					"$x":	7139,
-					"$y":	1252
+					"$x":	7170,
+					"$y":	1324
 				}
 			},
 			"Union.Prop-0914f32b-b1c7-472d-8280-a133a0831205":	{
 				"$Position":	{
-					"$x":	6409,
-					"$y":	1448
+					"$x":	6440,
+					"$y":	1520
 				}
 			},
 			"Prefab.Prop-c5db0adf-9db3-4bc2-ba69-b31b40d2183b":	{
 				"$Position":	{
-					"$x":	6419,
-					"$y":	1611
+					"$x":	6450,
+					"$y":	1683
 				}
 			},
 			"WeightedPath.Prefab.Prop-ac5e6513-551b-4ac5-9c21-3cde762fe494":	{
 				"$Position":	{
-					"$x":	6419,
-					"$y":	1927
+					"$x":	6450,
+					"$y":	1999
 				}
 			},
 			"Prefab.Prop-4b84522e-c262-40a8-a8d5-3743d4ba4cbd":	{
 				"$Position":	{
-					"$x":	7208,
-					"$y":	1620
+					"$x":	7239,
+					"$y":	1692
 				}
 			},
 			"WeightedPath.Prefab.Prop-5150c5e2-502a-4512-877a-3a2050b56045":	{
 				"$Position":	{
-					"$x":	7415,
-					"$y":	1924
+					"$x":	7446,
+					"$y":	1996
 				}
 			},
 			"Constant.Seed.GridWave-df35f61b-8009-40ea-b000-c5010c19123b":	{
 				"$Position":	{
-					"$x":	4726,
-					"$y":	-1365
+					"$x":	4032,
+					"$y":	-1132
 				}
 			},
 			"MultiAttempt.Feature.GridWave-4fca39d1-222b-4e59-9dd7-6e8d0b327f84":	{
 				"$Position":	{
-					"$x":	4724,
-					"$y":	-1189
+					"$x":	4035,
+					"$y":	-966
 				}
 			},
 			"Multithreading.Feature.GridWave-e885f39d-ad76-4da6-87db-aac90afb5182":	{
 				"$Position":	{
-					"$x":	4730,
-					"$y":	-927
+					"$x":	4044,
+					"$y":	-728
+				}
+			},
+			"Prefab.Prop-b93aec33-df5c-4ef8-b398-af72f0922fd6":	{
+				"$Position":	{
+					"$x":	6471,
+					"$y":	2914
+				}
+			},
+			"WeightedPath.Prefab.Prop-4601213a-3e39-4362-8154-2ca441430d6e":	{
+				"$Position":	{
+					"$x":	6471,
+					"$y":	3230
+				}
+			},
+			"Offset.Prop-cfe4c2e9-cf4e-4df2-b075-374d540c5384":	{
+				"$Position":	{
+					"$x":	6475,
+					"$y":	2763
+				}
+			},
+			"Point3D-bbd8c5f5-ddb9-4d0d-979a-8a8f92f505ca":	{
+				"$Position":	{
+					"$x":	7087,
+					"$y":	2725
+				}
+			},
+			"Mask.Prop-81325343-11f2-4512-b5c8-07fafc4e19e7":	{
+				"$Position":	{
+					"$x":	6349,
+					"$y":	2254
+				}
+			},
+			"BlockMask-66c4e6a2-2758-4576-8df1-2f661c94457c":	{
+				"$Position":	{
+					"$x":	6960,
+					"$y":	2289
+				}
+			},
+			"BlockSet.BlockMask-dcd8e02b-b8a4-4390-92c5-be100643cba3":	{
+				"$Position":	{
+					"$x":	7646,
+					"$y":	2399
+				}
+			},
+			"Material-461647f3-ed8a-4eb8-83a5-9c3c29d36b16":	{
+				"$Position":	{
+					"$x":	7490,
+					"$y":	2502
 				}
 			}
 		},
 		"$FloatingNodes":	[],
 		"$Links":	{
 		},
-		"$Groups":	[],
+		"$Groups":	[{
+				"$Position":	{
+					"$x":	6266.625,
+					"$y":	-3786.125
+				},
+				"$width":	2150.4375,
+				"$height":	1510.125,
+				"$name":	"Canals"
+			}, {
+				"$Position":	{
+					"$x":	6090.875,
+					"$y":	-244
+				},
+				"$width":	2603.125,
+				"$height":	3781.9375,
+				"$name":	"Buildings"
+			}],
 		"$Comments":	[],
 		"$WorkspaceID":	"HytaleGenerator - Props"
 	}
